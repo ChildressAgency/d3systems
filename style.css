@@ -148,9 +148,12 @@ a:hover:after{
 .hp-hero .d-word{
   color:#00f;
   border-bottom:none;
-  animation:fade_in_line;
-  animation-duration:1s;
+  animation:fade_down_in;
+  animation-duration:.3s;
   animation-fill-mode:forwards;
+  animation-timing-function:linear;
+  display:inline-block;
+  line-height:1em;
 }
 .hp-hero .inline-link{
   color:#191919;
@@ -172,6 +175,16 @@ a:hover:after{
     opacity:1;
   }
 }
+@keyframes fade_down_in{
+  from{
+    opacity:0;
+    top:-20px;
+  }
+  to{
+    opacity:1;
+    top:0;
+  }
+}
 #write-in span{
   opacity:0;
 }
@@ -180,14 +193,14 @@ a:hover:after{
 }
 .fade-in-text{
   animation:fade_in_line;
-  animation-duration:1.5s;
+  animation-duration:1s;
   animation-fill-mode:forwards;
 }
-.fade-in-first{ animation-delay:.5s; }
-.fade-in-second{ animation-delay:1s; }
-.fade-in-third{ animation-delay:1.5s; }
-.fade-in-fourth{ animation-delay:2s; }
-.fade-in-fifth{ animation-delay:2.5s; }
+.fade-in-first{ animation-delay:1s; }
+.fade-in-second{ animation-delay:1.5s; }
+.fade-in-third{ animation-delay:2s; }
+.fade-in-fourth{ animation-delay:2.5s; }
+.fade-in-fifth{ animation-delay:3s; }
 
 #scroll-down{
   display:block;
