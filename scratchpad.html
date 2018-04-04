@@ -1,0 +1,70 @@
+
+
+<div class="staff-details">
+  <div class="container">
+    <span class="staff-details-close"></span>
+    <h3 class="staff-name"></h3>
+    <h3 class="staff-title"></h3>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="staff-bio"></div>
+      </div>
+      <div class="col-sm-6">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <p class="staff-profile-label staff-team">Team:<span></span></p>
+            <p class="staff-profile-label staff-yearsexp">Years of Experience:<span></span></p>
+            <p class="staff-profile-label staff-languages">Languages:<span></span></p>
+          </div>
+          <div class="col-sm-12 col-md-6 border-left">
+            <p class="staff-profile-label staff-countryexp">Country Expertise:<span></span></p>
+            <p class="staff-profile-label staff-degrees">Degrees:<span></span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="og-expander" style="transition: height 350ms ease; height: 729px;">
+  <div class="og-expander-inner">
+    <span class="og-close"></span>
+    <div class="og-fullimg">
+      <div class="og-loading" style="display: none;"></div>
+      <img src="images/2.jpg" style="display: inline;">
+    </div>
+    <div class="og-details">
+      <h3>Veggies sunt bona vobis</h3>
+      <p>Komatsuna prairie turnip wattle seed artichoke mustard horseradish taro rutabaga ricebean carrot black-eyed pea turnip
+        greens beetroot yarrow watercress kombu.</p>
+      <a href="http://cargocollective.com/jaimemartinez/">Visit website</a>
+    </div>
+  </div>
+</div>
+
+
+<script>
+      this.$staff_team = $('<p class="staff-profile-label staff-team">Team:<span></span></p>');
+      this.$staff_yearsexp = $('<p class="staff-profile-label staff-yearsexp">Years of Experience:<span></span></p>');
+      this.$staff_languages = $('<p class="staff-profile-label staff-languages">Languages:<span></span></p>');
+      this.$staff_details_col_one = $('<div class="col-sm-12 col-md-6"></div>').append(this.$staff_team, this.$staff_yearsexp, this.$staff_languages);
+
+      this.$staff_countryexp = $('<p class="staff-profile-label staff-countryexp">Country Expertise:<span></span></p>');
+      this.$staff_degrees = $('<p class="staff-profile-label staff-degrees">Degrees:<span></span></p>');
+      this.$staff_details_col_two = $('<div class="col-sm-12 col-md-6"></div>').append(this.$staff_countryexp, this.$staff_degrees);
+
+      this.$staff_details_row = $('<div class="row"></div>').append(this.$staff_details_col_one, this.$staff_details_col_two);
+      this.$staff_details_col = $('<div class="col-sm-6"></div>').append(this.$staff_details_row);
+
+      this.$staff_bio = $('<div class="staff-bio"></div>');
+      this.$staff_bio_col = $('<div class="col-sm-6"></div>').append(this.$staff_bio);
+      
+      this.$staff_bio_details_row = $('<div class="row"></div>').append(this.$staff_bio_col, this.$staff_details_col);
+
+      this.$staff_name = $('<h3 class="staff-name"></h3>');
+      this.$staff_title = $('<h3 class="staff-title"></h3>');
+      this.$staff_close_details = $('<span class="staff-details-close"></span>');
+      
+      this.$staff_details_container = $('<div class="container"></div>').append(this.$staff_close_details, this.$staff_name, this.$staff_title, this.$staff_bio_details_row);
+      this.staff_details = $('<div class="staff-details"></div>').append(this.$staff_details_container);
+</script>
