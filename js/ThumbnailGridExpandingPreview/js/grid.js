@@ -196,7 +196,7 @@ var Grid = (function() {
 			easing : 'ease'
     };
     
-		console.log($grid);
+		console.log($items);
 
 	function init( config ) {
 		// the settings..
