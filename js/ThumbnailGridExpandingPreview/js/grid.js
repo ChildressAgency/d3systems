@@ -194,15 +194,16 @@ var Grid = (function() {
 			minHeight : 500,
 			speed : 350,
 			easing : 'ease'
-		};
+    };
+    
+		console.log($grid);
 
 	function init( config ) {
-		
 		// the settings..
 		settings = $.extend( true, {}, settings, config );
 
 		// preload all images
-		$grid.imagesLoaded( function() {
+		//$grid.imagesLoaded( function() {
 
 			// save item´s size and offset
 			saveItemInfo( true );
@@ -211,7 +212,7 @@ var Grid = (function() {
 			// initialize some events
 			initEvents();
 
-		} );
+		//} );
 
 	}
 

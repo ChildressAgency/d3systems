@@ -33,7 +33,7 @@ jQuery(document).ready(function($){
       itemSelector: '.grid-item',
       percentPosition:true,
       masonry:{
-        columnWidth:'.grid-sizer'
+        columnWidth:280
       }
     });
 
@@ -45,9 +45,10 @@ jQuery(document).ready(function($){
     });
   }
 
-  $(function(){
-    Grid.init();
-  });
+
+  //$(function(){
+    //Grid.init();
+  //});
 });
 
 /*
@@ -216,9 +217,9 @@ $.fn.imagesLoaded = function (callback) {
 var Grid = (function () {
 
   // list of items
-  var $grid = $('.grid'),
+  var $grid = $('#og-grid'),
     // the items
-    $items = $grid.children('.grid-item'),
+    $items = $grid.children('li'),
     // current expanded item's index
     current = -1,
     // position (top) of the expanded item
@@ -231,7 +232,7 @@ var Grid = (function () {
     $window = $(window), winsize,
     $body = $('html, body'),
     // transitionend events
-    /*transEndEventNames = {
+    transEndEventNames = {
       'WebkitTransition': 'webkitTransitionEnd',
       'MozTransition': 'transitionend',
       'OTransition': 'oTransitionEnd',
@@ -240,21 +241,24 @@ var Grid = (function () {
     },
     transEndEventName = transEndEventNames[Modernizr.prefixed('transition')],
     // support for csstransitions
-    support = Modernizr.csstransitions,*/
+    support = Modernizr.csstransitions,
     // default settings
     settings = {
       minHeight: 500,
       speed: 350,
       easing: 'ease'
     };
+   // console.log($items.html());
+    console.log($items);
 
   function init(config) {
-
+    
+    //$items.each(function(){ $(this).css('background-color', 'red'); });
     // the settings..
     settings = $.extend(true, {}, settings, config);
 
     // preload all images
-    /*$grid.imagesLoaded(function () {
+    //$grid.imagesLoaded(function () {
 
       // save item´s size and offset
       saveItemInfo(true);
@@ -263,7 +267,7 @@ var Grid = (function () {
       // initialize some events
       initEvents();
 
-    });*/
+    //});
 
   }
 
@@ -303,7 +307,7 @@ var Grid = (function () {
     // close the item if already expanded.
     // also close if clicking on the item´s cross
     initItemsEvents($items);
-
+    
     // on window resize get the window´s size again
     // reset some values..
     $window.on('debouncedresize', function () {
@@ -323,18 +327,24 @@ var Grid = (function () {
   }
 
   function initItemsEvents($items) {
-    $items.on('click', 'span.staff-details-close', function () {
+
+    //$items.on('click', 'span.staff-details-close', function () {
       //e.preventDefault();
-      hidePreview();
-      return false;
-    }).children('a').on('click', function (e) {
-      
+    //  hidePreview();
+    //  return false;
+    //});
+      //console.log($items.html());
+    
+    /*$items.children('.grid-item-content').on('click', function (e) {
+      e.preventDefault();
       var $item = $(this).parent();
       // check if item already opened
       current === $item.index() ? hidePreview() : showPreview($item);
       return false;
 
-    });
+    });*/
+    //$items.children('.grid').css('background-color', 'red');
+
   }
 
   function getWinSize() {
@@ -342,7 +352,7 @@ var Grid = (function () {
   }
 
   function showPreview($item) {
-
+    //console.log($item);
     var preview = $.data(this, 'preview'),
       // item´s offset top
       position = $item.data('offsetTop');
@@ -413,7 +423,7 @@ var Grid = (function () {
       }
     },*/
 
-    create: function(){
+    create: function () {
       this.$staff_team = $('<p class="staff-profile-label staff-team"></p>');
       this.$staff_yearsexp = $('<p class="staff-profile-label staff-yearsexp"></p>');
       this.$staff_languages = $('<p class="staff-profile-label staff-languages"></p>');
@@ -428,17 +438,18 @@ var Grid = (function () {
 
       this.$staff_bio = $('<div class="staff-bio"></div>');
       this.$staff_bio_col = $('<div class="col-sm-6"></div>').append(this.$staff_bio);
-      
+
       this.$staff_bio_details_row = $('<div class="row"></div>').append(this.$staff_bio_col, this.$staff_details_col);
 
       this.$staff_name = $('<h3 class="staff-name"></h3>');
       this.$staff_title = $('<h3 class="staff-title"></h3>');
       this.$staff_close_details = $('<span class="staff-details-close"></span>');
-      
+
       this.$staff_details_container = $('<div class="container"></div>').append(this.$staff_close_details, this.$staff_name, this.$staff_title, this.$staff_bio_details_row);
       this.staff_details = $('<div class="staff-details"></div>').append(this.$staff_details_container);
 
-      if(support){
+      this.$item.append(this.getEl());
+      if (support) {
         this.setTransition();
       }
     },
