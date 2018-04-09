@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="">
+
+  <meta http-equiv="cache-control" content="public">
+  <meta http-equiv="cache-control" content="private">
+
+  <title>D3 Systems</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" media="all" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <link rel="stylesheet" id="gridder-css" href="gridder.min.css" type="text/css" media="all" />
+  <link rel="stylesheet" id="d3systems-css" href="style.css" type="text/css" media="all" />
+
+  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/modernizr.custom.js"></script>
+  <script type="text/javascript" src="js/isotope.pkgd.min.js"></script>
+  <script type="text/javascript" src="js/d3systems-scripts.js"></script>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body data-spy="scroll" data-target="#page-progress" data-offset="119">
+  <nav id="header-nav">
+    <div class="container">
+      <div class="navbar-header">
+        <a href="#" class="header-logo">
+          <img src="images/logo.png" class="img-responsive" alt="D3 Systems Logo" />
+        </a>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="expanded" aria-controls="navbar">
+          <span class="sr-only">Toggle Navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Our Process</a></li>
+          <li><a href="#">Our Network</a></li>
+          <li><a href="#">Global Reach</a></li>
+          <li><a href="#">Our Work</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <form action="/" method="get" class="navbar-form navbar-right">
+          <div class="input-group">
+            <input type="text" name="s" class="form-control" placeholder="Search" />
+            <span class="input-group-btn">
+              <button class="btn"  type="submit"><i class="fas fa-search"></i></button>
+            </span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <div id="page-progress" class="nav nav-tabs nav-justified">
+    <a href="#staff">
+      <span>Staff</span>
+    </a>
+    <a href="#subsidiaries">
+      <span>Subsidiaries</span>
+    </a>
+    <a href="#clients">
+      <span>Clients</span>
+    </a>
+  </div>
+  <section id="hero" class="hero" style="background-image:url(images/two-women-speaking.jpg); background-position:left center;">
+    <div class="container">
+      <div class="hero-caption">
+        <h1>Our Staff</h1>
+        <p>We are proud of our staff's diverse backgrounds and skillsets, enhancing our team's versatility.</p>
+      </div>
+    </div>
+  </section>
+  <main id="main">
+    <div class="container">
+      <p>The D3 team works across cultural boundaries, speaks multiple languages, and combines field experience with methodological expertise. D3's research staff has decades of experience in research design, data collection, and analysis to inform our clients' strategic decision-making. From complex weighting schemes to regression analysis, our in-house statisticians provide the technical knowledge for designing methodologies that allow clients to achieve their analytical goals. Together, we build an understanding of each client's needs to become true research partners.</p>
+    </div>
+  </main>
+  <section id="staff">
+    <div class="container">
+      <ul id="filter-nav">
+        <li><a href="#" class="filter" data-filter=".all">All Staff</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Team</a>
+          <ul class="dropdown-menu">
+            <li><a href="#" class="filter" data-filter=".executive">Executive</a></li>
+            <li><a href="#" class="filter" data-filter=".management">Management</a></li>
+            <li><a href="#" class="filter" data-filter=".analysts">Analysts</a></li>
+            <li><a href="#" class="filter" data-filter=".statisticians">Statisticians</a></li>
+            <li><a href="#" class="filter" data-filter=".administration">Administration</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Regional Expertise</a>
+          <ul class="dropdown-menu">
+            <li><a href="#" class="filter" data-filter=".the-americas-and-the-caribbean">The Americas and the Caribbean</a></li>
+            <li><a href="#" class="filter" data-filter=".europe">Europe</a></li>
+            <li><a href="#" class="filter" data-filter=".middle-east-and-north-africa">Middle East and North Africa</a></li>
+            <li><a href="#" class="filter" data-filter=".sub-saharan-africa">Sub-Saharan Africa</a></li>
+            <li><a href="#" class="filter" data-filter=".central-and-south-asia">Central and South Asia</a></li>
+            <li><a href="#" class="filter" data-filter=".east-asia-southeast-asia-and-oceana">East Asia, Southeast Asia, and Oceana</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Languages</a>
+          <ul class="dropdown-menu">
+            <li><a href="#" class="filter" data-filter=".english">English</a></li>
+            <li><a href="#" class="filter" data-filter=".spanish">Spanish</a></li>
+            <li><a href="#" class="filter" data-filter=".french">French</a></li>
+            <li><a href="#" class="filter" data-filter=".pashto">Pashto</a></li>
+            <li><a href="#" class="filter" data-filter=".dari">Dari</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div id="grid" class="grid gridder">
+        <!--<div class="grid-sizer col-xs-6 col-sm-3"></div>-->
+        <div class="gridder-list grid-item executive management middle-east-and-north-africa english" data-griddercontent="#staff-details">
+          <a href="#" class="grid-item-content" data-staff_name="David Jodice, PH.D." data-staff_title="President & Chief Executive Officer" data-staff_bio="<p>Dr. Jodice has led research teams on cross-national political instability and violence (Science Center Berlin), surveys in developing countries (Research Management Services) and full-service opinion, media and market research (D3 Systems, Inc.) from 1977 to 2015. He is the Founder and President of D3 Systems, a co-founder of full-service research companies in Afghanistan (ACSOR), Bosnia & Herzegovina (MIB) and Kenya (Infinite Insight). With Matthew Warshaw (also D3) and colleagues from Bulgaria (Kantcho Stoychev and Andrei Raichev) he has co-founded Research Control Solutions. A key driver for Dr. Jodice is capacity building - at home and abroad - at the individual, team, and company levels.</p>" data-staff_team="Management" data-staff_yearsexp="40" data-staff_degrees="B.A. in History (Gordon College), M.A. and Ph.D. in Government (Harvard)" data-staff_languages="English" data-staff_countryexp="Afghanistan, Bosnia, Herzegovina, and Kenya">
+            <img src="images/headshots/david-jodice.jpg" class="img-circle img-responsive center-block" alt="David Jodice" />
+            <h4>David A. Jodice, Ph.D.</h4>
+            <p>President and Chief Executive Officer</p>
+          </a>
+        </div>
+        <div class="gridder-list grid-item management administration the-americas-and-the-caribbean english spanish" data-griddercontent="#staff-details">
+          <a href="#" class="grid-item-content" data-staff_name="Member 2 Name" data-staff_title="President & Chief Executive Officer" data-staff_bio="<p>Dr. Jodice has led research teams on cross-national political instability and violence (Science Center Berlin), surveys in developing countries (Research Management Services) and full-service opinion, media and market research (D3 Systems, Inc.) from 1977 to 2015. He is the Founder and President of D3 Systems, a co-founder of full-service research companies in Afghanistan (ACSOR), Bosnia & Herzegovina (MIB) and Kenya (Infinite Insight). With Matthew Warshaw (also D3) and colleagues from Bulgaria (Kantcho Stoychev and Andrei Raichev) he has co-founded Research Control Solutions. A key driver for Dr. Jodice is capacity building - at home and abroad - at the individual, team, and company levels.</p>" data-staff_team="Management" data-staff_yearsexp="40" data-staff_degrees="B.A. in History (Gordon College), M.A. and Ph.D. in Government (Harvard)" data-staff_languages="English" data-staff_countryexp="Afghanistan, Bosnia, Herzegovina, and Kenya">
+            <img src="images/headshots/david-jodice.jpg" class="img-circle img-responsive center-block" alt="David Jodice" />
+            <h4>David A. Jodice, Ph.D.</h4>
+            <p>President and Chief Executive Officer</p>
+          </a>
+        </div>
+        <div class="gridder-list grid-item analysts europe middle-east-and-north-africa pashto" data-griddercontent="#staff-details">
+          <a href="#" class="grid-item-content" data-staff_name="Member 3 Name" data-staff_title="President & Chief Executive Officer"
+            data-staff_bio="<p>Dr. Jodice has led research teams on cross-national political instability and violence (Science Center Berlin), surveys in developing countries (Research Management Services) and full-service opinion, media and market research (D3 Systems, Inc.) from 1977 to 2015. He is the Founder and President of D3 Systems, a co-founder of full-service research companies in Afghanistan (ACSOR), Bosnia & Herzegovina (MIB) and Kenya (Infinite Insight). With Matthew Warshaw (also D3) and colleagues from Bulgaria (Kantcho Stoychev and Andrei Raichev) he has co-founded Research Control Solutions. A key driver for Dr. Jodice is capacity building - at home and abroad - at the individual, team, and company levels.</p>" data-staff_team="Management" data-staff_yearsexp="40" data-staff_degrees="B.A. in History (Gordon College), M.A. and Ph.D. in Government (Harvard)" data-staff_languages="English" data-staff_countryexp="Afghanistan, Bosnia, Herzegovina, and Kenya">
+            <img src="images/headshots/david-jodice.jpg" class="img-circle img-responsive center-block" alt="David Jodice" />
+            <h4>David A. Jodice, Ph.D.</h4>
+            <p>President and Chief Executive Officer</p>
+          </a>
+        </div>
+        <div class="gridder-list grid-item executive management middle-east-and-north-africa english" data-griddercontent="#staff-details">
+          <a href="#" class="grid-item-content" data-staff_name="Member 4 Name" data-staff_title="President & Chief Executive Officer"
+            data-staff_bio="<p>Dr. Jodice has led research teams on cross-national political instability and violence (Science Center Berlin), surveys in developing countries (Research Management Services) and full-service opinion, media and market research (D3 Systems, Inc.) from 1977 to 2015. He is the Founder and President of D3 Systems, a co-founder of full-service research companies in Afghanistan (ACSOR), Bosnia & Herzegovina (MIB) and Kenya (Infinite Insight). With Matthew Warshaw (also D3) and colleagues from Bulgaria (Kantcho Stoychev and Andrei Raichev) he has co-founded Research Control Solutions. A key driver for Dr. Jodice is capacity building - at home and abroad - at the individual, team, and company levels.</p>" data-staff_team="Management" data-staff_yearsexp="40" data-staff_degrees="B.A. in History (Gordon College), M.A. and Ph.D. in Government (Harvard)" data-staff_languages="English" data-staff_countryexp="Afghanistan, Bosnia, Herzegovina, and Kenya">
+            <img src="images/headshots/david-jodice.jpg" class="img-circle img-responsive center-block" alt="David Jodice" />
+            <h4>David A. Jodice, Ph.D.</h4>
+            <p>President and Chief Executive Officer</p>
+          </a>
+        </div>
+        <div class="gridder-list grid-item executive management middle-east-and-north-africa english" data-griddercontent="#staff-details">
+          <a href="#" class="grid-item-content" data-staff_name="Member 5 Name" data-staff_title="President & Chief Executive Officer"
+            data-staff_bio="<p>Dr. Jodice has led research teams on cross-national political instability and violence (Science Center Berlin), surveys in developing countries (Research Management Services) and full-service opinion, media and market research (D3 Systems, Inc.) from 1977 to 2015. He is the Founder and President of D3 Systems, a co-founder of full-service research companies in Afghanistan (ACSOR), Bosnia & Herzegovina (MIB) and Kenya (Infinite Insight). With Matthew Warshaw (also D3) and colleagues from Bulgaria (Kantcho Stoychev and Andrei Raichev) he has co-founded Research Control Solutions. A key driver for Dr. Jodice is capacity building - at home and abroad - at the individual, team, and company levels.</p>" data-staff_team="Management" data-staff_yearsexp="40" data-staff_degrees="B.A. in History (Gordon College), M.A. and Ph.D. in Government (Harvard)" data-staff_languages="English" data-staff_countryexp="Afghanistan, Bosnia, Herzegovina, and Kenya">
+            <img src="images/headshots/david-jodice.jpg" class="img-circle img-responsive center-block" alt="David Jodice" />
+            <h4>David A. Jodice, Ph.D.</h4>
+            <p>President and Chief Executive Officer</p>
+          </a>
+        </div>
+        <div class="gridder-list grid-item executive management middle-east-and-north-africa english" data-griddercontent="#staff-details">
+          <a href="#" class="grid-item-content" data-staff_name="Member 6 Name" data-staff_title="President & Chief Executive Officer"
+            data-staff_bio="<p>Dr. Jodice has led research teams on cross-national political instability and violence (Science Center Berlin), surveys in developing countries (Research Management Services) and full-service opinion, media and market research (D3 Systems, Inc.) from 1977 to 2015. He is the Founder and President of D3 Systems, a co-founder of full-service research companies in Afghanistan (ACSOR), Bosnia & Herzegovina (MIB) and Kenya (Infinite Insight). With Matthew Warshaw (also D3) and colleagues from Bulgaria (Kantcho Stoychev and Andrei Raichev) he has co-founded Research Control Solutions. A key driver for Dr. Jodice is capacity building - at home and abroad - at the individual, team, and company levels.</p>" data-staff_team="Management" data-staff_yearsexp="40" data-staff_degrees="B.A. in History (Gordon College), M.A. and Ph.D. in Government (Harvard)" data-staff_languages="English" data-staff_countryexp="Afghanistan, Bosnia, Herzegovina, and Kenya">
+            <img src="images/headshots/david-jodice.jpg" class="img-circle img-responsive center-block" alt="David Jodice" />
+            <h4>David A. Jodice, Ph.D.</h4>
+            <p>President and Chief Executive Officer</p>
+          </a>
+        </div>
+        <div class="gridder-list grid-item executive management middle-east-and-north-africa english" data-griddercontent="#staff-details">
+          <a href="#" class="grid-item-content" data-staff_name="Member 7 Name" data-staff_title="President & Chief Executive Officer"
+            data-staff_bio="<p>Dr. Jodice has led research teams on cross-national political instability and violence (Science Center Berlin), surveys in developing countries (Research Management Services) and full-service opinion, media and market research (D3 Systems, Inc.) from 1977 to 2015. He is the Founder and President of D3 Systems, a co-founder of full-service research companies in Afghanistan (ACSOR), Bosnia & Herzegovina (MIB) and Kenya (Infinite Insight). With Matthew Warshaw (also D3) and colleagues from Bulgaria (Kantcho Stoychev and Andrei Raichev) he has co-founded Research Control Solutions. A key driver for Dr. Jodice is capacity building - at home and abroad - at the individual, team, and company levels.</p>" data-staff_team="Management" data-staff_yearsexp="40" data-staff_degrees="B.A. in History (Gordon College), M.A. and Ph.D. in Government (Harvard)" data-staff_languages="English" data-staff_countryexp="Afghanistan, Bosnia, Herzegovina, and Kenya">
+            <img src="images/headshots/david-jodice.jpg" class="img-circle img-responsive center-block" alt="David Jodice" />
+            <h4>David A. Jodice, Ph.D.</h4>
+            <p>President and Chief Executive Officer</p>
+          </a>
+        </div>
+        <div class="gridder-list grid-item executive management middle-east-and-north-africa english" data-griddercontent="#staff-details">
+          <a href="#" class="grid-item-content" data-staff_name="Member 8 Name" data-staff_title="President & Chief Executive Officer"
+            data-staff_bio="<p>Dr. Jodice has led research teams on cross-national political instability and violence (Science Center Berlin), surveys in developing countries (Research Management Services) and full-service opinion, media and market research (D3 Systems, Inc.) from 1977 to 2015. He is the Founder and President of D3 Systems, a co-founder of full-service research companies in Afghanistan (ACSOR), Bosnia & Herzegovina (MIB) and Kenya (Infinite Insight). With Matthew Warshaw (also D3) and colleagues from Bulgaria (Kantcho Stoychev and Andrei Raichev) he has co-founded Research Control Solutions. A key driver for Dr. Jodice is capacity building - at home and abroad - at the individual, team, and company levels.</p>" data-staff_team="Management" data-staff_yearsexp="40" data-staff_degrees="B.A. in History (Gordon College), M.A. and Ph.D. in Government (Harvard)" data-staff_languages="English" data-staff_countryexp="Afghanistan, Bosnia, Herzegovina, and Kenya">
+            <img src="images/headshots/david-jodice.jpg" class="img-circle img-responsive center-block" alt="David Jodice" />
+            <h4>David A. Jodice, Ph.D.</h4>
+            <p>President and Chief Executive Officer</p>
+          </a>
+        </div>
+        <div class="gridder-list grid-item executive management middle-east-and-north-africa english" data-griddercontent="#staff-details">
+          <a href="#" class="grid-item-content" data-staff_name="Member 9 Name" data-staff_title="President & Chief Executive Officer"
+            data-staff_bio="<p>Dr. Jodice has led research teams on cross-national political instability and violence (Science Center Berlin), surveys in developing countries (Research Management Services) and full-service opinion, media and market research (D3 Systems, Inc.) from 1977 to 2015. He is the Founder and President of D3 Systems, a co-founder of full-service research companies in Afghanistan (ACSOR), Bosnia & Herzegovina (MIB) and Kenya (Infinite Insight). With Matthew Warshaw (also D3) and colleagues from Bulgaria (Kantcho Stoychev and Andrei Raichev) he has co-founded Research Control Solutions. A key driver for Dr. Jodice is capacity building - at home and abroad - at the individual, team, and company levels.</p>" data-staff_team="Management" data-staff_yearsexp="40" data-staff_degrees="B.A. in History (Gordon College), M.A. and Ph.D. in Government (Harvard)" data-staff_languages="English" data-staff_countryexp="Afghanistan, Bosnia, Herzegovina, and Kenya">
+            <img src="images/headshots/david-jodice.jpg" class="img-circle img-responsive center-block" alt="David Jodice" />
+            <h4>David A. Jodice, Ph.D.</h4>
+            <p>President and Chief Executive Officer</p>
+          </a>
+        </div>
+        <div class="gridder-list grid-item executive management middle-east-and-north-africa english" data-griddercontent="#staff-details">
+          <a href="#" class="grid-item-content" data-staff_name="Member 10 Name" data-staff_title="President & Chief Executive Officer"
+            data-staff_bio="<p>Dr. Jodice has led research teams on cross-national political instability and violence (Science Center Berlin), surveys in developing countries (Research Management Services) and full-service opinion, media and market research (D3 Systems, Inc.) from 1977 to 2015. He is the Founder and President of D3 Systems, a co-founder of full-service research companies in Afghanistan (ACSOR), Bosnia & Herzegovina (MIB) and Kenya (Infinite Insight). With Matthew Warshaw (also D3) and colleagues from Bulgaria (Kantcho Stoychev and Andrei Raichev) he has co-founded Research Control Solutions. A key driver for Dr. Jodice is capacity building - at home and abroad - at the individual, team, and company levels.</p>" data-staff_team="Management" data-staff_yearsexp="40" data-staff_degrees="B.A. in History (Gordon College), M.A. and Ph.D. in Government (Harvard)" data-staff_languages="English" data-staff_countryexp="Afghanistan, Bosnia, Herzegovina, and Kenya">
+            <img src="images/headshots/david-jodice.jpg" class="img-circle img-responsive center-block" alt="David Jodice" />
+            <h4>David A. Jodice, Ph.D.</h4>
+            <p>President and Chief Executive Officer</p>
+          </a>
+        </div>
+        <div class="gridder-list grid-item executive management middle-east-and-north-africa english" data-griddercontent="#staff-details">
+          <a href="#" class="grid-item-content" data-staff_name="Member 11 Name" data-staff_title="President & Chief Executive Officer"
+            data-staff_bio="<p>Dr. Jodice has led research teams on cross-national political instability and violence (Science Center Berlin), surveys in developing countries (Research Management Services) and full-service opinion, media and market research (D3 Systems, Inc.) from 1977 to 2015. He is the Founder and President of D3 Systems, a co-founder of full-service research companies in Afghanistan (ACSOR), Bosnia & Herzegovina (MIB) and Kenya (Infinite Insight). With Matthew Warshaw (also D3) and colleagues from Bulgaria (Kantcho Stoychev and Andrei Raichev) he has co-founded Research Control Solutions. A key driver for Dr. Jodice is capacity building - at home and abroad - at the individual, team, and company levels.</p>" data-staff_team="Management" data-staff_yearsexp="40" data-staff_degrees="B.A. in History (Gordon College), M.A. and Ph.D. in Government (Harvard)" data-staff_languages="English" data-staff_countryexp="Afghanistan, Bosnia, Herzegovina, and Kenya">
+            <img src="images/headshots/david-jodice.jpg" class="img-circle img-responsive center-block" alt="David Jodice" />
+            <h4>David A. Jodice, Ph.D.</h4>
+            <p>President and Chief Executive Officer</p>
+          </a>
+        </div>
+        <div class="gridder-list grid-item executive management middle-east-and-north-africa english" data-griddercontent="#staff-details">
+          <a href="#" class="grid-item-content" data-staff_name="Member 12 Name" data-staff_title="President & Chief Executive Officer"
+            data-staff_bio="<p>Dr. Jodice has led research teams on cross-national political instability and violence (Science Center Berlin), surveys in developing countries (Research Management Services) and full-service opinion, media and market research (D3 Systems, Inc.) from 1977 to 2015. He is the Founder and President of D3 Systems, a co-founder of full-service research companies in Afghanistan (ACSOR), Bosnia & Herzegovina (MIB) and Kenya (Infinite Insight). With Matthew Warshaw (also D3) and colleagues from Bulgaria (Kantcho Stoychev and Andrei Raichev) he has co-founded Research Control Solutions. A key driver for Dr. Jodice is capacity building - at home and abroad - at the individual, team, and company levels.</p>" data-staff_team="Management" data-staff_yearsexp="40" data-staff_degrees="B.A. in History (Gordon College), M.A. and Ph.D. in Government (Harvard)" data-staff_languages="English" data-staff_countryexp="Afghanistan, Bosnia, Herzegovina, and Kenya">
+            <img src="images/headshots/david-jodice.jpg" class="img-circle img-responsive center-block" alt="David Jodice" />
+            <h4>David A. Jodice, Ph.D.</h4>
+            <p>President and Chief Executive Officer</p>
+          </a>
+        </div>        
+      </ul><!--grid-->
+
+      <div id="staff-details" class="staff-details">
+        <div class="container">
+          <span class="staff-details-close"></span>
+          <h3 class="staff-name"></h3>
+          <h3 class="staff-title"></h3>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="staff-bio"></div>
+            </div>
+            <div class="col-sm-6">
+              <div class="row">
+                <div class="col-sm-12 col-md-6">
+                  <p class="staff-profile-label staff-team">Team:<span></span></p>
+                  <p class="staff-profile-label staff-yearsexp">Years of Experience:<span></span></p>
+                  <p class="staff-profile-label staff-languages">Languages:<span></span></p>
+                </div>
+                <div class="col-sm-12 col-md-6 border-left">
+                  <p class="staff-profile-label staff-countryexp">Country Expertise:<span></span></p>
+                  <p class="staff-profile-label staff-degrees">Degrees:<span></span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <script>
+      //$(function () {
+      //  Grid.init();
+        //console.log(Grid.$grid);
+      //});
+    </script>
+  </section>
+  <footer>
+    <div class="container">
+      <h2>D3: Designs, Data, Decisions</h2>
+      <hr />
+      <div class="row">
+        <div class="col-sm-4">
+          <h3>Contact Us</h3>
+          <ul class="list-unstyled">
+            <li>Research: <span class="value">research@d3systems.com</span></li>
+            <li>Recruitment: <span class="value">hr@d3systems.com</span></li>
+            <li>General: <span class="value">info@d3systems.com</span></li>
+          </ul>
+          <p>8300 Greensboro Dr. Suite 450<br />Tysons Corner, VA 22102<br /><span class="value">+1 703 388 2450</span></p>
+        </div>
+        <div class="col-sm-5">
+          <h3>Subsidiaries</h3>
+          <ul class="list-unstyled">
+            <li><a href="#">ACSOR-Surveys <span class="location">Afghanistan</span></a></li>
+            <li><a href="#">Research Control Solutions (RCS) <span class="location">United States</span></a></li>
+            <li><a href="#">Infinite Insight <span class="location">Kenya</span></a></li>
+            <li><a href="#">D-Force Sampling <span class="location">Malaysia</span></a></li>
+            <li><a href="#">Mareco Index Bosnia <span class="location">Bosnia and Herzegovnia</span></a></li>
+          </ul>
+        </div>
+        <div class="col-sm-3">
+          <h3>Social Media</h3>
+          <div class="social">
+            <a href="#" class="facebook" title="Facebook"></a>
+            <a href="#" class="linkedin" title="LinkedIn"></a>
+            <a href="#" class="newsletter" title="Newsletter"></a>
+            <a href="#" class="d3" title="Our Work"></a>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div id="stats" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <div class="row">
+              <div class="col-sm-3">
+                <p>Annual Miles Flown</p>
+              </div>
+              <div class="col-sm-3">
+                <p>2015: <span>734.555</span></p>
+              </div>
+              <div class="col-sm-3">
+                <p>2016: <span>843,051</span></p>
+              </div>
+              <div class="col-sm-3">
+                <p>2017: <span>1,002,530</span></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="row">
+              <div class="col-sm-3">
+                <p>Project Countries</p>
+              </div>
+              <div class="col-sm-3">
+                <p>2015: <span>27</span></p>
+              </div>
+              <div class="col-sm-3">
+                <p>2016: <span>31</span></p>
+              </div>
+              <div class="col-sm-3">
+                <p>2017: <span>34</span></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="row">
+              <div class="col-sm-3">
+                <p>Projects Complete</p>
+              </div>
+              <div class="col-sm-3">
+                <p>2015: <span>132</span></p>
+              </div>
+              <div class="col-sm-3">
+                <p>2016: <span>142</span></p>
+              </div>
+              <div class="col-sm-3">
+                <p>2017: <span>161</span></p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+</body>
+
+</html>
