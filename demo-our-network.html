@@ -32,7 +32,7 @@
 </head>
 
 <body data-spy="scroll" data-target="#page-progress" data-offset="119">
-  <nav id="header-nav">
+  <nav id="header-nav" class="sticky">
     <div class="container">
       <div class="navbar-header">
         <a href="#" class="header-logo">
@@ -63,19 +63,27 @@
         </form>
       </div>
     </div>
+    <div id="page-progress" class="nav nav-tabs nav-justified">
+      <ul class="nav nav-tabs nav-justified">
+        <li>
+          <a href="#staff">
+            <span>Staff</span>
+          </a>
+        </li>
+        <li>
+          <a href="#subsidiaries">
+            <span>Subsidiaries</span>
+          </a>
+        </li>
+        <li>
+          <a href="#clients">
+            <span>Clients</span>
+          </a>
+        </li>
+      </ul>
+    </div>
   </nav>
-  <div id="page-progress" class="nav nav-tabs nav-justified">
-    <a href="#staff">
-      <span>Staff</span>
-    </a>
-    <a href="#subsidiaries">
-      <span>Subsidiaries</span>
-    </a>
-    <a href="#clients">
-      <span>Clients</span>
-    </a>
-  </div>
-  <section id="hero" class="hero" style="background-image:url(images/two-women-speaking.jpg); background-position:left center;">
+  <section id="hero" class="hero" style="background-image:url(images/two-women-speaking.jpg); background-position:25% 50%;">
     <div class="container">
       <div class="hero-caption">
         <h1>Our Staff</h1>
@@ -90,8 +98,8 @@
   </main>
   <section id="staff">
     <div class="container">
-      <ul id="filter-nav">
-        <li><a href="#" class="filter" data-filter=".all">All Staff</a></li>
+      <ul id="filter-nav" class="nav nav-tabs">
+        <li class="active"><a href="#" class="filter" data-filter=".all">All Staff</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Team</a>
           <ul class="dropdown-menu">
@@ -249,12 +257,12 @@
       </div>
 
     </div>
-    <script>
-      //$(function () {
-      //  Grid.init();
-        //console.log(Grid.$grid);
-      //});
-    </script>
+  </section>
+  <section id="subsidiaries">
+
+  </section>
+  <section id="#clients">
+
   </section>
   <footer>
     <div class="container">
