@@ -151,6 +151,8 @@ a:hover:after{
   text-align:center;
   left:0;
   right:0;
+}
+.hero .hero-caption>p{
   max-width:400px;
   margin-left:auto;
   margin-right:auto;
@@ -635,7 +637,7 @@ footer .social .d3{
   #competency-cards .container-sm-height{
     border-spacing:15px;
   }
-  .staff-details .row>.col-sm-6:first-child{
+  .details .row>.col-sm-6:first-child{
     border-right:1px solid #999;
   }
 }

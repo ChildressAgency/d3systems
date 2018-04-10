@@ -29,6 +29,7 @@ jQuery(document).ready(function($){
   }); 
   
   var staff_grid = $('#staff_grid').revealer();
+  var subsidiaries_grid = $('subsidiaries').revealer();
 
   var $filters = $('#filter-nav').on('click', '.filter', function(e){
     e.preventDefault();
@@ -418,22 +419,23 @@ $.fn.revealer = function(){
 
       this.$staff_countryexp = $('<p class="profile-label staff-countryexp"></p>');
       this.$staff_degrees = $('<p class="profile-label staff-degrees"></p>');
-      this.$staff_details_col_two = $('<div class="col-sm-12 col-md-6"></div>').append(this.$staff_countryexp, this.$staff_degrees);
 
-      this.$staff_details_row = $('<div class="row"></div>').append(this.$staff_details_col_one, this.$staff_details_col_two);
-      this.$staff_details_col = $('<div class="col-sm-6"></div>').append(this.$staff_details_row);
+      this.$details_col_two = $('<div class="col-sm-12 col-md-6"></div>').append(this.$staff_countryexp, this.$staff_degrees);
 
-      this.$staff_bio = $('<div class="bio"></div>');
-      this.$staff_bio_col = $('<div class="col-sm-6"></div>').append(this.$staff_bio);
+      this.$details_row = $('<div class="row"></div>').append(this.$details_col_one, this.$details_col_two);
+      this.$details_col = $('<div class="col-sm-6"></div>').append(this.$details_row);
 
-      this.$staff_bio_details_row = $('<div class="row"></div>').append(this.$staff_bio_col, this.$staff_details_col);
+      this.$bio = $('<div class="bio"></div>');
+      this.$bio_col = $('<div class="col-sm-6"></div>').append(this.$bio);
 
-      this.$staff_name = $('<h3 class="name"></h3>');
-      this.$staff_title = $('<h3 class="title"></h3>');
-      this.$staff_close_details = $('<span class="details-close"></span>');
+      this.$bio_details_row = $('<div class="row"></div>').append(this.$bio_col, this.$details_col);
 
-      this.$staff_details_container = $('<div class="container"></div>').append(this.$staff_close_details, this.$staff_name, this.$staff_title, this.$staff_bio_details_row);
-      this.$staff_details = $('<div id="details" class="details"></div>').append(this.$staff_details_container);
+      this.$details_name = $('<h3 class="name"></h3>');
+      this.$details_title = $('<h3 class="title"></h3>');
+      this.$close_details = $('<span class="details-close"></span>');
+
+      this.$details_container = $('<div class="container"></div>').append(this.$close_details, this.$details_name, this.$details_title, this.$bio_details_row);
+      this.$details = $('<div id="details" class="details"></div>').append(this.$details_container);
 
       this.$item.append(this.getEl());
       if (support) {
@@ -461,24 +463,30 @@ $.fn.revealer = function(){
       // update preview´s content
       var $itemEl = this.$item.children('a'),
         eldata = {
-          staff_name: $itemEl.data('staff_name'),
-          staff_title: $itemEl.data('staff_title'),
-          staff_bio: $itemEl.data('staff_bio'),
+          details_name: $itemEl.data('details_name'),
+          details_title: $itemEl.data('details_title'),
+          bio: $itemEl.data('details_bio'),
           staff_team: $itemEl.data('staff_team'),
           staff_yearsexp: $itemEl.data('staff_yearsexp'),
           staff_degrees: $itemEl.data('staff_degrees'),
           staff_languages: $itemEl.data('staff_languages'),
-          staff_countryexp: $itemEl.data('staff_countryexp')
+          staff_countryexp: $itemEl.data('staff_countryexp'),
+          subsidiary_address: $itemEl.data('subsidiary_address'),
+          subsidiary_phone: $itemEl.data('subsidiary_phone'),
+          subsidiary_contact: $itemEl.data('subsidiary_contact')
         };
 
-      this.$staff_team.html('Team:<span>' + eldata.staff_team + '</span>');
+      (eldata.details_name != null) ? this.$details_name.html(eldata.details_name) : this.$details_name.html('');
+      (eldata.details_title != null) ? this.$details_title.html(eldata.details_title) : this.$details_title.html('');
+      (eldata.bio != null) ? this.$bio.html(eldata.bio) : this.$bio.html('');
+      (eldata.staff_team != null) ? this.$staff_team.html('Team:<span>' + eldata.staff_team + '</span>') : this.$staff_team.html('');
       (eldata.staff_yearsexp != null) ? this.$staff_yearsexp.html('Years of Experience:<span>' + eldata.staff_yearsexp + '</span>') : this.$staff_yearsexp.html('');
-      this.$staff_languages.html('Languages:<span>' + eldata.staff_languages + '</span>');
-      this.$staff_countryexp.html('Country Expertise:<span>' + eldata.staff_countryexp + '</span>');
-      this.$staff_degrees.html('Degrees:<span>' + eldata.staff_degrees + '</span>');
-      this.$staff_bio.html(eldata.staff_bio);
-      this.$staff_name.html(eldata.staff_name);
-      this.$staff_title.html(eldata.staff_title);
+      (eldata.staff_languages != null) ? this.$staff_languages.html('Languages:<span>' + eldata.staff_languages + '</span>') : this.$staff_languages.html('');
+      (eldata.staff_countryexp != null) ? this.$staff_countryexp.html('Country Expertise:<span>' + eldata.staff_countryexp + '</span>') : this.$staff_countryexp.html('');
+      (eldata.staff_degrees != null) ? this.$staff_degrees.html('Degrees:<span>' + eldata.staff_degrees + '</span>') : this.$staff_degrees.html('');
+      (eldata.subsidiary_address != null) ? this.$subsidiary_address.html('Address:<span>' + eldata.subsidiary_address + '</span>') : this.$subsidiary_address.html('');
+      (eldata.subsidiary_phone != null) ? this.$subsidiary_phone.html('Telephone:<span>' + eldata_subsidiary_phone + '</span>') : this.$subsidiary_phone.html('');
+      (eldata.subsidiary_contact != null) ? this.$subsidiary_contact.html('Contact:<span>' + eldata.$subsidiary_contact + '</span>') : this.$subsidiary_contact.html('');
 
       var self = this;
     },
@@ -501,7 +509,7 @@ $.fn.revealer = function(){
           if (support) {
             $(this).off(transEndEventName);
           }
-          self.$staff_details.remove();
+          self.$details.remove();
         };
 
       setTimeout($.proxy(function () {
@@ -509,7 +517,7 @@ $.fn.revealer = function(){
         if (typeof this.$largeImg !== 'undefined') {
           this.$largeImg.fadeOut('fast');
         }
-        this.$staff_details.css('height', 0);
+        this.$details.css('height', 0);
         // the current expanded item (might be different from this.$item)
         var $expandedItem = $items.eq(this.expandedIdx);
         $expandedItem.css('height', $expandedItem.data('height')).on(transEndEventName, onEndFn);
@@ -554,10 +562,10 @@ $.fn.revealer = function(){
       var staff_details_height = $('#details').height();
       var itemHeight = this.$item.data('height') + marginExpanded + staff_details_height;
 
-      this.$staff_details.slideDown();
+      this.$details.slideDown();
       //console.log(staff_details_height);
       this.$item.css('height', itemHeight).on(transEndEventName, onEndFn);
-      this.$staff_details.animate({'opacity':'1'}, 400);
+      this.$details.animate({'opacity':'1'}, 400);
 
       //this.$item.css('height', $('#staff_details').height()).on(transEndEventName, onEndFn);
       //var staff_details_height = this.$item.find('#staff-details');
@@ -570,18 +578,18 @@ $.fn.revealer = function(){
     },
     positionPreview: function () {
       var position = this.$item.data('offsetTop'),
-        previewOffsetT = this.$staff_details.offset().top - scrollExtra,
+        previewOffsetT = this.$details.offset().top - scrollExtra,
         scrollVal = this.height + this.$item.data('height') + marginExpanded <= winsize.height ? position : this.height < winsize.height ? previewOffsetT - (winsize.height - this.height) : previewOffsetT;
 
       $body.animate({ scrollTop: scrollVal }, settings.speed);
 
     },
     setTransition: function () {
-      this.$staff_details.css('transition', 'height ' + settings.speed + 'ms ' + settings.easing);
+      this.$details.css('transition', 'height ' + settings.speed + 'ms ' + settings.easing);
       this.$item.css('transition', 'height ' + settings.speed + 'ms ' + settings.easing);
     },
     getEl: function () {
-      return this.$staff_details;
+      return this.$details;
     }
   }
 };
