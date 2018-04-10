@@ -298,11 +298,6 @@ a:hover:after{
   text-align:center;
 }
 
-#staff{
-  background-color:#fcfbfb;
-  box-shadow:inset 0px 8px 18px -5px #ddd;
-  min-height:615px;
-}
 #filter-nav.nav-tabs{
   border-bottom:none;
 }
@@ -343,6 +338,17 @@ a:hover:after{
   color:#191919;
 }
 
+#staff{
+  background-color:#fcfbfb;
+  box-shadow:inset 0px 8px 18px -5px #ddd;
+  min-height:615px;
+}
+#subsidiaries{
+  background-color:#fcfbfb;
+  box-shadow:inset 0px 8px 18px -5px #ddd;
+  min-height:320px;
+}
+
 .grid{
   width:100%;
   text-align:center;
@@ -351,6 +357,8 @@ a:hover:after{
   display:inline-block;
   width:225px;
   padding:25px;
+  vertical-align:top;
+  min-height:320px;
 }
 .grid-item>.grid-item-content{
   display:block;
@@ -377,6 +385,7 @@ a:hover:after{
   font-size:14px;
   border-bottom:1px dotted #00f;
   display:inline-block;
+  position:relative;
 }
 .grid-item-content h4:after{
   content:"";
@@ -384,7 +393,7 @@ a:hover:after{
   height:1px;
   width:0;
   background-color:#00f;
-  bottom:50px;
+  bottom:-1px;
   left:0;
   -webkit-transition:width .3s ease;
   transition:width .3s ease;  
@@ -483,15 +492,29 @@ a:hover:after{
 }
 .details .profile-label{
   color:#999;
+  margin-bottom:0;
 }
 .details .profile-label>span{
   color:#fff;
   display:block;
+  margin-bottom:10px;
+}
+.details .profile-label a{
+  color:#fff;
+  border-color:#999;
+}
+.details .profile-label a:after,
+.details .profile-label a:hover:after,
+.details .profile-label a:focus:after{
+  background-color:#999;
 }
 .details .container{
   height:100%;
   padding-top:25px;
   padding-bottom:25px;
+}
+#subsidiaries-grid .grid-item-content img{
+  background-color:#fff;
 }
 
 #page-progress{

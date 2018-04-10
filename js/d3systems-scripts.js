@@ -29,7 +29,7 @@ jQuery(document).ready(function($){
   }); 
   
   var staff_grid = $('#staff_grid').revealer();
-  var subsidiaries_grid = $('subsidiaries').revealer();
+  var subsidiaries_grid = $('#subsidiaries-grid').revealer();
 
   var $filters = $('#filter-nav').on('click', '.filter', function(e){
     e.preventDefault();
@@ -485,8 +485,8 @@ $.fn.revealer = function(){
       (eldata.staff_countryexp != null) ? this.$staff_countryexp.html('Country Expertise:<span>' + eldata.staff_countryexp + '</span>') : this.$staff_countryexp.html('');
       (eldata.staff_degrees != null) ? this.$staff_degrees.html('Degrees:<span>' + eldata.staff_degrees + '</span>') : this.$staff_degrees.html('');
       (eldata.subsidiary_address != null) ? this.$subsidiary_address.html('Address:<span>' + eldata.subsidiary_address + '</span>') : this.$subsidiary_address.html('');
-      (eldata.subsidiary_phone != null) ? this.$subsidiary_phone.html('Telephone:<span>' + eldata_subsidiary_phone + '</span>') : this.$subsidiary_phone.html('');
-      (eldata.subsidiary_contact != null) ? this.$subsidiary_contact.html('Contact:<span>' + eldata.$subsidiary_contact + '</span>') : this.$subsidiary_contact.html('');
+      (eldata.subsidiary_phone != null) ? this.$subsidiary_phone.html('Telephone:<span>' + eldata.subsidiary_phone + '</span>') : this.$subsidiary_phone.html('');
+      (eldata.subsidiary_contact != null) ? this.$subsidiary_contact.html('Contact:<span>' + eldata.subsidiary_contact + '</span>') : this.$subsidiary_contact.html('');
 
       var self = this;
     },
