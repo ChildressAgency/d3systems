@@ -28,7 +28,7 @@ jQuery(document).ready(function($){
     }
   }); 
   
-  var test = $('#grid').revealer();
+  var staff_grid = $('#staff_grid').revealer();
 
   var $filters = $('#filter-nav').on('click', '.filter', function(e){
     e.preventDefault();
@@ -36,15 +36,15 @@ jQuery(document).ready(function($){
     $('#filter-nav li').removeClass('active');
     $(this).parent().addClass('active');
 
-    $('#grid>.grid-item').fadeOut(400);
+    $('#staff_grid>.grid-item').fadeOut(400);
 
     if($filter == '.all'){
-      $('#grid>.grid-item').each(function(){
+      $('#staff_grid>.grid-item').each(function(){
         $(this).fadeIn(400);
       });
     }
     else{
-      $('#grid>' + $filter).each(function(){
+      $('#staff_grid>' + $filter).each(function(){
         $(this).fadeIn(400);
       });
       //$('#grid>.grid-item').not($filter).hide();
@@ -221,7 +221,7 @@ $.fn.imagesLoaded = function (callback) {
 //var Grid = (function () {
 $.fn.revealer = function(){
   // list of items
-  var $grid = $('#grid'),
+  var $grid = $(this),
     // the items
     $items = $grid.children('.grid-item'),
     // current expanded item's index
@@ -232,7 +232,7 @@ $.fn.revealer = function(){
     // extra amount of pixels to scroll the window
     scrollExtra = 0,
     // extra margin when expanded (between preview overlay and the next items)
-    marginExpanded = 10,
+    marginExpanded = 85,
     $window = $(window), winsize,
     $body = $('html, body'),
     // transitionend events
@@ -248,7 +248,7 @@ $.fn.revealer = function(){
     support = Modernizr.csstransitions,
     // default settings
     settings = {
-      minHeight: 300,
+      minHeight: 425,
       speed: 350,
       easing: 'ease'
     };
@@ -332,7 +332,7 @@ $.fn.revealer = function(){
 
   function initItemsEvents($items) {
 
-    $items.on('click', 'span.staff-details-close', function () {
+    $items.on('click', 'span.details-close', function () {
       //e.preventDefault();
       hidePreview();
       return false;
@@ -407,29 +407,33 @@ $.fn.revealer = function(){
   Preview.prototype = {
 
     create: function () {
-      this.$staff_team = $('<p class="staff-profile-label staff-team"></p>');
-      this.$staff_yearsexp = $('<p class="staff-profile-label staff-yearsexp"></p>');
-      this.$staff_languages = $('<p class="staff-profile-label staff-languages"></p>');
-      this.$staff_details_col_one = $('<div class="col-sm-12 col-md-6"></div>').append(this.$staff_team, this.$staff_yearsexp, this.$staff_languages);
+      this.$staff_team = $('<p class="profile-label staff-team"></p>');
+      this.$staff_yearsexp = $('<p class="profile-label staff-yearsexp"></p>');
+      this.$staff_languages = $('<p class="profile-label staff-languages"></p>');
+      this.$subsidiary_address = $('<p class="profile-label subsidiary-address"></p>');
+      this.$subsidiary_phone = $('<p class="profile-label subsidiary-phone"></p>');
+      this.$subsidiary_contact = $('<p class="profile-label subsidiary-contact"></p>');
 
-      this.$staff_countryexp = $('<p class="staff-profile-label staff-countryexp"></p>');
-      this.$staff_degrees = $('<p class="staff-profile-label staff-degrees"></p>');
+      this.$details_col_one = $('<div class="col-sm-12 col-md-6"></div>').append(this.$staff_team, this.$staff_yearsexp, this.$staff_languages, this.$subsidiary_address, this.$subsidiary_phone, this.$subsidiary_contact);
+
+      this.$staff_countryexp = $('<p class="profile-label staff-countryexp"></p>');
+      this.$staff_degrees = $('<p class="profile-label staff-degrees"></p>');
       this.$staff_details_col_two = $('<div class="col-sm-12 col-md-6"></div>').append(this.$staff_countryexp, this.$staff_degrees);
 
       this.$staff_details_row = $('<div class="row"></div>').append(this.$staff_details_col_one, this.$staff_details_col_two);
       this.$staff_details_col = $('<div class="col-sm-6"></div>').append(this.$staff_details_row);
 
-      this.$staff_bio = $('<div class="staff-bio"></div>');
+      this.$staff_bio = $('<div class="bio"></div>');
       this.$staff_bio_col = $('<div class="col-sm-6"></div>').append(this.$staff_bio);
 
       this.$staff_bio_details_row = $('<div class="row"></div>').append(this.$staff_bio_col, this.$staff_details_col);
 
-      this.$staff_name = $('<h3 class="staff-name"></h3>');
-      this.$staff_title = $('<h3 class="staff-title"></h3>');
-      this.$staff_close_details = $('<span class="staff-details-close"></span>');
+      this.$staff_name = $('<h3 class="name"></h3>');
+      this.$staff_title = $('<h3 class="title"></h3>');
+      this.$staff_close_details = $('<span class="details-close"></span>');
 
       this.$staff_details_container = $('<div class="container"></div>').append(this.$staff_close_details, this.$staff_name, this.$staff_title, this.$staff_bio_details_row);
-      this.$staff_details = $('<div class="staff-details"></div>').append(this.$staff_details_container);
+      this.$staff_details = $('<div id="details" class="details"></div>').append(this.$staff_details_container);
 
       this.$item.append(this.getEl());
       if (support) {
@@ -445,10 +449,10 @@ $.fn.revealer = function(){
       // if already expanded remove class "og-expanded" from current item and add it to new item
       if (current !== -1) {
         var $currentItem = $items.eq(current);
-        $currentItem.removeClass('staff-details-expanded');
-        this.$item.addClass('staff-details-expanded');
+        $currentItem.removeClass('details-expanded');
+        this.$item.addClass('details-expanded');
         // position the preview correctly
-        this.positionPreview();
+        //this.positionPreview();
       }
 
       // update current value
@@ -468,7 +472,7 @@ $.fn.revealer = function(){
         };
 
       this.$staff_team.html('Team:<span>' + eldata.staff_team + '</span>');
-      this.$staff_yearsexp.html('Years of Experience:<span>' + eldata.staff_yearsexp + '</span>');
+      (eldata.staff_yearsexp != null) ? this.$staff_yearsexp.html('Years of Experience:<span>' + eldata.staff_yearsexp + '</span>') : this.$staff_yearsexp.html('');
       this.$staff_languages.html('Languages:<span>' + eldata.staff_languages + '</span>');
       this.$staff_countryexp.html('Country Expertise:<span>' + eldata.staff_countryexp + '</span>');
       this.$staff_degrees.html('Degrees:<span>' + eldata.staff_degrees + '</span>');
@@ -484,18 +488,19 @@ $.fn.revealer = function(){
         // set the height for the preview and the item
         this.setHeights();
         // scroll to position the preview in the right place
-        this.positionPreview();
+        //this.positionPreview();
       }, this), 25);
 
     },
     close: function () {
 
-      var self = this,
-        onEndFn = function () {
+      var self = this;
+          self.$item.removeClass('details-expanded');
+
+      var onEndFn = function () {
           if (support) {
             $(this).off(transEndEventName);
           }
-          self.$item.removeClass('staff-details-expanded');
           self.$staff_details.remove();
         };
 
@@ -520,8 +525,10 @@ $.fn.revealer = function(){
     },
     calcHeight: function () {
 
+      //var heightPreview = winsize.height - this.$item.data('height') - marginExpanded,
       var heightPreview = winsize.height - this.$item.data('height') - marginExpanded,
         itemHeight = winsize.height;
+        //console.log();
 
       if (heightPreview < settings.minHeight) {
         heightPreview = settings.minHeight;
@@ -539,12 +546,22 @@ $.fn.revealer = function(){
           if (support) {
             self.$item.off(transEndEventName);
           }
-          self.$item.addClass('staff-details-expanded');
+          self.$item.addClass('details-expanded');
         };
 
-      this.calcHeight();
-      this.$staff_details.css('height', this.height);
-      this.$item.css('height', this.itemHeight).on(transEndEventName, onEndFn);
+      //this.calcHeight();
+      //this.$staff_details.css('height', this.height);
+      var staff_details_height = $('#details').height();
+      var itemHeight = this.$item.data('height') + marginExpanded + staff_details_height;
+
+      this.$staff_details.slideDown();
+      //console.log(staff_details_height);
+      this.$item.css('height', itemHeight).on(transEndEventName, onEndFn);
+      this.$staff_details.animate({'opacity':'1'}, 400);
+
+      //this.$item.css('height', $('#staff_details').height()).on(transEndEventName, onEndFn);
+      //var staff_details_height = this.$item.find('#staff-details');
+      //this.$item.css('height', staff_details_height).on(transEndEventName, onEndFn);
 
       if (!support) {
         onEndFn.call();
