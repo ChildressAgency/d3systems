@@ -338,27 +338,29 @@ a:hover:after{
   color:#191919;
 }
 
-#staff{
+#staff,
+#subsidiaries-grid,
+#clients-grid{
   background-color:#fcfbfb;
   box-shadow:inset 0px 8px 18px -5px #ddd;
+}
+#staff{
   min-height:615px;
 }
 #subsidiaries{
-  background-color:#fcfbfb;
-  box-shadow:inset 0px 8px 18px -5px #ddd;
   min-height:320px;
 }
 
 .grid{
   width:100%;
-  text-align:center;
 }
 .grid-item{
   display:inline-block;
   width:225px;
   padding:25px;
   vertical-align:top;
-  min-height:320px;
+  /*min-height:320px;*/
+  text-align:center;
 }
 .grid-item>.grid-item-content{
   display:block;
@@ -513,7 +515,7 @@ a:hover:after{
   padding-top:25px;
   padding-bottom:25px;
 }
-#subsidiaries-grid .grid-item-content img{
+.grid-item-content img{
   background-color:#fff;
 }
 
