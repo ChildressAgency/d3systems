@@ -47,7 +47,7 @@ jQuery(document).ready(function($){
   });
   
   var staff_grid = $('#staff_grid').revealer();
-  var subsidiaries_grid = $('#subsidiaries-grid').revealer();
+  var subsidiaries_grid = $('#subsidiaries_grid').revealer();
 
   var $filters = $('#filter-nav').on('click', '.filter', function(e){
     e.preventDefault();

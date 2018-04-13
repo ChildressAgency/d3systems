@@ -523,30 +523,39 @@ a:hover:after{
   margin-top:25px;
   margin-bottom:-25px;
 }
-#page-progress .nav-tabs>li>a{
+.justified-nav .nav-tabs>li>a{
   color:#191919;
   font-size:12px;
   padding-top:2px;
   padding-bottom:2px;
   border:none;
   border-radius:0;
-  box-shadow:3px 0px 0px -2px #191919;
 }
-#page-progress .nav-tabs>li:last-child>a{
+.justified-nav .nav-tabs>li{
+  box-shadow:3px 0px 0px -2px #191919;
+  -webkit-transition:all .3s ease;
+  transition:all .3s ease;
+  vertical-align:middle;
+}
+.justified-nav .nav-tabs>li:last-child>a{
   box-shadow:none;
 }
-#page-progress .nav-tabs>li>a:after,
-#page-progress .nav-tabs>li>a:hover:after,
-#page-progress .nav-tabs>li>a:focus:after{
+.justified-nav .nav-tabs>li>a:after,
+.justified-nav .nav-tabs>li>a:hover:after,
+.justified-nav .nav-tabs>li>a:focus:after{
   height:0;
   background-color:transparent;
 }
-#page-progress .nav-tabs>li.active>a,
-#page-progress .nav-tabs>li>a:hover{
-  border-bottom:none;
+.justified-nav .nav-tabs>li.active,
+.justified-nav .nav-tabs>li:hover{
   background-color:#191919;
-  color:#fff;
   box-shadow:none;
+}
+.justified-nav .nav-tabs>li.active>a,
+.justified-nav .nav-tabs>li:hover>a{
+  color:#fff;
+  border:none;
+  background-color:transparent;
 }
 
 .hero-global{
