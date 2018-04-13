@@ -596,6 +596,23 @@ a:hover:after{
     opacity:0;
   }
 }
+@keyframes radar_mobile{
+  0%{
+    height:0;
+    width:0;
+    opacity:1;
+  }
+  80%{
+    height:40px;
+    width:40px;
+    opacity:1;
+  }
+  100%{
+    height:50px;
+    width:50px;
+    opacity:0;
+  }
+}
 .red-marker{
   border-bottom:none;
   border:2px solid #f00;
@@ -603,6 +620,7 @@ a:hover:after{
   height:0;
   width:0;
   display:block;
+  pointer-events:none;
 }
 .pulse{
   display:block;
@@ -636,6 +654,13 @@ a:hover:after{
 .pulse:nth-child(3){
   -webkit-animation-delay:2s;
   animation-delay:2s;
+}
+
+g:hover>*{
+  fill:#f2f2f2 !important;
+}
+g#Layer_244{
+  pointer-events:none;
 }
 
 #super-footer{
@@ -732,6 +757,10 @@ footer .social .d3{
   }
   #scroll-down{
     display:none;
+  }
+  .pulse{
+    -webkit-animation-name:radar_mobile;
+    animation-name:radar_mobile;
   }
 }
 @media (min-width:768px){
