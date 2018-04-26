@@ -566,6 +566,9 @@ a:hover:after{
   width:100%;
   height:auto;
 }
+.globe-wrapper{
+  position:relative;
+}
 
 @-webkit-keyframes radar{
   0%{
@@ -671,6 +674,27 @@ g:hover>*{
 g#Layer_244{
   pointer-events:none;
 }
+g.active>*{
+  fill:#f2f2f2 !important;
+}
+#global-reach-nav .nav-tabs.nav-justified>.active>a,
+#global-reach-nav .nav-tabs.nav-justified>.active>a:focus, 
+#global-reach-nav .nav-tabs.nav-justified>.active>a:hover{
+  border:none;
+}
+.hero-global.hero{
+  height:auto;
+  margin-bottom:50px;
+}
+.hero-global.hero .hero-caption{
+  z-index:9;
+}
+.hero-global.hero .hero-caption>h1{
+  max-width:670px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
 
 #super-footer{
   background-color:#999;
@@ -763,6 +787,12 @@ footer .social .d3{
   }
   .hp-hero p{
     font-size:22px;
+  }
+  .hero .hero-caption>h1{
+    font-size:50px;
+  }
+  .hero-global.hero .hero-caption{
+    position:relative;
   }
   #scroll-down{
     display:none;
