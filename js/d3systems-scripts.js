@@ -121,100 +121,53 @@ jQuery(document).ready(function($){
 
 
   //https://stackoverflow.com/questions/44688708/how-to-create-the-parallax-effect-in-2-uneven-columns-so-they-end-even-at-the-en
-  /*
-  var header_height = $('#header-nav').outerHeight(true),
-      hero_height = $('.hero').outerHeight(true),
-      global_reach_nav_height = $('#global-reach-nav').outerHeight(true),
-      super_footer_height = $('#super-footer').outerHeight(true),
-      footer_height = $('footer').outerHeight(true),
-      sidebar_height = $('.global-reach-content').outerHeight(true);
-  var main_content = $('.global-main-content'),
-      nav_sidebar = $('.nav-sidebar'),
-      contentHeight = $('.global-main-content').outerHeight(true) + header_height + hero_height + global_reach_nav_height + super_footer_height + footer_height;
-      sidebarHeight = $('.nav-sidebar').outerHeight(true) + header_height + hero_height + global_reach_nav_height + super_footer_height + footer_height;
-*/
-/*
-  function setup(leftPaneHeight, rightPaneHeight) {
-    if (leftPaneHeight > rightPaneHeight) {
-      $(".global-main-content").css('position', 'fixed');
-    } else {
-      $(".nav-sidebar").css('position', 'fixed');
-    }
+
+  if($('.global-reach-nav').length){
+    var $sidebar = $('#left'),
+        sidebar_height = $sidebar.outerHeight(true);
+    var $main_content = $('#right'),
+        main_content_height = $main_content.outerHeight(true);
+    var $tall_column, $short_column, tall_column_height, short_column_height;
+
+    $(window).on("load resize scroll", function (e) {
+      if(sidebar_height > main_content_height){
+        $tall_column = $sidebar;
+        tall_column_height = sidebar_height;
+
+        $short_column = $main_content;
+        short_column_height = main_content_height;
+      }
+      else{
+        $tall_column = $main_content;
+        tall_column_height = main_content_height;
+
+        $short_column = $sidebar;
+        short_column_height = sidebar_height;
+      }
+      var travel = tall_column_height - short_column_height;
+      
+      //top of columns
+      var topOfColumns = $('.parallax').offset().top - header_height - global_reach_nav_height;
+      var columns = $('.parallax').outerHeight() - $(window).innerHeight() + header_height + global_reach_nav_height;
+      var scrollInterval = columns / travel;
+
+      //where the magic happens
+      var a = Math.round(($(window).scrollTop() - topOfColumns) / scrollInterval);
+      //find the bottom of the right column and give a Bool (true)
+      var b = $(window).scrollTop() >= $short_column.offset().top + $short_column.outerHeight() - window.innerHeight;
+
+      //if the user scrolls to the top of the columns and the user has not scrolled to the bottom of the right column
+      if ($(window).scrollTop() >= topOfColumns && b === false) {
+        $short_column.css({
+          "-webkit-transform": "translate3d(0px, " + a + "px, 0px)",
+          "-moz-transform": "translate3d(0px, " + a + "px, 0px)",
+          "-ms-transform": "translateY(" + a + "px)",
+          "-o-transform": "translate3d(0px, " + a + "px, 0px)",
+          transform: "translate3d(0px, " + a + "px, 0px)"
+        });
+      }
+    });
   }
-
-  function calculate(leftPaneHeight, rightPaneHeight) {
-    //var browserHeight = $(window).height();
-    var browserHeight = $(window).height() + header_height + hero_height + global_reach_nav_height;
-    //console.log(browserHeight);
-    var scrollerPosition = $(window).scrollTop() - header_height - hero_height - global_reach_nav_height;
-
-    if (leftPaneHeight > rightPaneHeight) {
-      var result = (-scrollerPosition * ((browserHeight - rightPaneHeight) / (browserHeight - leftPaneHeight)));
-      return $(".global-main-content").css('top', result + 'px');
-    } else {
-      var result = (-scrollerPosition * ((browserHeight - leftPaneHeight) / (browserHeight - rightPaneHeight)));
-      return $(".nav-sidebar").css('top', result + 'px');
-    }
-  }
-  $(window).on('resize', function () {
-    calculate(contentHeight, sidebarHeight);
-  });
-  $(window).on('scroll', function () {
-    //calculate(contentHeight, sidebarHeight);
-    calculate(sidebarHeight, contentHeight);
-  });
-
-  //setup(contentHeight, sidebarHeight);  
-  setup(sidebarHeight, contentHeight);*/
-
-  var $sidebar = $('#left'),
-      sidebar_height = $sidebar.outerHeight(true);
-  var $main_content = $('#right'),
-      main_content_height = $main_content.outerHeight(true);
-  var $tall_column, $short_column, tall_column_height, short_column_height;
-
-  $(window).on("load resize scroll", function (e) {
-    if(sidebar_height > main_content_height){
-      $tall_column = $sidebar;
-      tall_column_height = sidebar_height;
-
-      $short_column = $main_content;
-      short_column_height = main_content_height;
-    }
-    else{
-      $tall_column = $main_content;
-      tall_column_height = main_content_height;
-
-      $short_column = $sidebar;
-      short_column_height = sidebar_height;
-    }
-    //var col1 = $("#left").outerHeight();
-    //var col2 = $("#right").outerHeight();
-    //var travel = col1 - col2;
-    var travel = tall_column_height - short_column_height;
-    
-    //top of columns
-    var topOfColumns = $('.parallax').offset().top - header_height - global_reach_nav_height;
-    var columns = $('.parallax').outerHeight() - $(window).innerHeight() + header_height + global_reach_nav_height;
-    var scrollInterval = columns / travel;
-
-    //where the magic happens
-    var a = Math.round(($(window).scrollTop() - topOfColumns) / scrollInterval);
-    //find the bottom of the right column and give a Bool (true)
-    //var b = $(window).scrollTop() >= $('#right').offset().top + $('#right').outerHeight() - window.innerHeight;
-    var b = $(window).scrollTop() >= $short_column.offset().top + $short_column.outerHeight() - window.innerHeight;
-
-    //if the user scrolls to the top of the collumns and the user has not scrolled to the bottom of the right column
-    if ($(window).scrollTop() >= topOfColumns && b === false) {
-      $short_column.css({
-        "-webkit-transform": "translate3d(0px, " + a + "px, 0px)",
-        "-moz-transform": "translate3d(0px, " + a + "px, 0px)",
-        "-ms-transform": "translateY(" + a + "px)",
-        "-o-transform": "translate3d(0px, " + a + "px, 0px)",
-        transform: "translate3d(0px, " + a + "px, 0px)"
-      });
-    }
-  });
 
   //end affix settings
 

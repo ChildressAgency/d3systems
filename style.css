@@ -170,7 +170,7 @@ a:hover:after{
 }
 .hero .hero-caption{
   position:absolute;
-  bottom:0;
+  bottom:30px;
   text-align:center;
   left:0;
   right:0;
@@ -185,7 +185,6 @@ a:hover:after{
   font-family:Georgia, serif;
 }
 .hp-hero h1{
-  font-size:30px;
   color:#4d4d4d;
 }
 .hp-hero p{
@@ -194,7 +193,7 @@ a:hover:after{
   font-size:35px;
 }
 .hp-hero .d-word{
-  color:#00f;
+  color:#f00;
   border-bottom:none;
   animation:fade_down_in;
   animation-duration:.3s;
@@ -202,6 +201,9 @@ a:hover:after{
   animation-timing-function:linear;
   display:inline-block;
   line-height:1em;
+}
+.hp-hero .d-word:after{
+  background-color:#f00;
 }
 .hp-hero .inline-link{
   color:#191919;
@@ -273,6 +275,9 @@ a:hover:after{
 .section-intro{
   padding-top:15px;
   padding-bottom:15px;
+}
+.section-intro p{
+  font-size:21px;
 }
 #competency-cards{
   background-color:#f0e7e8;
@@ -368,6 +373,10 @@ a:hover:after{
   box-shadow:inset 0px 8px 18px -5px #ddd;
 }
 #staff{
+  /*min-height:615px;*/
+  margin-top:137px;
+}
+#staff_grid{
   min-height:615px;
 }
 #subsidiaries{
