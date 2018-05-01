@@ -49,7 +49,17 @@
         <ul class="nav navbar-nav">
           <li class="active"><a href="#">Our Process</a></li>
           <li><a href="#">Our Network</a></li>
-          <li><a href="#">Global Reach</a></li>
+          <li class="dropdown">
+            <a href="https://google.com" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Global Reach</a>
+            <ul class="dropdown-menu">
+              <li><a href="#">The Americas and the Caribbean</a></li>
+              <li><a href="#">Europe</a></li>
+              <li><a href="#">Middle East and North Africa</a></li>
+              <li><a href="#">Sub-Saharan Africa</a></li>
+              <li><a href="#">Central and South Asia</a></li>
+              <li><a href="#">East Asia, Southeast Asia, & Oceana</a></li>
+            </ul>
+          </li>
           <li><a href="#">Our Work</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
@@ -405,10 +415,10 @@
     </ul>
   </div>
   <div class="global-reach-content">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-3">
-          <nav class="nav-sidebar">
+    <div class="container">
+      <div class="row parallax">
+        <div class="col-sm-3" id="left">
+          <nav class="nav-sidebar hidden-xs">
             <section class="sidebar-section">
               <h2 class="sidebar-section-title">Regional Expertise</h2>
               <div class="sidebar-section-content">
@@ -478,7 +488,7 @@
             </section>
           </nav>
         </div>
-        <div class="col-sm-9">
+        <div class="col-sm-9" id="right">
           <div class="global-main-content" role="main">
             <section class="global-main-section">
               <header class="global-main-content-header">
@@ -570,7 +580,7 @@
                 <p>Our past performace and capabilities in the region include nationally representative public opinion polling, media research, in-depth interviews, focus groups, baseline studies, and impact / performance evaluations.</p>
               </div>
             </section>
-            <section class="global-main-section">
+            <section class="global-main-section spotlight">
               <header class="global-main-content-header">
                 <h2>Subsidiary Spotlight:</h2>
               </header>
