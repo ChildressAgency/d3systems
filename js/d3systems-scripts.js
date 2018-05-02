@@ -85,10 +85,11 @@ jQuery(document).ready(function($){
   var header_height = $('#header-nav').outerHeight(true),
       hero_height = $('.hero').outerHeight(true),
       global_reach_nav_height = $('#global-reach-nav').outerHeight(true),
+      page_navs_height = $('#page-navs').outerHeight(true),
       super_footer_height = $('#super-footer').outerHeight(true),
       footer_height = $('footer').outerHeight(true),
       sidebar_height = $('.global-reach-content').outerHeight(true);
-    $('.global-reach-content').css({'min-height':sidebar_height +80});
+  $('.global-reach-content').css({'min-height':sidebar_height +80});
   
   $('#global-reach-nav').affix({
     offset:{
@@ -102,27 +103,42 @@ jQuery(document).ready(function($){
   }).on('affix-top.bs.affix', function(){
     $(this).next().css({'margin-top':0});
   });
-/*
-  $('.nav-sidebar').affix({
+
+  $('#page-navs').affix({
+    offset:{
+      top: function(){
+        return hero_height - header_height;
+      }
+    }
+  }).on('affix.bs.affix', function(){
+    $(this).css({'top' : header_height});
+    $(this).next().css({'margin-top' : page_navs_height});
+  }).on('affix-top.bs.affix', function(){
+    $(this).next().css({'margin-top' : 0});
+  });
+
+  
+
+  $('#our-process-sidebar').affix({
     offset:{
       top: function(){
         var window_top = $('.nav-sidebar').offset().top;
         var top_margins = parseInt($('.nav-sidebar').children(0).css("margin-top"), 10);
 
-        return this.top = window_top - top_margins - header_height - global_reach_nav_height -40;
+        return this.top = window_top - top_margins - header_height - page_navs_height -20;
       },
       bottom: function(){
         return this.bottom = footer_height + super_footer_height +40;
       }
     }
   }).on('affix.bs.affix', function(){
-    $(this).css({'top':header_height + global_reach_nav_height + 40});
-  });*/
+    $(this).css({'top':header_height + page_navs_height + 40});
+  });
 
 
   //https://stackoverflow.com/questions/44688708/how-to-create-the-parallax-effect-in-2-uneven-columns-so-they-end-even-at-the-en
 
-  if($('.global-reach-nav').length){
+  if($('.global-reach-content').length){
     var $sidebar = $('#left'),
         sidebar_height = $sidebar.outerHeight(true);
     var $main_content = $('#right'),
@@ -170,6 +186,15 @@ jQuery(document).ready(function($){
   }
 
   //end affix settings
+
+  if($('.scroll-indicator-container').length){
+    $(window).on('scroll', function(){
+      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var scrolled = (winScroll / height) * 100;
+      document.getElementById("scroll-indicator").style.width = scrolled + '%';
+    });
+  }
 
 });
 
