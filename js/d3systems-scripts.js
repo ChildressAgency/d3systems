@@ -19,34 +19,24 @@ jQuery(document).ready(function($){
     $(this).removeClass('open');
   });
 
-  //home-hero continue
-  $('#scroll-down').on('click', function (e) {
+  //smooth scroll anchors
+  $('.smooth-scroll').on('click', function (e) {
     e.preventDefault;
+    var scroll_offset = 120;
+    if($(this).data('scroll_offset')){
+      scroll_offset = $(this).data('scroll_offset');
+    }
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
       var target = $(this.hash);
       target = target.length ? target : $('[name="' + this.hash.slice(1) + '"]');
       if (target.length) {
         $('html,body').animate({
-          scrollTop: target.offset().top - 120
+          scrollTop: target.offset().top - scroll_offset
         }, 1000);
         return false;
       }
     }
   }); 
-
-  $('#page-progress a').on('click', function (e) {
-    e.preventDefault;
-    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-      if (target.length) {
-        $('html,body').animate({
-          scrollTop: target.offset().top - 136
-        }, 1000);
-        return false;
-      }
-    }
-  });  
   
   //grid functions
   $('.circle-card-content').on('click', function(e){
@@ -91,30 +81,34 @@ jQuery(document).ready(function($){
       sidebar_height = $('.global-reach-content').outerHeight(true);
   $('.global-reach-content').css({'min-height':sidebar_height +80});
   
+  $('#global-reach-nav').on('affix.bs.affix', function () {
+    $(this).css({ 'top': header_height });
+    $(this).next().css({ 'margin-top': global_reach_nav_height + 40 });//40 for the padding
+  });
+  $('#global-reach-nav').on('affix-top.bs.affix', function () {
+    $(this).next().css({ 'margin-top': 0 });
+  });
   $('#global-reach-nav').affix({
     offset:{
       top: function(){
         return hero_height - header_height;
       }
     }
-  }).on('affix.bs.affix', function(){
-    $(this).css({'top' : header_height});
-    $(this).next().css({'margin-top':global_reach_nav_height + 40});//40 for the padding
-  }).on('affix-top.bs.affix', function(){
-    $(this).next().css({'margin-top':0});
   });
 
+  $('#page-navs').on('affix.bs.affix', function () {
+    $(this).css({ 'top': header_height });
+    $(this).next().css({ 'margin-top': page_navs_height });
+  });
+  $('#page-navs').on('affix-top.bs.affix', function () {
+    $(this).next().css({ 'margin-top': 0 });
+  });
   $('#page-navs').affix({
     offset:{
       top: function(){
         return hero_height - header_height;
       }
     }
-  }).on('affix.bs.affix', function(){
-    $(this).css({'top' : header_height});
-    $(this).next().css({'margin-top' : page_navs_height});
-  }).on('affix-top.bs.affix', function(){
-    $(this).next().css({'margin-top' : 0});
   });
 
   
@@ -195,6 +189,40 @@ jQuery(document).ready(function($){
       document.getElementById("scroll-indicator").style.width = scrolled + '%';
     });
   }
+
+  //https://medium.com/talk-like/detecting-if-an-element-is-in-the-viewport-jquery-a6a4405a3ea2
+  $.fn.isInViewport = function(){
+    var $window = $(window);
+
+    var element_top = $(this).offset().top;
+    var element_bottom = element_top + $(this).outerHeight();
+
+    var viewport_top = $window.scrollTop();
+    var viewport_bottom = viewport_top + $window.height();
+
+    return element_bottom > (viewport_top + 185) && element_top < (viewport_top + 220);
+  }
+
+  $(window).on('resize scroll', function(){
+    $('.sidebar-sub-section').each(function(){
+      var $self = $(this);
+      var process_section = $(this).data('process_section');
+      
+      if($('#' + process_section).isInViewport()){
+        //console.log(process_section + ' true');
+        $('.sidebar-sub-section').each(function(){
+          //$(this).find('.sidebar-section-content').slideUp();
+        });
+        $($self).find('.sidebar-section-content').slideDown();
+        $($self).find('.sidebar-section-title').removeClass('process-notshown');
+      }
+      else{
+        //console.log(process_section + ' false');
+        $($self).find('.sidebar-section-content').slideUp();
+        $($self).find('.sidebar-section-title').addClass('process-notshown');
+      }
+    });
+  });
 
 });
 

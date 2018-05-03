@@ -79,25 +79,23 @@
       </div>
     </div>
   </div>
-  <nav id="page-navs">
+  <nav id="page-navs" class="hidden-xs">
     <div id="page-progress" class="justified-nav our-process-main-nav">
       <ul class="nav nav-tabs nav-justified">
-        <li><a href="#our-process-content">Designs</a></li>
-        <li><a href="#data">Data</a></li>
-        <li><a href="#decisions">Decisions</a></li>
+        <li><a href="#our-process-content" class="smooth-scroll">Designs</a></li>
+        <li><a href="#data" class="smooth-scroll">Data</a></li>
+        <li><a href="#decisions" class="smooth-scroll">Decisions</a></li>
       </ul>
     </div>
     <div id="sub-progress" class="justified-nav">
       <ul class="nav nav-tabs nav-justified">
-        <li><a href="#">Project Orientation</a></li>
-        <li><a href="#">Decision Making</a></li>
-        <li><a href="#">Data Collection</a></li>
-        <li><a href="#">Field Implementation</a></li>
-        <li><a href="#">Quality Control</a></li>
-        <li><a href="#">Data Processing</a></li>
-        <li><a href="#">Project Analysis</a></li>
-        <li><a href="#">Key Findings</a></li>
-        <li><a href="#">Data Visualization</a></li>
+        <li><a href="#project-orientation" class="smooth-scroll">Project Orientation</a></li>
+        <li><a href="#instrument-design" class="smooth-scroll">Instrument Design</a></li>
+        <li><a href="#field-logistics" class="smooth-scroll">Field Logistics</a></li>
+        <li><a href="#field-preparation" class="smooth-scroll">Field Preparation</a></li>
+        <li><a href="#field-preparation2" class="smooth-scroll">Field Preparation</a></li>
+        <li><a href="#data-processing" class="smooth-scroll">Data Processing</a></li>
+        <li><a href="#analytical-reporting" class="smooth-scroll">Analytical Reporting</a></li>
       </ul>
       <div class="scroll-indicator-container">
         <div id="scroll-indicator"></div>
@@ -111,41 +109,44 @@
         <div class="col-sm-4">
           <div id="our-process-sidebar" class="nav-sidebar hidden-xs">
             <div class="sidebar-section">
-              <section id="designs" class="sidebar-sub-section">
-                <h2 class="sidebar-section-title">Designs</h2>
+              <section class="sidebar-sub-section" data-process_section="designs">
+                <h2 class="sidebar-section-title process-notshown">Designs</h2>
                 <div class="sidebar-section-content">
                   <hr />
                   <h3>Every project starts as a blank page.</h3>
                   <hr />
                   <p>After the data input method is confirmed delivery mode. These are collected in questionnaires, in-depth interviews, or focus group guides.</p>
                   <p>After the initial design, we'll take care of cognitive testing, language translation, and pre-tests, fine-tuning at each point of feedback.</p>
-                </div>
-                <div class="sub-section-links">
-                  <a href="#project-orientation">Project Orientation</a>
-                  <a href="#decision-making">Decision Making</a>
-                </div>
-              </section>
-              <section id="data" class="sidebar-sub-section">
-                <hr />
-                <h3>Reliable, representative data - regardless of the target population</h3>
-                <p>We collect high-fidelity data from challenging global environments and build the capacity of local research firms, strengthening our network with time.</p>
-                <p>We believe in transparency when you commit to our team. Our process allows us to share continuous updates on progress and limitations while in field so that there is never a time that you're left in the dark.</p>
-                <div class="sub-section-links">
-                  <a href="#data-collection">Data Collection</a>
-                  <a href="#field-implementation">Field Implementation</a>
-                  <a href="#quality-control">Quality Control</a>
-                  <a href="#data-processing">Data Processing</a>
+                  <div class="sub-section-links">
+                    <a href="#project-orientation" class="smooth-scroll" data-scroll_offset="220">Project Orientation</a>
+                    <a href="#instrumentation-design" class="smooth-scroll" data-scroll_offset="220">Instrumentation Design</a>
+                    <a href="#field-logistics" class="smooth-scroll" data-scroll_offset="220">Field Logistics</a>
+                  </div>
                 </div>
               </section>
-              <section id="decisions" class="sidebar-sub-section">
-                <h3>The D3 process informs your next big move.</h3>
-                <p>D3 generates analytical insights, contextual narratives, and data visualization for our clients to easily bridge the gap between data science and pure communication.</p>
-                <p>We conclude our process by turning numbers into insights and decisions. Many of our clients benefit by maintaining their relationship with our team between different projects. this allows best practices to be established and knowledge to be shared between departments.</p>
-                <div class="sub-section-links">
-                  <a href="#project-analysis">Project Analysis</a>
-                  <a href="#key-findings">Key Findings</a>
-                  <a href="#data-visualization">Data Visualization</a>
-                  <a href="#next-steps">Next Steps</a>
+              <section class="sidebar-sub-section" data-process_section="data">
+                <h2 class="sidebar-section-title process-notshown">Data</h2>
+                <div class="sidebar-section-content">
+                  <hr />
+                  <h3>Reliable, representative data - regardless of the target population</h3>
+                  <p>We collect high-fidelity data from challenging global environments and build the capacity of local research firms, strengthening our network with time.</p>
+                  <p>We believe in transparency when you commit to our team. Our process allows us to share continuous updates on progress and limitations while in field so that there is never a time that you're left in the dark.</p>
+                  <div class="sub-section-links">
+                    <a href="#field-preparation" class="smooth-scroll" data-scroll_offset="220">Field Preparation</a>
+                    <a href="#field-preparation2" class="smooth-scroll" data-scroll_offset="220">Field Preparation</a>
+                    <a href="#data-processing" class="smooth-scroll" data-scroll_offset="220">Data Processing</a>
+                  </div>
+                </div>
+              </section>
+              <section class="sidebar-sub-section" data-process_section="decisions">
+                <h2 class="sidebar-section-title process-notshown">Decisions</h2>
+                <div class="sidebar-section-content">
+                  <h3>The D3 process informs your next big move.</h3>
+                  <p>D3 generates analytical insights, contextual narratives, and data visualization for our clients to easily bridge the gap between data science and pure communication.</p>
+                  <p>We conclude our process by turning numbers into insights and decisions. Many of our clients benefit by maintaining their relationship with our team between different projects. this allows best practices to be established and knowledge to be shared between departments.</p>
+                  <div class="sub-section-links">
+                    <a href="#analytical-reporting" class="smooth-scroll" data-scroll_offset="220">Analytical Reporting</a>
+                  </div>
                 </div>
               </section>
               <div class="sidebar-section-footer">
@@ -162,146 +163,163 @@
                   <h2>Project Orientation</h2>
                 </header>
                 <div class="main-content-body">
-                  <span class="gradient-circle-border">
-                    <img src="http://via.placeholder.com/130x130" class="img-circle center-block" alt="" />
-                  </span>
-                  <h4>Collaboration focuses research objectives</h4>
-                  <p>We work closely with our clients to understand their goals and the most important ideas of their research. We assist by refining research objectives and designing instruments that will collect actionable data.</p>
+                  <div class="media">
+                    <div class="media-left media-middle">
+                      <span class="gradient-circle-border">
+                        <img src="http://via.placeholder.com/130x130" class="img-circle" alt="Define Research Objectives" />
+                      </span>
+                    </div>
+                    <div class="media-body media-middle">
+                      <h4 class="media-heading">Define Research Objectives</h4>
+                      <p>We work closely with our clients to understand their research goals and target audience. We can assist by tailoring research objectives and designing instruments that enable clients to collect actionable data based on their stated goals.</p>
+                    </div>
+                  </div>
+                  <div class="media">
+                    <div class="media-left media-middle">
+                      <span class="gradient-circle-border">
+                        <img src="http://via.placeholder.com/130x130" class="img-circle" alt="Design Detailed Methodology" />
+                      </span>
+                    </div>
+                    <div class="media-body media-middle">
+                      <h4 class="media-heading">Design Detailed Methodology</h4>
+                      <p>We then draft sophisticated Sample Plans that provide detailed explanations of the sample frame, multi-stage probabilities of selection, weighting schemes, and more. We expertly develop scientific methodologies for quantitative, qualitative, and mixed-methods research, in addition to designing experimental and quasi-experimental approaches fro impact evaluations and performance assessments. We can implement surveys, in-depth interviews, focus groups, panels, media monitoring studies, and evaluations, across a variety of modes, including tablets, telephones, pen-and-paper, and online platforms</p>
+                    </div>
+                  </div>
+                  <div class="media">
+                    <div class="media-left media-middle">
+                      <span class="gradient-circle-border">
+                        <img src="http://via.placeholder.com/130x130" class="img-circle" alt="Determine Accessibility of Target Audience" />
+                      </span>
+                    </div>
+                    <div class="media-body media-middle">
+                      <h4 class="media-heading">Determine Accessibility of Target Audience</h4>
+                      <p>Our in-house team of statisticians work closely with local field partners to determine the accessibility of the target population and ensure the sample frame accurately reflects any limitations to ensure optimal sampling.</p>
+                    </div>
+                  </div>
                 </div>
+                <a href="#" target="_blank" class="infographic-link">See our full research process here</a>
               </section>
-              <section id="decision-making" class="main-section">
+              <section id="instrument-design" class="main-section">
                 <header class="main-content-header">
-                  <h2>Decision Making</h2>
+                  <h2>Instrument Design</h2>
                 </header>
                 <div class="main-content-body">
                   <div class="media">
-                    <div class="media-left">
+                    <div class="media-left media-middle">
                       <span class="gradient-circle-border">
-                        <img src="http://via.placeholder.com/130x130" class="img-circle" alt="" />
+                        <img src="http://via.placeholder.com/130x130" class="img-circle" alt="Contextualize" />
                       </span>
                     </div>
-                    <div class="media-body">
-                      <h4 class="media-heading">Choose Method</h4>
-                      <p>Surveys can be conducted through qualitative, quantitative, mixed, experimental, or quai-experimental survey methodologies.</p>
+                    <div class="media-body media-middle">
+                      <h4 class="media-heading">Contextualize</h4>
+                      <p>After receiving the first draft of the questionnaire, we work with the local team to integrate content that is appropriate and relatable to the target audience. When necessary, we conduct cognitive testing to validate questions are perceived in the way they were intended when written.</p>
                     </div>
                   </div>
                   <div class="media">
-                    <div class="media-left">
+                    <div class="media-left media-middle">
                       <span class="gradient-circle-border">
-                        <img src="http://via.placeholder.com/130x130" class="img-circle" alt="" />
+                        <img src="http://via.placeholder.com/130x130" class="img-circle" alt="Translate & Verify" />
                       </span>
                     </div>
-                    <div class="media-body">
-                      <h4 class="media-heading">Determine Accessibility</h4>
-                      <p>Population accessibility is a critical informant of our survey designs when choosing delivery methods.</p>
+                    <div class="media-body media-middle">
+                      <h4 class="media-heading">Translate & Verify</h4>
+                      <p>Either through back-translations or third--party verifications, we ensure the local language instrument reflects the original meaning behind the English text, so that nothing is lost in translation.</p>
                     </div>
                   </div>
                   <div class="media">
-                    <div class="media-left">
+                    <div class="media-left media-middle">
                       <span class="gradient-circle-border">
-                        <img src="http://via.placeholder.com/130x130" class="img-circle" alt="" />
+                        <img src="http://via.placeholder.com/130x130" class="img-circle" alt="Pre-Test" />
                       </span>
                     </div>
-                    <div class="media-body">
-                      <h4 class="media-heading">Utilize Technology</h4>
-                      <p>Technological adaptability allows our team to conduct surveys via tablet, web, phone, paper, and face-to-face.</p>
+                    <div class="media-body media-middle">
+                      <h4 class="media-heading">Pre-Test</h4>
+                      <p>Whenever possible, we conduct rigorous pre-tests to implement the survey instrument and assigned methodology. Based on feedback and/or observations, we liaise between clients and the local field partner to make any necessary adjustments.</p>
                     </div>
                   </div>
                 </div>
+                <a href="#" target="_blank" class="infographic-link">See our full research process here</a>
+              </section>
+              <section id="field-logistics" class="main-section">
+                <header class="main-content-header">
+                  <h2>Field Logistics</h2>
+                </header>
+                <div class="main-content-body">
+                  <div class="media">
+                    <div class="media-left media-middle">
+                      <span class="gradient-circle-border">
+                        <img src="http://via.placeholder.com/130x130" class="img-circle" alt="Identify and/or Build Capacity of Local Firms" />
+                      </span>
+                    </div>
+                    <div class="media-body media-middle">
+                      <h4 class="media-heading">Identify and/or Build Capacity of Local Firms</h4>
+                      <p>Over 30 years, we have built a robust international network of field suppliers. Where local capacity does not exist, we travel in-country and invest in building the local team's skillset to ensure the data are captured accurately.</p>
+                    </div>
+                  </div>
+                </div>
+                <a href="#" target="_blank" class="infographic-link">See our full research process here</a>
               </section>
             </div>
             <div id="data">
-              <section id="data-collection" class="main-section">
+              <section id="field-preparation" class="main-section">
                 <header class="main-content-header">
-                  <h2>Data-Collection</h2>
+                  <h2>Field Preparation</h2>
                 </header>
                 <div class="main-content-body">
-                  <span class="gradient-circle-border">
-                    <img src="http://via.placeholder.com/130x130" class="img-circle center-block" alt="" />
-                  </span>
-                  <h4>We'll take care of the logistics</h4>
-                  <p>Over 30 years, we have strengthened our data collection process and earned the reputation of having the highest quality data. The investment our team makes in the global community supports our network and expands our capabilities.</p>
+                  <div class="media">
+                    <div class="media-left media-middle">
+                      <span class="gradient-circle-border">
+                        <img src="http://via.placeholder.com/130x130" class="img-circle" alt="Convert Instrument into Specified Mode & Test" />
+                      </span>
+                    </div>
+                    <div class="media-body media-middle">
+                      <h4 class="media-heading">Convert Instrument into Specified Mode & Test</h4>
+                      <p>Our team is well-versed in programming and testing scripts designed for implementation across modes, including via telephone, mobile devices / tablets, and the web. We supplement the scripts by developing detailed interviewer training manuals that highlight how to properly implement both the sampling methodology and survey instrument. For qualitative projects, we either create or help refine discussion and moderator guides so that they effectively inform the research objectives.</p>
+                    </div>
+                  </div>
+                  <div class="media">
+                    <div class="media-left media-middle">
+                      <span class="gradient-circle-border">
+                        <img src="http://via.placeholder.com/130x130" class="img-circle" alt="Train Field Team" />
+                      </span>
+                    </div>
+                    <div class="media-body media-middle">
+                      <h4 class="media-heading">Train Field Team</h4>
+                      <p>Whenever possible, our team travels in-country to oversee the training of the interviewers, specifically to ensure the sampling techniques and interviewing procedures are correctly communicated to and implemented by the field team.</p>
+                    </div>
+                  </div>
                 </div>
+                <a href="#" target="_blank" class="infographic-link">See our full research process here</a>
               </section>
-              <section id="field-implementation" class="main-section">
+              <section id="field-preparation2" class="main-section">
                 <header class="main-content-header">
-                  <h2>Field Implementation</h2>
+                  <h2>Field Preparation</h2>
                 </header>
                 <div class="main-content-body">
                   <div class="media">
-                    <div class="media-left">
+                    <div class="media-left media-middle">
                       <span class="gradient-circle-border">
-                        <img src="http://via.placeholder.com/130x130" class="img-circle" alt="" />
+                        <img src="http://via.placeholder.com/130x130" class="img-circle" alt="Conduct In-Field Quality Control" />
                       </span>
                     </div>
-                    <div class="media-body">
-                      <h4 class="media-heading">Field team Training</h4>
-                      <p>Our team has vast experience in leading international survey efforts and in-person training. We'll ensure that nothing gets lost in translation</p>
+                    <div class="media-body media-middle">
+                      <h4 class="media-heading">Conduct In-field Quality Control</h4>
+                      <p>Prior to launching fieldwork, we confirm that the local firm has an adequate plan for monitoring the field procedures, including contact procedures, survey timing, back-checking, and more.</p>
                     </div>
                   </div>
                   <div class="media">
-                    <div class="media-left">
+                    <div class="media-left media-middle">
                       <span class="gradient-circle-border">
-                        <img src="http://via.placeholder.com/130x130" class="img-circle" alt="" />
+                        <img src="http://via.placeholder.com/130x130" class="img-circle" alt="Receive Regular Updates on Achieved Sample Plan" />
                       </span>
                     </div>
-                    <div class="media-body">
-                      <h4 class="media-heading">Execute Sampling Plans</h4>
-                      <p>In-field or from afar, the D3 process ensures that your data is collected according to plan.</p>
-                    </div>
-                  </div>
-                  <div class="media">
-                    <div class="media-left">
-                      <span class="gradient-circle-border">
-                        <img src="http://via.placeholder.com/130x130" class="img-circle" alt="" />
-                      </span>
-                    </div>
-                    <div class="media-body">
-                      <h4 class="media-heading">Set Framing Methods</h4>
-                      <p>Our team of in-house statisticians set population frames that perfectly fit the environment and communities that we survey.</p>
+                    <div class="media-body media-middle">
+                      <h4 class="media-heading">Receive Regular Updates on Achieved Sample Plan</h4>
+                      <p>We remain in close contact wiht our local counterparts to receive regular updates on fieldwork, including contact outcomes, demographics of achieved sample, events affecting fieldwork, and more. we are fully transparent and immediately inform clients of notable updates.</p>
                     </div>
                   </div>
                 </div>
-              </section>
-              <section id="quality-control" class="main-section">
-                <header class="main-content-header">
-                  <h2>Quality Control</h2>
-                </header>
-                <div class="main-content-body">
-                  <div class="media">
-                    <div class="media-left">
-                      <span class="gradient-circle-border">
-                        <img src="http://via.placeholder.com/130x130" class="img-circle" alt="" />
-                      </span>
-                    </div>
-                    <div class="media-body">
-                      <h4 class="media-heading">Monitor Field Team</h4>
-                      <p>Our team has vast experience in leading international survey efforts and in-person training. We'll ensure that nothing gets lost in translation.</p>
-                    </div>
-                  </div>
-                  <div class="media">
-                    <div class="media-left">
-                      <span class="gradient-circle-border">
-                        <img src="http://via.placeholder.com/130x130" class="img-circle" alt="" />
-                      </span>
-                    </div>
-                    <div class="media-body">
-                      <h4 class="media-heading">Test Data Cognition and Logic Test I</h4>
-                      <p>Each of our vendors conduct in-house quality control checks that support the data collection process.</p>
-                    </div>
-                  </div>
-                  <div class="media">
-                    <div class="media-left">
-                      <span class="gradient-circle-border">
-                        <img src="http://via.placeholder.com/130x130" class="img-circle" alt="" />
-                      </span>
-                    </div>
-                    <div class="media-body">
-                      <h4 class="media-heading">Data Cognition and logic Test II</h4>
-                      <p>Over the course of the company's existence, we have developed a series of innovative technical quality control practices. These are implemented as a second method of quality control.</p>
-                    </div>
-                  </div>
-                </div>
+                <a href="#" target="_blank" class="infographic-link">See our full research process here</a>
               </section>
               <section id="data-processing" class="main-section">
                 <header class="main-content-header">
@@ -309,126 +327,93 @@
                 </header>
                 <div class="main-content-body">
                   <div class="media">
-                    <div class="media-right">
-                        <span class="gradient-circle-border">
-                          <img src="http://via.placeholder.com/130x130" class="img-circle" alt="" />
-                        </span>
+                    <div class="media-left media-middle">
+                      <span class="gradient-circle-border">
+                        <img src="http://via.placeholder.com/130x130" class="img-circle" alt="Code & Clean Data" />
+                      </span>
                     </div>
-                    <div class="media-body">
-                      <h4 class="media-heading">Weight Data</h4>
-                    </div>
-                  </div>
-                  <div class="media">
-                    <div class="media-right">
-                        <span class="gradient-circle-border">
-                          <img src="http://via.placeholder.com/130x130" class="img-circle" alt="" />
-                        </span>
-                    </div>
-                    <div class="media-body">
-                      <h4 class="media-heading">Non-Response / Disposition Analysis</h4>
+                    <div class="media-body media-middle">
+                      <h4 class="media-heading">Code & Clean Data</h4>
+                      <p>Our team is versatile and can work either with pre-defined data maps or generate them from scratch so that the final dataset reflects the desired format for merging and/or analysis.</p>
                     </div>
                   </div>
                   <div class="media">
-                    <div class="media-right">
-                        <span class="gradient-circle-border">
-                          <img src="http://via.placeholder.com/130x130" class="img-circle" alt="" />
-                        </span>
+                    <div class="media-left media-middle">
+                      <span class="gradient-circle-border">
+                        <img src="http://via.placeholder.com/130x130" class="img-circle" alt="Evaluate Field Team" />
+                      </span>
                     </div>
-                    <div class="media-body">
-                      <h4 class="media-header">Report Quality Control</h4>
-                      <p>We believe in transparency when you commit to our team. You'll know exactly what adjustments have been made.</p>
+                    <div class="media-body media-middle">
+                      <h4 class="media-heading">Evaluate Field Team</h4>
+                      <p>We have developed a proprietary program, Valkryie, which comprehensively analyzes each interviewer's work and assures the integrity, reliability, and accuracy of the data.</p>
+                    </div>
+                  </div>
+                  <div class="media">
+                    <div class="media-left media-middle">
+                      <span class="gradient-circle-border">
+                        <img src="http://via.placeholder.com/130x130" class="img-circle" alt="Analyze" />
+                      </span>
+                    </div>
+                    <div class="media-body media-middle">
+                      <h4 class="media-heading">Analyze</h4>
+                      <p>Our in-house team of statisticians perform post-stratification and/or complex weighting schemes, based on project needs, so that the data reflect specified population parameters.</p>
+                    </div>
+                  </div>
+                  <div class="media">
+                    <div class="media-left media-middle">
+                      <span class="gradient-circle-border">
+                        <img src="http://via.placeholder.com/130x130" class="img-circle" alt="Deliver Data & Reports" />
+                      </span>
+                    </div>
+                    <div class="media-body media-middle">
+                      <h4 class="media-heading">Deliver Data & Reports</h4>
                     </div>
                   </div>
                 </div>
+                <a href="#" target="_blank" class="infographic-link">See our full research process here</a>
               </section>
             </div>
             <div id="decisions">
-              <section id="project-analysis" class="main-section">
+              <section id="analytical-reporting" class="main-section">
                 <header class="main-content-header">
-                  <h2>Project Analysis</h2>
+                  <h2>Analytical Reporting</h2>
                 </header>
                 <div class="main-content-body">
                   <div class="media">
-                    <div class="media-left">
+                    <div class="media-left media-middle">
                       <span class="gradient-circle-border">
-                        <img src="http://via.placeholder.com/130x130" class="img-circle" alt="" />
+                        <img src="http://via.placeholder.com/130x130" class="img-circle" alt="Bridge the Gap between Data Science & Communication" />
                       </span>
                     </div>
-                    <div class="media-body">
-                      <h4 class="media-heading">Longitudinal Analysis</h4>
+                    <div class="media-body media-middle">
+                      <h4 class="media-heading">Bridge the Gap between Data Science & Communication</h4>
+                      <p>Through advanced statistical testing and data analysis, we effectively turn numbers into insights, making sense of the data to tell a story and inform client decisions. Our team utilizes innovative visualization techniques that concisely share key takeaways. Additionally, we can generate heat maps, geospacial models, GPS coordinate graphs, choropleth diagrams, and dot density charts, upon request.</p>
                     </div>
                   </div>
                   <div class="media">
-                    <div class="media-left">
+                    <div class="media-left media-middle">
                       <span class="gradient-circle-border">
-                        <img src="http://via.placeholder.com/130x130" class="img-circle" alt="" />
+                        <img src="http://via.placeholder.com/130x130" class="img-circle" alt="Reveal Insights to Inform Decisions" />
                       </span>
                     </div>
-                    <div class="media-body">
-                      <h4 class="media-heading">Cross-National Analysis</h4>
+                    <div class="media-body media-middle">
+                      <h4 class="media-heading">Reveal Insights to Inform Decisions</h4>
+                      <p>Because we work closely with our clients from the beginning of a project, we understand their research goals and tailor findings so that they are clear and actionable.</p>
                     </div>
                   </div>
                   <div class="media">
-                    <div class="media-left">
+                    <div class="media-left media-middle">
                       <span class="gradient-circle-border">
-                        <img src="http://via.placeholder.com/130x130" class="img-circle" alt="" />
+                        <img src="http://via.placeholder.com/130x130" class="img-circle" alt="Share Lessons Learned & Apply to Future Projects" />
                       </span>
                     </div>
-                    <div class="media-body">
-                      <h4 class="media-heading">Complex Analysis</h4>
-                      <p>Regressions, etc.</p>
+                    <div class="media-body media-middle">
+                      <h4 class="media-heading">Share Lessons Learned & Apply to future Projects</h4>
+                      <p>Our team firmly believes in transparency and applying lessons learned to future projects to fortify the integrity of our work. These insights and best practices are shared both internally and externally with local partners and clients to build upon the quality of future projects, allowing our clients to benefit from returning to us for multiple projects</p>
                     </div>
                   </div>
                 </div>
-              </section>
-              <section id="key-findings" class="main-section">
-                <header class="main-content-header">
-                  <h2>Key Findings</h2>
-                </header>
-                <div class="main-content-body">
-                  <span class="gradient-circle-border">
-                    <img src="http://via.placeholder.com/130x130" class="img-circle" alt="" />
-                  </span>
-                  <h4>We compile research results</h4>
-                </div>
-              </section>
-              <section id="data-visualization" class="main-section">
-                <header class="main-content-header">
-                  <h2>Data visualization</h2>
-                </header>
-                <span class="gradient-circle-border">
-                  <img src="http://via.placeholder.com/130x130" class="img-circle" alt="" />
-                </span>
-                <h4>We'll make key findings come to life</h4>
-              </section>
-              <section id="next-steps" class="main-section">
-                <header class="main-content-header">
-                  <h2>Next Steps</h2>
-                </header>
-                <div class="main-content-body">
-                  <div class="media">
-                    <div class="media-left">
-                      <span class="gradient-circle-border">
-                        <img src="http://via.placeholder.com/130x130" class="img-circle" alt="" />
-                      </span>
-                    </div>
-                    <div class="media-body">
-                      <h4 class="media-heading">Best Practices</h4>
-                      <p>Return to top with next wave data and best practices.</p>
-                    </div>
-                  </div>
-                  <div class="media">
-                    <div class="media-left">
-                      <span class="gradient-circle-border">
-                        <img src="http://via.placeholder.com/130x130" class="img-circle" alt="" />
-                      </span>
-                    </div>
-                    <div class="media-body">
-                      <h4 class="media-heading">Client Resource Management</h4>
-                      <p>Our clients benefit from returning to D3 for multiple projects. We'll manage past research efforts so you don't have to.</p>
-                    </div>
-                  </div>
-                </div>
+                <a href="#" target="_blank" class="infographic-link">See our full research process here</a>
               </section>
             </div>
           </div>

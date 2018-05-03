@@ -193,7 +193,7 @@ a:hover:after{
   font-size:35px;
 }
 .hp-hero .d-word{
-  color:#f00;
+  color:#d61f26;
   border-bottom:none;
   animation:fade_down_in;
   animation-duration:.3s;
@@ -203,7 +203,7 @@ a:hover:after{
   line-height:1em;
 }
 .hp-hero .d-word:after{
-  background-color:#f00;
+  background-color:#d61f26;
 }
 .hp-hero .inline-link{
   color:#191919;
@@ -397,6 +397,9 @@ a:hover:after{
   padding:2px;
   display:block;
   border-radius:50%;
+}
+.process-main-content .gradient-circle-border{
+  display:inline-block;
 }
 .grid{
   width:100%;
@@ -805,6 +808,29 @@ g.active>*{
   margin-top:0;
   margin-bottom:0;
   padding:15px;
+  -webkit-transition:all .3s ease;
+  transition:all .3s ease;
+  position:relative;
+}
+.sidebar-section-title.process-notshown:before{
+  content:"";
+  position:absolute;
+  width:90%;
+  height:1px;
+  background-color:#666;
+  left:0;
+  right:0;
+  top:0;
+  margin-left:auto;
+  margin-right:auto;
+}
+.sidebar-sub-section:first-child .sidebar-section-title.process-notshown:before{
+  height:0;
+  background-color:transparent;
+}
+.sidebar-section-title.process-notshown{
+  background-color:#fff;
+  color:#191919;
 }
 .sidebar-section-content hr{
   border-color:#000;
@@ -1042,7 +1068,43 @@ g.active>*{
   padding-bottom:40px;
   position:relative;
 }
+.sub-section-links{
+  margin-top:40px;
+}
+.sub-section-links a{
+  display:table;
+  margin-bottom:10px;
+}
+#our-process-sidebar .sidebar-section-content{
+  display:none;
+}
 
+.infographic-link{
+  color:#d61f26;
+  display:inline-block;
+  margin:25px 15px;
+  font-size:18px;
+  border-color:#d61f26;
+}
+.infographic-link:after{
+  background-color:#d61f26;
+}
+.infographic-link:hover{
+  color:#d61f26;
+}
+.process-main-content .main-content-header{
+  background-color:#fcfafa;
+}
+.process-main-content .main-content-header h2{
+  font-size:40px;
+  color:#4d4d4d;
+}
+.main-content-body .media{
+  margin-top:40px;
+}
+.process-main-content .main-content-body{
+  padding:25px 15px;
+}
 
 #super-footer{
   background-color:#999;
@@ -1178,5 +1240,10 @@ footer .social .d3{
   }
   .details .row>.col-sm-6:first-child{
     border-right:1px solid #999;
+  }
+}
+@media (min-width:768px) and (max-width:991px){
+  #our-process-sidebar.nav-sidebar{
+    max-width:220px;
   }
 }
