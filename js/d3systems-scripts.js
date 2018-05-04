@@ -224,6 +224,13 @@ jQuery(document).ready(function($){
     });
   });
 
+  //our-work
+  $('#our-work-grid').masonry({
+    itemSelector: '.work-grid-item',
+    columnWidth: '.grid-sizer',
+    percentPosition:true
+  });
+
 });
 
 /*

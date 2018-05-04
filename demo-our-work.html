@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="">
+
+  <meta http-equiv="cache-control" content="public">
+  <meta http-equiv="cache-control" content="private">
+
+  <title>D3 Systems</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" media="all" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <link rel="stylesheet" id="d3systems-css" href="style.css" type="text/css" media="all" />
+
+  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/modernizr.custom.js"></script>
+  <script type="text/javascript" src="js/masonry.min.js"></script>
+  <script type="text/javascript" src="js/d3systems-scripts.js"></script>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <!--[if gte IE 9]
+    <style type="text/css">
+      .gradient {
+        filter: none;
+      }
+    </style>
+  <![endif]-->
+</head>
+
+<body>
+  <nav id="header-nav" class="sticky">
+    <div class="container">
+      <div class="navbar-header">
+        <a href="#" class="header-logo">
+          <img src="images/logo.png" class="img-responsive" alt="D3 Systems Logo" />
+        </a>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="expanded" aria-controls="navbar">
+          <span class="sr-only">Toggle Navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Our Process</a></li>
+          <li><a href="#">Our Network</a></li>
+          <li><a href="#">Global Reach</a></li>
+          <li><a href="#">Our Work</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <form action="/" method="get" class="navbar-form navbar-right">
+          <div class="input-group">
+            <input type="text" name="s" class="form-control" placeholder="Search" />
+            <span class="input-group-btn">
+              <button class="btn"  type="submit"><i class="fas fa-search"></i></button>
+            </span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <div class="hero" style="background-image:url(images/traffic-through-windshield.jpg); background-position:center center;">
+    <div class="container">
+      <div class="hero-caption">
+        <h1>Our Work</h1>
+        <p>Customizable survey research conducted from beginning to all ends of the earth.</p>
+      </div>
+    </div>
+  </div>
+  <section id="our-work">
+    <div class="container">
+      <ul id="our-work-nav" class="nav nav-tabs">
+        <li class="active"><a href="#">All</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Type</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">D3 News</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Research</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Topic</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Audience & Media</a></li>
+            <li><a href="#">Awards</a></li>
+            <li><a href="#">Conference Presentations</a></li>
+            <li><a href="#">Difficult Research</a></li>
+            <li><a href="#">Environments</a></li>
+            <li><a href="#">Election Polling</a></li>
+            <li><a href="#">Gender Research Initiative</a></li>
+            <li><a href="#">Impact Evaluation</a></li>
+            <li><a href="#">International Development</a></li>
+            <li><a href="#">News & Events</a></li>
+            <li><a href="#">Press, Politics & Foreign</a></li>
+            <li><a href="#">Policy</a></li>
+            <li><a href="#">Public Health</a></li>
+            <li><a href="#">Research</a></li>
+            <li><a href="#">Survey Methodology</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Country</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Afghanistan</a></li>
+            <li><a href="#">Bangladesh</a></li>
+            <li><a href="#">Bosnia & Herzegovina</a></li>
+            <li><a href="#">Bulgaria</a></li>
+            <li><a href="#">Columbia</a></li>
+            <li><a href="#">Costa Rica</a></li>
+            <li><a href="#">Egypt</a></li>
+            <li><a href="#">Guatemala</a></li>
+            <li><a href="#">Haiti</a></li>
+            <li><a href="#">Honduras</a></li>
+            <li><a href="#">India</a></li>
+            <li><a href="#">Iran</a></li>
+            <li><a href="#">Iraq</a></li>
+            <li><a href="#">Israel</a></li>
+            <li><a href="#">Jordan</a></li>
+            <li><a href="#">Kenya</a></li>
+            <li><a href="#">Kyrgyzstan</a></li>
+            <li><a href="#">Lebanon</a></li>
+            <li><a href="#">Mauritania</a></li>
+            <li><a href="#">Mexico</a></li>
+            <li><a href="#">Moldova</a></li>
+            <li><a href="#">Nigeria</a></li>
+            <li><a href="#">Pakistan</a></li>
+            <li><a href="#">Panama</a></li>
+            <li><a href="#">Philippines</a></li>
+            <li><a href="#">South Africa</a></li>
+            <li><a href="#">South Sudan</a></li>
+            <li><a href="#">Sudan</a></li>
+            <li><a href="#">Syria</a></li>
+            <li><a href="#">Tanzania</a></li>
+            <li><a href="#">Turkey</a></li>
+            <li><a href="#">UAE</a></li>
+            <li><a href="#">Yemen</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Date</a></li>
+      </ul>
+      <div id="our-work-grid">
+        <div class="grid-sizer col-sm-4"></div>
+        <div class="work-grid-item col-sm-4">
+          <div class="post-card">
+            <h3 class="post-card-category" style="background-color:#f7d2d4;">Events</h3>
+            <div class="post-card-thumb">
+              <img src="images/HondurasColorTreated-01.jpg" class="img-responsive center-block" alt="" />
+              <h2 class="post-card-thumb-caption">
+                <span class="summary-card-title-part" style="color:#fff;">Survey of</span>
+                <span class="summary-card-title-main" style="color:#fff;">Thai People-</span>
+                <span class="summary-card-title-part" style="color:#fff;">a Time of Change</span>
+              </h2>
+              <div class="post-caption-overlay"></div>
+            </div>
+            <div class="post-card-content">
+              <h4 class="post-date">Sept. 16, 2017</h4>
+              <hr style="border-color:#f7d2d4;" />
+              <p>D3 is excited to announce that we recently designed and successfully executed a sample plan that far exceeds stadard coverage for public opinion research...</p>
+              <a href="#" class="post-read-more">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="work-grid-item col-sm-4">
+          <div class="post-card">
+            <h3 class="post-card-category" style="background-color:#f7d2d4;">Events</h3>
+            <div class="post-card-thumb">
+              <img src="images/HondurasColorTreated-01.jpg" class="img-responsive center-block" alt="" />
+              <h2 class="post-card-thumb-caption">
+                <span class="summary-card-title-main">RCS:</span>
+                <span class="summary-card-title-part">Custom D3 Survey Tech.</span>
+              </h2>
+              <div class="post-caption-overlay"></div>
+            </div>
+            <div class="post-card-content">
+              <h4 class="post-date">Nov.3, 2017</h4>
+              <hr style="border-color:#f7d2d4;" />
+              <p>Research Control Solutions (RCS) was formally established as a subsidiary of D3 in 2012, and was inspired by D3's search for an affordable solution for electronic data capture capable of overcoming field challenges...</p>
+              <a href="#" class="post-read-more">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="work-grid-item col-sm-4">
+          <div class="post-card">
+            <h3 class="post-card-category" style="background-color:#abd8e9;">Research</h3>
+            <div class="post-card-thumb">
+              <img src="images/HondurasColorTreated-01.jpg" class="img-responsive center-block" alt="" />
+              <h2 class="post-card-thumb-caption">
+                <span class="summary-card-title-part">Survey of</span>
+                <span class="summary-card-title-main">Thai People-</span>
+                <span class="summary-card-title-part">a Time of Change</span>
+              </h2>
+              <div class="post-caption-overlay"></div>
+            </div>
+            <div class="post-card-content">
+              <h4 class="post-date">Oct. 28, 2017</h4>
+              <hr style="border-color:#abd8e9;" />
+              <p>Over the past 20 years the Thai people have seen significant change in their country...</p>
+              <a href="#" class="post-read-more">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="work-grid-item col-sm-4">
+          <div class="post-card">
+            <h3 class="post-card-category" style="background-color:#f0e7e8;">D3 News</h3>
+            <div class="post-card-thumb">
+              <img src="images/HondurasColorTreated-01.jpg" class="img-responsive center-block" alt="" />
+              <h2 class="post-card-thumb-caption">
+                <span class="summary-card-title-main">Hard to Reach</span>
+                <span class="summary-card-title-part">Is Our Reach</span>
+              </h2>
+              <div class="post-caption-overlay"></div>
+            </div>
+            <div class="post-card-content">
+              <h4 class="post-date">Oct. 4, 2017</h4>
+              <hr style="border-color:#f0e7e8;" />
+              <p>D3 has built the staff and has the global experience to manage each phase of a research project cycle from inception to final analysis, depending on client needs. Our team of social scientists, regional experts and statisticians is well versed in instrument design to achieve specified research objectives for a wide variety of...</p>
+              <a href="#" class="post-read-more">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="work-grid-item col-sm-4">
+          <div class="post-card">
+            <h3 class="post-card-category" style="background-color:#f7d2d4;">Event</h3>
+            <div class="post-card-thumb">
+              <img src="images/HondurasColorTreated-01.jpg" class="img-responsive center-block" alt="" />
+              <h2 class="post-card-thumb-caption">
+                <span class="summary-card-title-part">D3 helps create</span>
+                <span class="summary-card-title-main">Zari</span>
+              </h2>
+              <div class="post-caption-overlay"></div>
+            </div>
+            <div class="post-card-content">
+              <h4 class="post-date">Spt. 21, 2017</h4>
+              <hr style="border-color:#f7d2d4;" />
+              <p>Fast Company listed Sherrie Westin on their annual '100 Most Creative People in Business'. D3 and Sesame Workshop collaborated to design survey methods that would provide the best data to create Zari, the groundbreaking Afghan Muppet...</p>
+              <a href="#" class="post-read-more">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="work-grid-item col-sm-4">
+          <div class="post-card">
+            <h3 class="post-card-category" style="background-color:#f0e7e8;">D3 News</h3>
+            <div class="post-card-thumb">
+              <img src="images/HondurasColorTreated-01.jpg" class="img-responsive center-block" alt="" />
+              <h2 class="post-card-thumb-caption">
+                <span class="summary-card-title-part">D3 Leads</span>
+                <span class="summary-card-title-main">Pew's Global Attitudes Project</span>
+                <span class="summary-card-title-part">in the Middle East</span>
+              </h2>
+              <div class="post-caption-overlay"></div>
+            </div>
+            <div class="post-card-content">
+              <h4 class="post-date">Oct. 4, 2017</h4>
+              <hr style="border-color:#f0e7e8;" />
+              <p>D3 has built the staff and has the global experience to manage each phase of a research project cycle from inception to final analysis, depending on client needs. Our team of social scientists, regional experts and statisticians is well versed in instrument design to achieve specified research objectives for a wide variety of...</p>
+              <a href="#" class="post-read-more">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="work-grid-item col-sm-4">
+          <div class="post-card">
+            <h3 class="post-card-category" style="background-color:#abd8e9;">Research</h3>
+            <div class="post-card-thumb">
+              <img src="images/HondurasColorTreated-01.jpg" class="img-responsive center-block" alt="" />
+              <h2 class="post-card-thumb-caption">
+                <span class="summary-card-title-part">Social media usage</span>
+                <span class="summary-card-title-main">Guatemala</span>
+              </h2>
+              <div class="post-caption-overlay"></div>
+            </div>
+            <div class="post-card-content">
+              <h4 class="post-date">Sept. 16, 2017</h4>
+              <hr style="border-color:#abd8e9;" />
+              <p>D3 is excited to announce taht we recently designed and successfully executed a sample plan that far exceeds standard coverage for public opinion research...</p>
+              <a href="#" class="post-read-more">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="super-footer">
+    <div class="container">
+      <h2>Let's use our global connections to map out your next research solution.</h2>
+      <a href="#" class="btn-main">Learn More About Our Process</a>
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      <h2>D3: Designs, Data, Decisions</h2>
+      <hr />
+      <div class="row">
+        <div class="col-sm-4">
+          <h3>Contact Us</h3>
+          <ul class="list-unstyled">
+            <li>Research: <span class="value">research@d3systems.com</span></li>
+            <li>Recruitment: <span class="value">hr@d3systems.com</span></li>
+            <li>General: <span class="value">info@d3systems.com</span></li>
+          </ul>
+          <p>8300 Greensboro Dr. Suite 450<br />Tysons Corner, VA 22102<br /><span class="value">+1 703 388 2450</span></p>
+        </div>
+        <div class="col-sm-5">
+          <h3>Subsidiaries</h3>
+          <ul class="list-unstyled">
+            <li><a href="#">ACSOR-Surveys <span class="location">Afghanistan</span></a></li>
+            <li><a href="#">Research Control Solutions (RCS) <span class="location">United States</span></a></li>
+            <li><a href="#">Infinite Insight <span class="location">Kenya</span></a></li>
+            <li><a href="#">D-Force Sampling <span class="location">Malaysia</span></a></li>
+            <li><a href="#">Mareco Index Bosnia <span class="location">Bosnia and Herzegovnia</span></a></li>
+          </ul>
+        </div>
+        <div class="col-sm-3">
+          <h3>Social Media</h3>
+          <div class="social">
+            <a href="#" class="facebook" title="Facebook"></a>
+            <a href="#" class="linkedin" title="LinkedIn"></a>
+            <a href="#" class="newsletter" title="Newsletter"></a>
+            <a href="#" class="d3" title="Our Work"></a>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div id="stats" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <div class="row">
+              <div class="col-sm-3">
+                <p>Annual Miles Flown</p>
+              </div>
+              <div class="col-xs-4 col-sm-3">
+                <p>2015: <span>734.555</span></p>
+              </div>
+              <div class="col-xs-4 col-sm-3">
+                <p>2016: <span>843,051</span></p>
+              </div>
+              <div class="col-xs-4 col-sm-3">
+                <p>2017: <span>1,002,530</span></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="row">
+              <div class="col-sm-3">
+                <p>Project Countries</p>
+              </div>
+              <div class="col-xs-4 col-sm-3">
+                <p>2015: <span>27</span></p>
+              </div>
+              <div class="col-xs-4 col-sm-3">
+                <p>2016: <span>31</span></p>
+              </div>
+              <div class="col-xs-4 col-sm-3">
+                <p>2017: <span>34</span></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="row">
+              <div class="col-sm-3">
+                <p>Projects Complete</p>
+              </div>
+              <div class="col-xs-4 col-sm-3">
+                <p>2015: <span>132</span></p>
+              </div>
+              <div class="col-xs-4 col-sm-3">
+                <p>2016: <span>142</span></p>
+              </div>
+              <div class="col-xs-4 col-sm-3">
+                <p>2017: <span>161</span></p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+</body>
+
+</html>
