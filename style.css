@@ -381,6 +381,11 @@ a:hover:after{
   background-color:#fff;
   color:#191919;
 }
+.nav-tabs>li.nav-tab-label>a{
+  color:#fff !important;
+  background-color:#999 !important;
+  box-shadow:none !important;
+}
 
 #staff,
 #subsidiaries-grid,
@@ -1015,8 +1020,6 @@ g.active>*{
 .sidebar-social .social>a{
   display:inline-block;
   position:relative;
-  height:20px;
-  width:20px;
   background-image:url(images/sprites.png);
   background-repeat:no-repeat;
   opacity:1;
@@ -1025,6 +1028,7 @@ g.active>*{
   border-bottom:none;
   margin-right:5%;
   margin-left:5%;
+  vertical-align:middle;
 }
 .sidebar-social .social>a:after{
   background-color:transparent;
@@ -1037,16 +1041,28 @@ g.active>*{
   opacity:.5;
 }
 .sidebar-social .social .facebook{
-  background-position:0px -110px;
+  /*background-position:0px -110px;*/
+  background-position:-86px -115px;
+  height:22px;
+  width:22px;
 }
 .sidebar-social .social .linkedin{
-  background-position:-21px -110px;
+  /*background-position:-21px -110px;*/
+  background-position:-113px -116px;
+  height:21px;
+  width:22px;
 }
 .sidebar-social .social .newsletter{
-  background-position:-42px -110px;
+  /*background-position:-42px -110px;*/
+  background-position:-140px -119px;
+  height:15px;
+  width:22px;
 }
 .sidebar-social .social .d3{
-  background-position:-62px -110px;
+  /*background-position:-62px -110px;*/
+  background-position:-164px -112px;
+  height:28px;
+  width:28px;
 }
 
 .main-section{  
@@ -1172,6 +1188,96 @@ g.active>*{
   font-weight:600;
 }
 
+#our-work-single{
+  background-color:#fcfafa;
+}
+#main-article{
+  padding-top:40px;
+  padding-bottom:40px;
+}
+.post{
+  background-color:#fff;
+  box-shadow:0px 0px 20px #ddd;
+}
+.post .post-category{
+  font-size:16px;
+  margin-top:0;
+  margin-bottom:0;
+  padding:15px;
+}
+.post header,
+.post article,
+.post footer{
+  padding:15px;
+}
+.post-header h1{
+  margin-top:0;
+  margin-bottom:0;
+}
+.post-title-part{
+  font-size:70px;
+  display:block;
+  font-weight:300;
+}
+.post-title-main{
+  font-size:70px;
+  font-family:Georgia, serif;
+  display:block;
+  font-weight:bold;
+}
+.post-header hr{
+  width:125px;
+  margin-left:0;
+  margin-right:auto;
+  border-width:20px;
+}
+.post-header .post-date{
+  font-size:14px;
+  color:#999;
+}
+.post article{
+  font-size:18px;
+}
+.post footer{
+  color:#4d4d4d;
+}
+.work-sidebar-section{
+  background-color:#fff;
+  box-shadow:0px 0px 20px #ddd;
+  margin-bottom:40px;
+}
+.work-filter-results>h3{
+  background-color:#999;
+  color:#fff;
+  text-align:center;
+  font-size:14px;
+  padding:10px;
+  margin-top:0;
+  margin-bottom:0;
+}
+.work-sidebar-section ul{
+  list-style:none;
+}
+.work-sidebar-section ul>li{
+  padding-top:10px;
+  padding-bottom:10px;
+}
+.work-sidebar-section ul>li:before{
+  content:">";
+  margin-right:5px;
+  margin-left:-5px;
+  font-weight:bold;
+}
+
+.carousel-progress-bar{
+  height:3px;
+  width:0%;
+  background-color:#00f;
+  position:absolute;
+  bottom:-3px;
+  z-index:9;
+}
+
 #super-footer{
   background-color:#999;
   color:#fff;
@@ -1183,35 +1289,35 @@ g.active>*{
   font-family:Georgia, serif;
 }
 
-footer{
+#footer{
   background-color:#4d4d4d;
   color:#fff;
   padding-top:40px;
   padding-bottom:40px;
 }
-footer hr{
+#footer hr{
   border-color:#999;
 }
-footer .value{
+#footer .value{
   color:#999;
 }
-footer ul>li>a{
+#footer ul>li>a{
   color:#fff;
   border-bottom:none;
 }
-footer ul>li>a>.location{
+#footer ul>li>a>.location{
   color:#999;
 }
-footer ul>li>a:hover{
+#footer ul>li>a:hover{
   color:#fff;
 }
-footer ul>li>a:after{
+#footer ul>li>a:after{
   background-color:#fff;
 }
-footer ul>li>a:hover:after{
+#footer ul>li>a:hover:after{
   background-color:#fff;
 }
-footer .social>a{
+#footer .social>a{
   display:inline-block;
   position:relative;
   height:28px;
@@ -1224,26 +1330,26 @@ footer .social>a{
   border-bottom:none;
   margin-right:10px;
 }
-footer .social>a:after{
+#footer .social>a:after{
   background-color:transparent;
 }
-footer .social>a:hover:after{
+#footer .social>a:hover:after{
   height:0;
   background-color:transparent;
 }
-footer .social>a:hover{
+#footer .social>a:hover{
   opacity:.5;
 }
-footer .social .facebook{
+#footer .social .facebook{
   background-position:-80px 0px;
 }
-footer .social .linkedin{
+#footer .social .linkedin{
   background-position:-112px 0px;
 }
-footer .social .newsletter{
+#footer .social .newsletter{
   background-position:-50px 0px;
 }
-footer .social .d3{
+#footer .social .d3{
   background-position:-139px 0px;
 }
 
