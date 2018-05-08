@@ -231,6 +231,36 @@ jQuery(document).ready(function($){
     percentPosition:true
   });
 
+  //carousel progress bar on contact page
+  var percent = 0,
+      bar = $('.carousel-progress-bar'),
+      hero_carousel = $('#hero-carousel');
+
+  function carousel_progress_bar(){
+    bar.css({ 'width' : percent + "%" });
+    percent = percent + 0.5;
+
+    if(percent>100){
+      percent = 0;
+      hero_carousel.carousel('next');
+    }
+  }
+
+  hero_carousel.carousel({
+    interval:false,
+    pause:true
+  }).on('slid.bs.carousel', function(){});
+
+  var barInterval = setInterval(carousel_progress_bar, 30);
+  hero_carousel.hover(
+    function(){
+      clearInterval(barInterval);
+    },
+    function(){
+      barInterval = setInterval(carousel_progress_bar, 30);
+    }
+  );
+
 });
 
 /*
