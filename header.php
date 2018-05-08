@@ -83,7 +83,7 @@
   </div><!-- landing-page-wrapper -->
 <?php elseif(is_page('our-network')): ?>
   <section id="staff">
-    <div class="hero" style="background-image:url(<?php the_field('hero_background_image'); ?>); background-position:25% 50%;">
+    <div class="hero" style="background-image:url(<?php the_field('hero_background_image'); ?>); <?php the_field('hero_background_image_css'); ?>">
       <div class="container">
         <div class="hero-caption">
           <h1><?php the_field('hero_title'); ?></h1>
@@ -134,4 +134,21 @@
       </div>
     </div>
   </div>
-<?php elseif()
+<?php else:
+  $hero_background_image = get_stylesheet_directory_uri() . '/images/urban-thailand.jpg';
+  $hero_background_image_css = '';
+
+  if(get_field('hero_background_image')){
+    $hero_background_image = get_field('hero_background_image');
+    $hero_background_image_css = get_field('hero_background_image_css');
+  } ?>
+
+  <div class="hero" style="background-image:url(<?php echo $hero_background_image; ?>); <?php echo $hero_background_image_css; ?>">
+    <div class="container">
+      <div class="hero-caption">
+        <h1><?php the_field('hero_title'); ?></h1>
+        <p><?php the_field('hero_caption'); ?></p>
+      </div>
+    </div>
+  </div>
+<?php endif; ?>

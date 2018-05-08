@@ -1463,6 +1463,23 @@ g#Layer_244{
   color:#fff;
   font-weight:300;
 }
+.colophon{
+  margin-top:40px;
+  text-align:center;
+  color:#999;
+  font-size:12px;
+}
+.colophon p{
+  margin-bottom:0;
+}
+.colophon a{
+  color:#999;
+  border-color:#999;
+}
+.colophon a:after,
+.colophon a:hover:after{
+  background-color:#999;
+}
 
 
 @media (max-width:767px){
