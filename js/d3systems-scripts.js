@@ -225,11 +225,13 @@ jQuery(document).ready(function($){
   });
 
   //our-work
-  $('#our-work-grid').masonry({
-    itemSelector: '.work-grid-item',
-    columnWidth: '.grid-sizer',
-    percentPosition:true
-  });
+  if(typeof $.fn.masonry == 'function'){
+    $('#our-work-grid').masonry({
+      itemSelector: '.work-grid-item',
+      columnWidth: '.grid-sizer',
+      percentPosition:true
+    });
+  }
 
   //carousel progress bar on contact page
   var percent = 0,

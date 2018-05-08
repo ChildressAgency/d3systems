@@ -272,6 +272,15 @@ a:hover:after{
   background-color:transparent;
 }
 
+#hero-carousel .carousel-inner,
+#hero-carousel .item{
+  height:442px;
+}
+#hero-carousel .item{
+  background-repeat:no-repeat;
+  background-size:cover;
+}
+
 .section-intro{
   padding-top:15px;
   padding-bottom:15px;
@@ -818,8 +827,8 @@ g.active>*{
   background-color:#fff;
   box-shadow:0px 0px 20px #ddd;
 }
-.sidebar-section + .sidebar-section{
-  margin-top:40px;
+.sidebar-section{
+  margin-bottom:40px;
 }
 .sidebar-section-content{
   padding:15px;
@@ -1246,7 +1255,7 @@ g.active>*{
   box-shadow:0px 0px 20px #ddd;
   margin-bottom:40px;
 }
-.work-filter-results>h3{
+.sidebar-details>h3{
   background-color:#999;
   color:#fff;
   text-align:center;
@@ -1255,14 +1264,14 @@ g.active>*{
   margin-top:0;
   margin-bottom:0;
 }
-.work-sidebar-section ul{
+.sidebar-details ul{
   list-style:none;
 }
-.work-sidebar-section ul>li{
+.sidebar-details ul>li{
   padding-top:10px;
   padding-bottom:10px;
 }
-.work-sidebar-section ul>li:before{
+.sidebar-details ul>li:before{
   content:">";
   margin-right:5px;
   margin-left:-5px;
@@ -1276,6 +1285,93 @@ g.active>*{
   position:absolute;
   bottom:-3px;
   z-index:9;
+}
+
+#contact-page{
+  padding-top:40px;
+  padding-bottom:40px;
+}
+#contact-sidebar .sidebar-details ul>li{
+  font-size:20px;
+}
+#contact-sidebar .sidebar-details ul>li>span{
+  font-weight:600;
+}
+.contact-form{
+  box-shadow:0px 0px 20px #ddd;
+  padding-bottom:25px;
+}
+.contact-form .form-group{
+  padding-left:15px;
+  padding-right:15px;
+}
+.contact-form .form-group.subject-group{
+  padding-left:0;
+  padding-right:0;
+}
+.subject-group .radio-inline{
+  padding-left:0;
+  width:100%;
+  text-align:center;
+}
+.subject-group .radio-inline .wpcf7-list-item{
+  display:table-cell;
+  width:1%;
+}
+.subject-group .radio-inline .wpcf7-list-item label{
+  display:block;
+}
+.subject-group input[type="radio"]{
+  position:absolute;
+  opacity:0;
+  margin-left:0;
+}
+.subject-group .radio-inline input[type="radio"] + .wpcf7-list-item-label{
+  font-weight:400;
+  font-size:12px;
+  display:block;
+  color:#999;
+  padding-top:5px;
+  padding-bottom:5px;
+  -webkit-transition:all .3s ease;
+  transition:all .3s ease;
+  box-shadow:5px 0px 0px -4px #999;
+}
+.subject-group .radio-inline .wpcf7-list-item.last .wpcf7-list-item-label{
+  box-shadow:none;
+}
+.subject-group .radio-inline input[type="radio"]:checked + .wpcf7-list-item-label{
+  background-color:#191919;
+  color:#fff;
+  box-shadow:none;
+}
+.contact-form input[type="text"].form-control,
+.contact-form input[type="email"].form-control{
+  border:none;
+  border-radius:0;
+  box-shadow:none;
+  border-bottom:1px solid #191919;
+  padding-left:0;
+  font-size:12px;
+}
+.contact-form textarea.form-control{
+  border-color:#191919;
+  border-radius:0;
+}
+.contact-form .form-group{
+  margin-bottom:25px;
+}
+.contact-form input[type="submit"]{
+  background-color:transparent;
+  border:1px solid #191919;
+  font-weight:600;
+  padding:1px 40px;
+  -webkit-transition:all .3s ease;
+  transition:all .3s ease;
+}
+.contact-form input[type="submit"]:hover{
+  color:#fff;
+  background-color:#191919;
 }
 
 #super-footer{
