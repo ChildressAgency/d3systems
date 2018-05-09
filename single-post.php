@@ -115,36 +115,7 @@
 
                 if($sidebar_topic->have_posts()): while($sidebar_topic->have_posts()): $sidebar_topic->the_post(); ?>
                   <section class="sidebar-section">
-                    <div class="post-card">
-                      <?php 
-                        $sidebar_topic_categories = get_the_terms(get_the_ID(), 'category');
-                        $cur_sidebar_topic_category = $sidebar_topic_categories[0];
-                        $acf_sidebar_topic_category_id = 'category_' . $cur_sidebar_topic_category->term_id;
-                        $sidebar_topic_category_color = '#f7d2d4';
-
-                        if(get_field('category_color', $acf_sidebar_topic_category_id)){
-                          $sidebar_topic_category_color = get_field('category_color', $acf_sidebar_topic_category_id);
-                        }
-
-                        $sidebar_topic_image_url = wp_get_attachment_url(get_post_thumbnail_id());
-                      ?>
-                      <h3 class="post-card-category" style="background-color:<?php echo $sidebar_topic_category_color; ?>;"><?php echo $cur_sidebar_topic_category->name; ?></h3>
-                      <div class="post-card-thumb">
-                        <img src="<?php echo $sidebar_topic_image_url; ?>" class="img-responsive center-block" alt="" />
-                        <h2 class="post-card-thumb-caption">
-                          <span class="summary-card-title-part"><?php the_field('post_pre_title'); ?></span>
-                          <span class="summary-card-title-main"><?php the_field('post_main_title'); ?></span>
-                          <span class="summary-card-title-part"><?php the_field('post_sub_title'); ?></span>
-                        </h2>
-                        <div class="post-caption-overlay"></div>
-                      </div>
-                      <div class="post-card-content">
-                        <h4 class="post-date"><?php echo get_the_date('M\. j, Y'); ?></h4>
-                        <hr style="border-color:<?php echo $sidebar_topic_category_color; ?>;" />
-                        <?php the_excerpt(); ?>
-                        <a href="<?php the_permalink(); ?>" class="post-read-more">Read More</a>
-                      </div>
-                    </div>
+                    <?php get_template_part('partials/post-card'); ?>
                   </section>
               <?php endwhile; endif; wp_reset_postdata(); ?>
 
@@ -163,36 +134,7 @@
 
                 if($sidebar_country->have_posts()): while($sidebar_country->have_posts()): $sidebar_country->the_post(); ?>
                   <section class="sidebar-section">
-                    <div class="post-card">
-                      <?php
-                        $sidebar_country_categories = get_the_terms(get_the_ID(), 'category');
-                        $cur_sidebar_country_category = $sidebar_country_categories[0];
-                        $acf_sidebar_country_category_id = 'category_' . $cur_sidebar_country_category->term_id;
-                        $sidebar_country_category_color = '#f7d2d4';
-
-                        if(get_field('category_color', $acf_sidebar_country_category_id)){
-                          $sidebar_country_category_color = get_field('category_color', $acf_sidebar_country_category_id);
-                        }
-
-                        $sidebar_country_image_url = wp_get_attachment_url(get_post_thumbnail_id());
-                      ?>
-                      <h3 class="post-card-category" style="background-color:#<?php echo $sidebar_country_category_color; ?>;"><?php echo $cur_sidebar_country_category->name; ?></h3>
-                      <div class="post-card-thumb">
-                        <img src="<?php echo $sidebar_country_image_url; ?>" class="img-responsive center-block" alt="" />
-                        <h2 class="post-card-thumb-caption">
-                          <span class="summary-card-title-part"><?php the_field('post_pre_title');?></span>
-                          <span class="summary-card-title-main"><?php the_field('post_main_title'); ?></span>
-                          <span class="summary-card-title-part"><?php the_field('post-sub-title'); ?></span>
-                        </h2>
-                        <div class="post-caption-overlay"></div>
-                      </div>
-                      <div class="post-card-content">
-                        <h4 class="post-date"><?php echo get_the_date('M\. j, Y'); ?></h4>
-                        <hr style="border-color:<?php echo $sidebar_country_category_sidebar; ?>;" />
-                        <?php the_excerpt(); ?>
-                        <a href="<?php the_permalink(); ?>" class="post-read-more">Read More</a>
-                      </div>
-                    </div>
+                    <?php get_template_part('partials/post-card'); ?>
                   </section>
               <?php endwhile; endif; wp_reset_postdata(); ?>
               <section class="sidebar-section">

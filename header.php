@@ -70,6 +70,7 @@
     </div>
   </nav>
 <?php if(is_front_page()): ?>
+
   <section id="hero" class="hp-hero">
     <div class="container">
       <h1>D3: Designs, Data, Decisions&mdash;</h1>
@@ -81,7 +82,9 @@
     </div><!-- landing-page-wrapper-inner -->
     <a href="#competency-cards" id="scroll-down" class="smooth-scroll"></a>
   </div><!-- landing-page-wrapper -->
+
 <?php elseif(is_page('our-network')): ?>
+
   <section id="staff">
     <div class="hero" style="background-image:url(<?php the_field('hero_background_image'); ?>); <?php the_field('hero_background_image_css'); ?>">
       <div class="container">
@@ -91,7 +94,10 @@
         </div>
       </div>
     </div>
+  <?php //section intentionally not closed here ?>
+
 <?php elseif(is_page_template('global-reach.php')): ?>
+
   <div class="hero-global hero">
     <div class="container-fluid">
       <?php 
@@ -132,7 +138,49 @@
       </div>
     </div>
   </div>
+
+<?php elseif(is_page('contact')): ?>
+
+  <div class="hero contact-hero">
+    <?php if(get_field('contact_hero_setting') == 'carousel'): ?>
+
+      <div id="hero-carousel" class="carousel slide" data-interval="false" data-ride="carousel">
+        <div class="carousel-inner" role="listbox">
+          <?php if(have_rows('carousel_slides')): $cs=0; while(have_rows('carousel_slides')): the_row(); ?>
+            <div class="item<?php if($cs == 0){ echo ' active'; } ?>" style="background-image:url(<?php the_sub_field('carousel_slide_image'); ?>);"></div>
+          <?php endwhile; endif; ?>
+          <div class="hero-caption">
+            <h1><?php the_sub_field('hero_title'); ?></h1>
+            <p><?php the_sub_field('hero_caption'); ?></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-progress-bar"></div>
+
+    <?php else: 
+
+      $hero_background_image = get_stylesheet_directory_uri() . '/images/urban-thailand.jpg';
+      $hero_background_image_css = '';
+
+      if(get_field('hero_background_image')){
+        $hero_background_image = get_field('hero_background_image');
+        $hero_background_image_css = get_field('hero_background_image_css');
+      } ?>
+
+      <div class="hero" style="background-image:url(<?php echo $hero_background_image; ?>); <?php echo $hero_background_image_css; ?>">
+        <div class="container">
+          <div class="hero-caption">
+            <h1><?php the_field('hero_title'); ?></h1>
+            <p><?php the_field('hero_caption'); ?></p>
+          </div>
+        </div>        
+      </div>
+
+    <?php endif; ?>
+  </div>
+
 <?php else:
+
   $hero_background_image = get_stylesheet_directory_uri() . '/images/urban-thailand.jpg';
   $hero_background_image_css = '';
 
@@ -149,4 +197,5 @@
       </div>
     </div>
   </div>
+  
 <?php endif; ?>

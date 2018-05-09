@@ -776,3 +776,102 @@ var Grid = (function () {
               }) 
             }, 100), 
             setTimeout(function () { a(".bs-top").affix() }, 100), function () { var b = a("#bs-theme-stylesheet"), c = a(".bs-docs-theme-toggle"), d = function () { b.attr("href", b.attr("data-href")), c.text("Disable theme preview"), localStorage.setItem("previewTheme", !0) }; localStorage.getItem("previewTheme") && d(), c.click(function () { var a = b.attr("href"); a && 0 !== a.indexOf("data") ? (b.attr("href", ""), c.text("Preview theme"), localStorage.removeItem("previewTheme")) : d() }) }(), a(".tooltip-demo").tooltip({ selector: '[data-toggle="tooltip"]', container: "body" }), a(".popover-demo").popover({ selector: '[data-toggle="popover"]', container: "body" }), a(".tooltip-test").tooltip(), a(".popover-test").popover(), a(".bs-docs-popover").popover(), a("#loading-example-btn").on("click", function () { var b = a(this); b.button("loading"), setTimeout(function () { b.button("reset") }, 3e3) }), a("#exampleModal").on("show.bs.modal", function (b) { var c = a(b.relatedTarget), d = c.data("whatever"), e = a(this); e.find(".modal-title").text("New message to " + d), e.find(".modal-body input").val(d) }), a(".bs-docs-activate-animated-progressbar").on("click", function () { a(this).siblings(".progress").find(".progress-bar-striped").toggleClass("active") }), ZeroClipboard.config({ moviePath: "/assets/flash/ZeroClipboard.swf", hoverClass: "btn-clipboard-hover" }), a(".highlight").each(function () { var b = '<div class="zero-clipboard"><span class="btn-clipboard">Copy</span></div>'; a(this).before(b) }); var d = new ZeroClipboard(a(".btn-clipboard")), e = a("#global-zeroclipboard-html-bridge"); d.on("load", function () { e.data("placement", "top").attr("title", "Copy to clipboard").tooltip(), d.on("dataRequested", function (b) { var c = a(this).parent().nextAll(".highlight").first(); b.setText(c.text()) }), d.on("complete", function () { e.attr("title", "Copied!").tooltip("fixTitle").tooltip("show").attr("title", "Copy to clipboard").tooltip("fixTitle") }) }), d.on("noflash wrongflash", function () { a(".zero-clipboard").remove(), ZeroClipboard.destroy() }) }) }(jQuery), function () { "use strict"; anchors.options.placement = "left", anchors.add(".bs-docs-section > h1, .bs-docs-section > h2, .bs-docs-section > h3, .bs-docs-section > h4, .bs-docs-section > h5") }();
+
+
+//from single post sidebar upper
+                      <div class="post-card">
+                        <?php
+                          $sidebar_topic_categories = get_the_terms(get_the_ID(), 'category');
+                          $cur_sidebar_topic_category = $sidebar_topic_categories[0];
+                          $acf_sidebar_topic_category_id = 'category_' . $cur_sidebar_topic_category->term_id;
+                          $sidebar_topic_category_color = '#f7d2d4';
+  
+                        if(get_field('category_color', $acf_sidebar_topic_category_id)){
+                          $sidebar_topic_category_color = get_field('category_color', $acf_sidebar_topic_category_id);
+                        }
+
+                        $sidebar_topic_image_url = wp_get_attachment_url(get_post_thumbnail_id());
+                      ?>
+                      <h3 class="post-card-category" style="background-color:<?php echo $sidebar_topic_category_color; ?>;"><?php echo $cur_sidebar_topic_category->name; ?></h3>
+                        <div class="post-card-thumb">
+                          <img src="<?php echo $sidebar_topic_image_url; ?>" class="img-responsive center-block" alt="" />
+                          <h2 class="post-card-thumb-caption">
+                            <span class="summary-card-title-part"><?php the_field('post_pre_title'); ?></span>
+                            <span class="summary-card-title-main"><?php the_field('post_main_title'); ?></span>
+                            <span class="summary-card-title-part"><?php the_field('post_sub_title'); ?></span>
+                          </h2>
+                          <div class="post-caption-overlay"></div>
+                        </div>
+                        <div class="post-card-content">
+                          <h4 class="post-date"><?php echo get_the_date('M\. j, Y'); ?></h4>
+                          <hr style="border-color:<?php echo $sidebar_topic_category_color; ?>;" />
+                          <?php the_excerpt(); ?>
+                        <a href="<?php the_permalink(); ?>" class="post-read-more">Read More</a>
+                        </div>
+                      </div>
+                    
+
+//from single post sidebar lower
+                        <div class="post-card">
+                          <?php
+                            $sidebar_country_categories = get_the_terms(get_the_ID(), 'category');
+                            $cur_sidebar_country_category = $sidebar_country_categories[0];
+                            $acf_sidebar_country_category_id = 'category_' . $cur_sidebar_country_category->term_id;
+                            $sidebar_country_category_color = '#f7d2d4';
+    
+                        if(get_field('category_color', $acf_sidebar_country_category_id)){
+                            $sidebar_country_category_color = get_field('category_color', $acf_sidebar_country_category_id);
+                          }
+  
+                          $sidebar_country_image_url = wp_get_attachment_url(get_post_thumbnail_id());
+                        ?>
+                      <h3 class="post-card-category" style="background-color:#<?php echo $sidebar_country_category_color; ?>;"><?php echo $cur_sidebar_country_category->name; ?></h3>
+                          <div class="post-card-thumb">
+                            <img src="<?php echo $sidebar_country_image_url; ?>" class="img-responsive center-block" alt="" />
+                            <h2 class="post-card-thumb-caption">
+                              <span class="summary-card-title-part"><?php the_field('post_pre_title');?></span>
+                              <span class="summary-card-title-main"><?php the_field('post_main_title'); ?></span>
+                              <span class="summary-card-title-part"><?php the_field('post-sub-title'); ?></span>
+                            </h2>
+                            <div class="post-caption-overlay"></div>
+                          </div>
+                          <div class="post-card-content">
+                            <h4 class="post-date"><?php echo get_the_date('M\. j, Y'); ?></h4>
+                            <hr style="border-color:<?php echo $sidebar_country_category_sidebar; ?>;" />
+                            <?php the_excerpt(); ?>
+                        <a href="<?php the_permalink(); ?>" class="post-read-more">Read More</a>
+                          </div>
+                        </div>
+                    
+//from home loop
+                  <div class="post-card">
+                    <?php
+                      $category_color = '#f7d2d4';
+                      $cur_categories = get_the_terms(get_the_ID(), 'category');
+                      $cur_category = $cur_categories[0];
+                      $acf_cat_id = 'category_' . $cur_category->term_id;
+    
+                  if(get_field('category_color', $acf_cat_id)){
+                      $category_color = get_field('category_color', $acf_cat_id);
+                    }
+  
+                    $featured_image_url = wp_get_attachment_url(get_post_thumbnail_id());
+                  ?>
+                <h3 class="post-card-category" style="background-color:<?php echo $category_color; ?>;"><?php echo $cur_category->name; ?></h3>
+                    <div class="post-card-thumb">
+                      <img src="<?php echo $featured_image_url; ?>" class="img-responsive center-block" alt="" />
+                      <h2 class="post-card-thumb-caption">
+                        <span class="summary-card-title-part" style="color:#fff;"><?php the_field('post_pre_title'); ?></span>
+                        <span class="summary-card-title-main" style="color:#fff;"><?php the_field('post_main_title'); ?></span>
+                        <span class="summary-card-title-part" style="color:#fff;"><?php the_field('post_sub_title'); ?></span>
+                      </h2>
+                      <div class="post-caption-overlay"></div>
+                    </div>
+                    <div class="post-card-content">
+                      <h4 class="post-date"><?php echo get_the_date('M\. j, Y'); ?></h4>
+                      <hr style="border-color:<?php echo $category_color; ?>;" />
+                      <?php the_excerpt(); ?>
+                  <a href="<?php the_permalink(); ?>" class="post-read-more">Read More</a>
+                    </div>
+                  </div>
+              
