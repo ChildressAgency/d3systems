@@ -307,7 +307,7 @@ function d3systems_create_post_types(){
     'capability_type' => 'post',
     'public' => true,
     'menu_position' => 5,
-    'menu_icon' => 'dashicons-groups',
+    'menu_icon' => 'dashicons-businessman',
     'query_var' => 'staff',
     'supports' => array(
       'title',
@@ -385,6 +385,59 @@ function d3systems_create_post_types(){
   register_taxonomy('language', 'staff', $languages_args);
   
   //subsidiaries
+  $subsidiaries_labels = array(
+    'name' => 'Subsidiaries',
+    'singular_name' => 'Subsidiary',
+    'menu_name' => 'Subsidiaries',
+    'add_new_item' => 'Add New Subsidiary',
+    'search_items' => 'Search Subsidiaries',
+    'edit_item' => 'Edit Subsidiary',
+    'view_item' => 'View Subsidiary',
+    'all_items' => 'All Subsidiaries',
+    'new_item' => 'New Subsidiary',
+    'not_found' => 'Subsidiary Not Found'
+  );
+  $subsidiaries_args = array(
+    'labels' => $subsidiaries_labels,
+    'capability_type' => 'post',
+    'public' => true,
+    'menu_position' => 6,
+    'menu_icon' => 'dashicons-networking',
+    'query_var' => 'subsidiaries',
+    'support' => array(
+      'title',
+      'editor', 
+      'custom_fields'
+    )
+  );
+  register_post_type('subsidiary', $subsidiaries_args);
+
+  //clients
+  $clients_labels = array(
+    'name' => 'Clients',
+    'singular_name' => 'Client',
+    'menu_name' => 'Clients',
+    'add_new_item' => 'Add Client',
+    'search_items' => 'Search Clients',
+    'edit_item' => 'Edit Client',
+    'view_item' => 'View Client',
+    'all_items' => 'All Clients',
+    'new_item' => 'New Client',
+    'not_found' => 'Client Not Found'
+  );
+  $clients_args = array(
+    'labels' => $clients_args,
+    'capability_type' => 'post',
+    'public' => true,
+    'menu_position' => 7,
+    'menu_icon' => 'dashicons-groups',
+    'query_var' => 'client',
+    'supports' => array(
+      'title',
+      'editor',
+      'custom_fields'
+    )
+  );
 }
 
 add_action('init', 'd3systems_create_taxonomies');
