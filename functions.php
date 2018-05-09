@@ -271,7 +271,17 @@ function d3systems_header_fallback_menu(){ ?>
   <ul class="nav navbar-nav">
     <li<?php if(is_page('our-process')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('our-process'); ?>">Our Process</a></li>
     <li<?php if(is_page('our-network')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('our-network'); ?>">Our Network</a></li>
-    <li<?php if(is_page_template('global-reach')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('global-reach'); ?>">Global Reach</a></li>
+    <li<?php if(is_page_template('global-reach')){ echo ' class="active"'; } ?>>
+      <a href="<?php echo home_url('global-reach'); ?>" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Global Reach</a>
+      <ul class="dropdown-menu">
+        <li<?php if(is_page('the-americas-and-the-caribbean')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('the-americas-and-the-caribbean'); ?>">The Americas and the Caribbean</a></li>
+        <li<?php if(is_page('europe')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('europe'); ?>">Europe</a></li>
+        <li<?php if(is_page('middle-east-and-north-africa')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('middle-east-and-north-africa'); ?>">Middle East and North Africa</a></li>
+        <li<?php if(is_page('sub-saharan-africa')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('sub-saharan-africa'); ?>">Sub-Saharan Africa</a></li>
+        <li<?php if(is_page('central-and-south-asia')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('central-and-south-asia'); ?>">Central and South Asia</a></li>
+        <li<?php if(is_page('east-southeast-asia-and-oceana')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('east-southeast-asia-and-oceana'); ?>">East, Southeast Asia and Oceana</a></li>
+      </ul>
+    </li>
     <li<?php if(is_home() || is_single() || is_category() || is_tag()){ echo ' class="active"'; } ?>><a href="<?php echo home_url('our-work'); ?>">Our Work</a></li>
     <li<?php if(is_page('contact')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('contact'); ?>">Contact</a></li>
   </ul>
