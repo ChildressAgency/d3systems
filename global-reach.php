@@ -3,7 +3,7 @@
   Template Name: Global Reach Template
 */
 
-get_header(); ?>
+get_header('global-reach'); ?>
   <div id="global-reach-nav" class="justified-nav">
     <ul class="nav nav-tabs nav-justified">
       <li<?php if(is_page('global-reach')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('global-reach'); ?>">Global Reach</a></li>

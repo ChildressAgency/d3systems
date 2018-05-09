@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_header('home'); ?>
   <section id="competency-cards" class="icon-cards">
     <div class="container container-sm-height">
       <div class="row row-sm-height">
