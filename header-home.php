@@ -21,7 +21,7 @@
     <![endif]-->
 </head>
 
-<body>
+<body <?php body_class(); ?>>
   <div class="landing-page-wrapper">
     <div class="landing-page-wrapper-inner">
       <nav id="header-nav">
