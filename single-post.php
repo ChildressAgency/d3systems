@@ -1,0 +1,210 @@
+<?php get_header(); ?>
+  <div id="our-work-single">
+    <div class="container">
+      <?php get_template_part('partials/our-work-filters'); ?>
+      <section id="main-article">
+        <div class="row">
+          <div class="col-sm-8">
+            <main class="post">
+              <?php $countries_list = ''; $topics_list = ''; ?>
+              <?php if(have_posts()): while(have_posts()): the_post(); ?>
+                <?php 
+                  $category_color = '#f7d2d4';
+                  $cur_categories = get_the_terms(get_the_ID(), 'category');
+                  $cur_category = $cur_categories[0];
+                  $acf_cat_id = 'category_' . $cur_category->term_id;
+
+                  if(get_field('category_color', $acf_cat_id)){
+                    $category_color = get_field('category_color', $acf_cat_id);
+                  }
+                ?>
+                <h3 class="post-category" style="background-color:<?php echo $category_color; ?>;"><?php echo $cur_category->name; ?></h3>
+                <header class="post-header">
+                  <h1>
+                    <span class="post-title-part"><?php the_field('post_pre_title'); ?></span>
+                    <span class="post-title-main"><?php the_field('post_main_title'); ?></span>
+                    <span class="post-title-part"><?php the_field('post_sub_title'); ?></span>
+                  </h1>
+                  <hr style="border-color:<?php echo $category_color; ?>;" />
+                  <h4 class="post-date"><?php echo get_the_date('M\. j, Y'); ?></h4>
+                </header>
+                <article>
+                  <?php the_content(); ?>
+                </article>
+                <footer>
+                  <div class="footnotes">
+                    <?php if(have_rows('footnotes')): while(have_rows('footnotes')): the_row(); ?>
+                      <p><?php the_sub_field('footnote'); ?></p>
+                    <?php endwhile; endif; ?>
+                  </div>
+                  <p>This entry was posted on <?php echo get_the_date('F j, Y'); ?>, <?php the_author(); ?>
+                  <p>Countries: 
+                    <?php
+                      $countries_list = wp_get_post_terms($post->ID, 'country');
+                      $c = 0;
+                      $country_count = count($countries_list);
+                      foreach($countries_list as $country){
+                        echo '<a href="' . esc_url(get_term_link($country)) . '">' . $country->name . '</a>';
+                        if($c < $country_count){ echo ' | '; }
+                        $c++;
+                      }
+                    ?>
+                  </p>
+                  <p>Topics: 
+                    <?php
+                      $topics_list = wp_get_post_terms($post-ID, 'topic');
+                      $t = 0;
+                      $topics_count = count($topics_list);
+                      foreach($topics_list as $topic){
+                        echo '<a href="' . esc_url(get_term_link($topic)) . '">' . $topic->name . '</a>';
+                        if($t < $topics_count){ echo ' | '; }
+                        $t++;
+                      }
+                    ?>
+                  </p>
+                </footer>
+              <?php endwhile; else: ?>
+                <p>Sorry, there is nothing to display.</p>
+              <?php endif; ?>
+            </main>
+          </div>
+          <div class="col-sm-4">
+            <aside id="work-sidebar">
+              <section class="sidebar-section sidebar-details">
+                <h3>Filter Results:</h3>
+                <ul>
+                  <li>Type: <?php echo $cur_category->name; ?></li>
+                  <li>Topic: 
+                    <?php 
+                      $t = 0;
+                      foreach($topics_list as $topic){
+                        echo '<a href="' . esc_url(get_term_link($topic)) . '">' . $topic->name . '</a>';
+                        if($t < $topics_count){ echo ', '; } 
+                        $t++;
+                      }
+                    ?>
+                  </li>
+                  <li>Country: 
+                    <?php
+                      $c=0;
+                      foreach($countries_list as $country){
+                        echo '<a href="' . esc_url(get_term_link($country)) . '">' . $country->name . '</a>';
+                        if($c < $country_count){ echo ', '; }
+                        $c++;
+                      }
+                    ?>                    
+                  </li>
+                  <li>Date: <?php echo get_the_date('Y'); ?></li>
+                </ul>
+                <div class="sidebar-section-footer">
+                  <a href="<?php echo home_url('contact'); ?>">Get in Touch <span class="glyphicon glyphicon-menu-right"></span></a>
+                </div>
+              </section>
+              <?php
+                $topic = $topics_list[0];
+                $sidebar_topic = new WP_Query(array(
+                  'post_type' => 'post',
+                  'posts_per_page' => 1,
+                  'tax_query' => array(
+                    array(
+                      'taxonomy' => 'topic',
+                      'terms' => $topic->term_id
+                    )
+                  )
+                ));
+
+                if($sidebar_topic->have_posts()): while($sidebar_topic->have_posts()): $sidebar_topic->the_post(); ?>
+                  <section class="sidebar-section">
+                    <div class="post-card">
+                      <?php 
+                        $sidebar_topic_categories = get_the_terms(get_the_ID(), 'category');
+                        $cur_sidebar_topic_category = $sidebar_topic_categories[0];
+                        $acf_sidebar_topic_category_id = 'category_' . $cur_sidebar_topic_category->term_id;
+                        $sidebar_topic_category_color = '#f7d2d4';
+
+                        if(get_field('category_color', $acf_sidebar_topic_category_id)){
+                          $sidebar_topic_category_color = get_field('category_color', $acf_sidebar_topic_category_id);
+                        }
+
+                        $sidebar_topic_image_url = wp_get_attachment_url(get_post_thumbnail_id());
+                      ?>
+                      <h3 class="post-card-category" style="background-color:<?php echo $sidebar_topic_category_color; ?>;"><?php echo $cur_sidebar_topic_category->name; ?></h3>
+                      <div class="post-card-thumb">
+                        <img src="<?php echo $sidebar_topic_image_url; ?>" class="img-responsive center-block" alt="" />
+                        <h2 class="post-card-thumb-caption">
+                          <span class="summary-card-title-part"><?php the_field('post_pre_title'); ?></span>
+                          <span class="summary-card-title-main"><?php the_field('post_main_title'); ?></span>
+                          <span class="summary-card-title-part"><?php the_field('post_sub_title'); ?></span>
+                        </h2>
+                        <div class="post-caption-overlay"></div>
+                      </div>
+                      <div class="post-card-content">
+                        <h4 class="post-date"><?php echo get_the_date('M\. j, Y'); ?></h4>
+                        <hr style="border-color:<?php echo $sidebar_topic_category_color; ?>;" />
+                        <?php the_excerpt(); ?>
+                        <a href="<?php the_permalink(); ?>" class="post-read-more">Read More</a>
+                      </div>
+                    </div>
+                  </section>
+              <?php endwhile; endif; wp_reset_postdata(); ?>
+
+              <?php 
+                $country = $country_list[0];
+                $sidebar_country = new WP_Query(array(
+                  'post_type' => 'post',
+                  'posts_per_page' => 1,
+                  'tax_query' => array(
+                    array(
+                      'taxonomy' => 'country',
+                      'terms' => $country->term_id
+                    )
+                  )
+                ));
+
+                if($sidebar_country->have_posts()): while($sidebar_country->have_posts()): $sidebar_country->the_post(); ?>
+                  <section class="sidebar-section">
+                    <div class="post-card">
+                      <?php
+                        $sidebar_country_categories = get_the_terms(get_the_ID(), 'category');
+                        $cur_sidebar_country_category = $sidebar_country_categories[0];
+                        $acf_sidebar_country_category_id = 'category_' . $cur_sidebar_country_category->term_id;
+                        $sidebar_country_category_color = '#f7d2d4';
+
+                        if(get_field('category_color', $acf_sidebar_country_category_id)){
+                          $sidebar_country_category_color = get_field('category_color', $acf_sidebar_country_category_id);
+                        }
+
+                        $sidebar_country_image_url = wp_get_attachment_url(get_post_thumbnail_id());
+                      ?>
+                      <h3 class="post-card-category" style="background-color:#<?php echo $sidebar_country_category_color; ?>;"><?php echo $cur_sidebar_country_category->name; ?></h3>
+                      <div class="post-card-thumb">
+                        <img src="<?php echo $sidebar_country_image_url; ?>" class="img-responsive center-block" alt="" />
+                        <h2 class="post-card-thumb-caption">
+                          <span class="summary-card-title-part"><?php the_field('post_pre_title');?></span>
+                          <span class="summary-card-title-main"><?php the_field('post_main_title'); ?></span>
+                          <span class="summary-card-title-part"><?php the_field('post-sub-title'); ?></span>
+                        </h2>
+                        <div class="post-caption-overlay"></div>
+                      </div>
+                      <div class="post-card-content">
+                        <h4 class="post-date"><?php echo get_the_date('M\. j, Y'); ?></h4>
+                        <hr style="border-color:<?php echo $sidebar_country_category_sidebar; ?>;" />
+                        <?php the_excerpt(); ?>
+                        <a href="<?php the_permalink(); ?>" class="post-read-more">Read More</a>
+                      </div>
+                    </div>
+                  </section>
+              <?php endwhile; endif; wp_reset_postdata(); ?>
+              <section class="sidebar-section">
+                <div class="sidebar-social">
+                  <h3>Get in Touch</h3>
+                  <?php get_template_part('partials/social-media'); ?>
+                </div>
+              </section>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+<?php get_footer(); ?>
