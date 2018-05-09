@@ -21,20 +21,8 @@
     <![endif]-->
 </head>
 
-<body <?php 
-  body_class(); 
-  if(is_page_template('global-reach.php') || is_page('our-network')){ 
-    echo ' data-spy="scroll" data-target="#page-progress" data-offset="150"';
-  }
-  elseif(is_page('our-process')){
-    echo ' data-spy="scroll" data-target="#page-progress" data-offset="200"';
-  } ?>>
-  <?php if(is_front_page()): ?>
-    <div class="landing-page-wrapper">
-      <div class="landing-page-wrapper-inner">
-  <?php endif; ?>
-
-  <nav id="header-nav" <?php if(!is_front_page()){ echo 'class="sticky"'; } ?>>
+<body <?php body_class(); ?>>
+  <nav id="header-nav" class="sticky">
     <div class="container">
       <div class="navbar-header">
         <a href="<?php echo home_url(); ?>" class="header-logo">
@@ -69,125 +57,15 @@
       </div>
     </div>
   </nav>
-<?php if(is_front_page()): ?>
+  <?php
+    $hero_background_image = get_stylesheet_directory_uri() . '/images/urban-thailand.jpg';
+    $hero_background_image_css = '';
 
-  <section id="hero" class="hp-hero">
-    <div class="container">
-      <h1>D3: Designs, Data, Decisions&mdash;</h1>
-      <p id="write-in">
-        <?php the_field('landing_page_text'); ?>
-      </p>
-    </div>
-  </section>
-    </div><!-- landing-page-wrapper-inner -->
-    <a href="#competency-cards" id="scroll-down" class="smooth-scroll"></a>
-  </div><!-- landing-page-wrapper -->
-
-<?php elseif(is_page('our-network')): ?>
-
-  <section id="staff">
-    <div class="hero" style="background-image:url(<?php the_field('hero_background_image'); ?>); <?php the_field('hero_background_image_css'); ?>">
-      <div class="container">
-        <div class="hero-caption">
-          <h1><?php the_field('hero_title'); ?></h1>
-          <p><?php the_field('hero_caption'); ?></p>
-        </div>
-      </div>
-    </div>
-  <?php //section intentionally not closed here ?>
-
-<?php elseif(is_page_template('global-reach.php')): ?>
-
-  <div class="hero-global hero">
-    <div class="container-fluid">
-      <?php 
-        global $post;
-        $region = $post->post_name;
-      ?>
-      <div class="globe-wrapper <?php echo $region; ?>">
-        <?php get_template_part('partials/global-reach-map'); ?>
-        <a id="americas-marker" href="" title="" class="red-marker" style="position: absolute; left: 21.21%; top: 31.85%; z-index: 2;">
-          <span class="pulse"></span>
-          <span class="pulse"></span>
-          <span class="pulse"></span>
-        </a>
-        <a id="europe-marker" href="" title="" class="red-marker" style="position: absolute; left: 47.15%; top: 26.3%; z-index: 2;">
-          <span class="pulse"></span>
-          <span class="pulse"></span>
-          <span class="pulse"></span>
-        </a>
-        <a id="sub-saharan-marker" href="" title="" class="red-marker" style="position: absolute; left: 53.66%; top: 59.23%; z-index: 2;">
-          <span class="pulse"></span>
-          <span class="pulse"></span>
-          <span class="pulse"></span>
-        </a>
-        <a id="south-central-asia-marker" href="" title="" class="red-marker" style="position: absolute; left: 60.95%; top: 33.58%; z-index: 2;">
-          <span class="pulse"></span>
-          <span class="pulse"></span>
-          <span class="pulse"></span>
-        </a>
-        <a id="east-asia-oceania-marker" href="" title="" class="red-marker" style="position: absolute; left: 72.44%; top: 55.42%; z-index: 2;">
-          <span class="pulse"></span>
-          <span class="pulse"></span>
-          <span class="pulse"></span>
-        </a>
-      </div>
-      <div class="hero-caption">
-        <h1><?php the_field('hero_title'); ?></h1>
-        <p><?php the_field('hero_caption'); ?></p>
-      </div>
-    </div>
-  </div>
-
-<?php elseif(is_page('contact')): ?>
-
-  <div class="hero contact-hero">
-    <?php if(get_field('contact_hero_setting') == 'carousel'): ?>
-
-      <div id="hero-carousel" class="carousel slide" data-interval="false" data-ride="carousel">
-        <div class="carousel-inner" role="listbox">
-          <?php if(have_rows('carousel_slides')): $cs=0; while(have_rows('carousel_slides')): the_row(); ?>
-            <div class="item<?php if($cs == 0){ echo ' active'; } ?>" style="background-image:url(<?php the_sub_field('carousel_slide_image'); ?>);"></div>
-          <?php endwhile; endif; ?>
-          <div class="hero-caption">
-            <h1><?php the_sub_field('hero_title'); ?></h1>
-            <p><?php the_sub_field('hero_caption'); ?></p>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-progress-bar"></div>
-
-    <?php else: 
-
-      $hero_background_image = get_stylesheet_directory_uri() . '/images/urban-thailand.jpg';
-      $hero_background_image_css = '';
-
-      if(get_field('hero_background_image')){
-        $hero_background_image = get_field('hero_background_image');
-        $hero_background_image_css = get_field('hero_background_image_css');
-      } ?>
-
-      <div class="hero" style="background-image:url(<?php echo $hero_background_image; ?>); <?php echo $hero_background_image_css; ?>">
-        <div class="container">
-          <div class="hero-caption">
-            <h1><?php the_field('hero_title'); ?></h1>
-            <p><?php the_field('hero_caption'); ?></p>
-          </div>
-        </div>        
-      </div>
-
-    <?php endif; ?>
-  </div>
-
-<?php else:
-
-  $hero_background_image = get_stylesheet_directory_uri() . '/images/urban-thailand.jpg';
-  $hero_background_image_css = '';
-
-  if(get_field('hero_background_image')){
-    $hero_background_image = get_field('hero_background_image');
-    $hero_background_image_css = get_field('hero_background_image_css');
-  } ?>
+    if(get_field('hero_background_image')){
+      $hero_background_image = get_field('hero_background_image');
+      $hero_background_image_css = get_field('hero_background_image_css');
+    } 
+  ?>
 
   <div class="hero" style="background-image:url(<?php echo $hero_background_image; ?>); <?php echo $hero_background_image_css; ?>">
     <div class="container">
@@ -197,5 +75,3 @@
       </div>
     </div>
   </div>
-  
-<?php endif; ?>
