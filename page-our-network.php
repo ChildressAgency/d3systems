@@ -12,32 +12,34 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Team</a>
           <ul class="dropdown-menu">
-            <li><a href="#" class="filter" data-filter=".executive">Executive</a></li>
-            <li><a href="#" class="filter" data-filter=".management">Management</a></li>
-            <li><a href="#" class="filter" data-filter=".analysts">Analysts</a></li>
-            <li><a href="#" class="filter" data-filter=".statisticians">Statisticians</a></li>
-            <li><a href="#" class="filter" data-filter=".administration">Administration</a></li>
+            <?php
+              $teams = get_terms('team', array('hide_empty' => 0));
+              foreach($teams as $team){
+                echo '<li><a href="#" class="filter" data-filter=".' . $team->slug . '">' . $team->name . '</a></li>';
+              }
+            ?>
           </ul>
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Regional Expertise</a>
           <ul class="dropdown-menu">
-            <li><a href="#" class="filter" data-filter=".the-americas-and-the-caribbean">The Americas and the Caribbean</a></li>
-            <li><a href="#" class="filter" data-filter=".europe">Europe</a></li>
-            <li><a href="#" class="filter" data-filter=".middle-east-and-north-africa">Middle East and North Africa</a></li>
-            <li><a href="#" class="filter" data-filter=".sub-saharan-africa">Sub-Saharan Africa</a></li>
-            <li><a href="#" class="filter" data-filter=".central-and-south-asia">Central and South Asia</a></li>
-            <li><a href="#" class="filter" data-filter=".east-asia-southeast-asia-and-oceana">East Asia, Southeast Asia, and Oceana</a></li>
+            <?php
+              $regional_expertise = get_terms('regional_expertise', array('hide_empty' => 0));
+              foreach($regional_expertise as $region){
+                echo '<li><a href="#" class="filter" data-filter=".' . $region->slug . '">' . $region->name . '</a></li>';
+              }
+            ?>
           </ul>
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Languages</a>
           <ul class="dropdown-menu">
-            <li><a href="#" class="filter" data-filter=".english">English</a></li>
-            <li><a href="#" class="filter" data-filter=".spanish">Spanish</a></li>
-            <li><a href="#" class="filter" data-filter=".french">French</a></li>
-            <li><a href="#" class="filter" data-filter=".pashto">Pashto</a></li>
-            <li><a href="#" class="filter" data-filter=".dari">Dari</a></li>
+            <?php
+              $languages = get_terms('language', array('hide_empty' => 0));
+              foreach($languages as $language){
+                echo '<li><a href="#" class="filter" data-filter=".' . $language->slug . '">' . $language->name . '</a></li>';
+              }
+            ?>
           </ul>
         </li>
       </ul>
