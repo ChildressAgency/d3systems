@@ -276,3 +276,50 @@ function d3systems_header_fallback_menu(){ ?>
     <li<?php if(is_page('contact')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('contact'); ?>">Contact</a></li>
   </ul>
 <?php }
+
+add_action('init', 'd3systems_create_our_work_taxonomies');
+function d3systems_create_our_work_taxonomies(){
+  $topic_labels = array(
+    'name' => 'Topics',
+    'singular_name' => 'Topic',
+    'search_items' => 'Search Topics',
+    'all_items' => 'All Topics',
+    'parent_item' => 'Parent Topic',
+    'parent_item_colon' => 'Parent Topic:',
+    'edit_item' => 'Edit Topic',
+    'update_item' => 'Update Topic',
+    'add_new_item' => 'Add New Topic',
+    'new_item_name' => 'New Topic Name',
+    'menu_name' => 'Topics'
+  );
+  $topic_args = array(
+    'hierarchical' => true,
+    'labels' => $topic_labels,
+    'show_ui' => true,
+    'show_admin_column' => true,
+    'query_var' => 'topics',
+  );
+  register_taxonomy('topic', $topic_args);
+
+  $country_labels = array(
+    'name' => 'Countries',
+    'singular_name' => 'Country',
+    'search_items' => 'Search Countries',
+    'all_items' => 'All Countries',
+    'parent_item' => 'Parent Country',
+    'parent_item_colon' => 'Parent Country:',
+    'edit_item' => 'Edit Country',
+    'update_item' => 'Update Country',
+    'add_new_item' => 'Add New Country',
+    'new_item_name' => 'New Country Name',
+    'menu_name' => 'Countries'
+  );
+  $country_args = array(
+    'hierarchical' => true,
+    'labels' => $country_labels,
+    'show_ui' => true,
+    'show_admin_column' => true,
+    'query_var' => 'countries'
+  );
+  register_taxonomy('country', $country_args);
+}

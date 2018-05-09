@@ -393,10 +393,12 @@ a:hover:after{
   background-color:#fff;
   color:#191919;
 }
-.nav-tabs>li.nav-tab-label>a{
+.nav-tabs>li.nav-tab-label{
   color:#fff !important;
   background-color:#999 !important;
   box-shadow:none !important;
+  padding:2px 35px;
+  font-size:12px;
 }
 
 #staff,
@@ -1481,6 +1483,10 @@ g#Layer_244{
   background-color:#999;
 }
 
+.index-summary{
+  margin-bottom:40px;
+}
+
 
 @media (max-width:767px){
   .header-logo>img{
@@ -1511,6 +1517,27 @@ g#Layer_244{
   }
   .justified-nav .nav-tabs>li{
     box-shadow:none;
+  }
+  .post-header h1>.post-title-part{
+    font-size:40px;
+  }
+  .post-header h1>.post-title-main{
+    font-size:45px;
+  }
+  #filter-nav.nav-tabs>li,
+  #our-work-nav.nav-tabs>li{
+    float:none;
+    text-align: center;
+  }
+  #filter-nav.nav-tabs>li>a,
+  #our-work-nav.nav-tabs>li>a{
+    padding-left:15px;
+    padding-right:15px;
+    box-shadow:none;
+  }
+  #our-work-nav.nav-tabs .nav-tab-label{
+    padding-left:15px;
+    padding-right:15px;
   }
 }
 @media (min-width:768px){

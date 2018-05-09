@@ -95,10 +95,8 @@
   <div class="hero-global hero">
     <div class="container-fluid">
       <?php 
-        $region = '';
-        if(!is_page('global-reach')){
-          $region = get_field('globe_region_id');
-        }
+        global $post;
+        $region = $post->post_name;
       ?>
       <div class="globe-wrapper <?php echo $region; ?>">
         <?php get_template_part('partials/global-reach-map'); ?>
