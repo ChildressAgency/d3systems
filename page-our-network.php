@@ -44,104 +44,53 @@
         </li>
       </ul>
       <div id="staff_grid" class="grid row">
-        <!--<div class="grid-sizer col-xs-6 col-sm-3"></div>-->
-        <div class="grid-item circle-card executive management middle-east-and-north-africa english">
-          <a href="#" class="circle-card-content" data-details_name="David Jodice, PH.D." data-details_title="President & Chief Executive Officer" data-details_bio="<p>Dr. Jodice has led research teams on cross-national political instability and violence (Science Center Berlin), surveys in developing countries (Research Management Services) and full-service opinion, media and market research (D3 Systems, Inc.) from 1977 to 2015. He is the Founder and President of D3 Systems, a co-founder of full-service research companies in Afghanistan (ACSOR), Bosnia & Herzegovina (MIB) and Kenya (Infinite Insight). With Matthew Warshaw (also D3) and colleagues from Bulgaria (Kantcho Stoychev and Andrei Raichev) he has co-founded Research Control Solutions. A key driver for Dr. Jodice is capacity building - at home and abroad - at the individual, team, and company levels.</p>" data-staff_team="Management" data-staff_degrees="B.A. in History (Gordon College), M.A. and Ph.D. in Government (Harvard)" data-staff_languages="English" data-staff_countryexp="Afghanistan, Bosnia, Herzegovina, and Kenya">
-            <img src="images/headshots/david-jodice.jpg" class="img-circle center-block" alt="David Jodice" />
-            <h4>David A. Jodice, Ph.D.</h4>
-            <p>President and Chief Executive Officer President and Chief Executive Officer</p>
-          </a>
-        </div>
-        <div class="grid-item circle-card management administration the-americas-and-the-caribbean english spanish">
-          <a href="#" class="circle-card-content" data-details_name="Member 2 Name" data-details_title="President & Chief Executive Officer" data-details_bio="<p>Dr. Jodice has led research teams on cross-national political instability and violence (Science Center Berlin), surveys in developing countries (Research Management Services) and full-service opinion, media and market research (D3 Systems, Inc.) from 1977 to 2015. He is the Founder and President of D3 Systems, a co-founder of full-service research companies in Afghanistan (ACSOR), Bosnia & Herzegovina (MIB) and Kenya (Infinite Insight). With Matthew Warshaw (also D3) and colleagues from Bulgaria (Kantcho Stoychev and Andrei Raichev) he has co-founded Research Control Solutions. A key driver for Dr. Jodice is capacity building - at home and abroad - at the individual, team, and company levels.</p>" data-staff_team="Management" data-staff_yearsexp="40" data-staff_degrees="B.A. in History (Gordon College), M.A. and Ph.D. in Government (Harvard)" data-staff_languages="English" data-staff_countryexp="Afghanistan, Bosnia">
-            <img src="images/headshots/david-jodice.jpg" class="img-circle center-block" alt="David Jodice" />
-            <h4>David A. Jodice, Ph.D.</h4>
-            <p>President and Chief Executive Officer</p>
-          </a>
-        </div>
-        <div class="grid-item circle-card analysts europe middle-east-and-north-africa pashto">
-          <a href="#" class="circle-card-content" data-details_name="Member 3 Name" data-details_title="President & Chief Executive Officer"
-            data-details_bio="<p>Dr. Jodice has led research teams on cross-national political instability and violence (Science Center Berlin), surveys in developing countries (Research Management Services) and full-service opinion, media and market research (D3 Systems, Inc.) from 1977 to 2015. He is the Founder and President of D3 Systems, a co-founder of full-service research companies in Afghanistan (ACSOR), Bosnia & Herzegovina (MIB) and Kenya (Infinite Insight). With Matthew Warshaw (also D3) and colleagues from Bulgaria (Kantcho Stoychev and Andrei Raichev) he has co-founded Research Control Solutions. A key driver for Dr. Jodice is capacity building - at home and abroad - at the individual, team, and company levels.</p>" data-staff_team="Management" data-staff_yearsexp="40" data-staff_degrees="B.A. in History (Gordon College), M.A. and Ph.D. in Government (Harvard)" data-staff_languages="English" data-staff_countryexp="Afghanistan, Bosnia, Herzegovina, and Kenya">
-            <img src="images/headshots/david-jodice.jpg" class="img-circle center-block" alt="David Jodice" />
-            <h4>David A. Jodice, Ph.D.</h4>
-            <p>President and Chief Executive Officer</p>
-          </a>
-        </div>
-        <div class="grid-item circle-card executive management middle-east-and-north-africa english">
-          <a href="#" class="circle-card-content" data-details_name="Member 4 Name" data-details_title="President & Chief Executive Officer"
-            data-details_bio="<p>Dr. Jodice has led research teams on cross-national political instability and violence (Science Center Berlin), surveys in developing countries (Research Management Services) and full-service opinion, media and market research (D3 Systems, Inc.) from 1977 to 2015. He is the Founder and President of D3 Systems, a co-founder of full-service research companies in Afghanistan (ACSOR), Bosnia & Herzegovina (MIB) and Kenya (Infinite Insight). With Matthew Warshaw (also D3) and colleagues from Bulgaria (Kantcho Stoychev and Andrei Raichev) he has co-founded Research Control Solutions. A key driver for Dr. Jodice is capacity building - at home and abroad - at the individual, team, and company levels.</p>" data-staff_team="Management" data-staff_yearsexp="40" data-staff_degrees="B.A. in History (Gordon College), M.A. and Ph.D. in Government (Harvard)" data-staff_languages="English" data-staff_countryexp="Afghanistan, Bosnia, Herzegovina, and Kenya">
-            <img src="images/headshots/david-jodice.jpg" class="img-circle center-block" alt="David Jodice" />
-            <h4>David A. Jodice, Ph.D.</h4>
-            <p>President and Chief Executive Officer</p>
-          </a>
-        </div>
-        <div class="grid-item circle-card executive management middle-east-and-north-africa english">
-          <a href="#" class="circle-card-content" data-details_name="Member 5 Name" data-details_title="President & Chief Executive Officer"
-            data-details_bio="<p>Dr. Jodice has led research teams on cross-national political instability and violence (Science Center Berlin), surveys in developing countries (Research Management Services) and full-service opinion, media and market research (D3 Systems, Inc.) from 1977 to 2015. He is the Founder and President of D3 Systems, a co-founder of full-service research companies in Afghanistan (ACSOR), Bosnia & Herzegovina (MIB) and Kenya (Infinite Insight). With Matthew Warshaw (also D3) and colleagues from Bulgaria (Kantcho Stoychev and Andrei Raichev) he has co-founded Research Control Solutions. A key driver for Dr. Jodice is capacity building - at home and abroad - at the individual, team, and company levels.</p>" data-staff_team="Management" data-staff_yearsexp="40" data-staff_degrees="B.A. in History (Gordon College), M.A. and Ph.D. in Government (Harvard)" data-staff_languages="English" data-staff_countryexp="Afghanistan, Bosnia, Herzegovina, and Kenya">
-            <img src="images/headshots/david-jodice.jpg" class="img-circle center-block" alt="David Jodice" />
-            <h4>David A. Jodice, Ph.D.</h4>
-            <p>President and Chief Executive Officer</p>
-          </a>
-        </div>
-        <div class="grid-item circle-card executive management middle-east-and-north-africa english">
-          <a href="#" class="circle-card-content" data-details_name="Member 6 Name" data-details_title="President & Chief Executive Officer"
-            data-details_bio="<p>Dr. Jodice has led research teams on cross-national political instability and violence (Science Center Berlin), surveys in developing countries (Research Management Services) and full-service opinion, media and market research (D3 Systems, Inc.) from 1977 to 2015. He is the Founder and President of D3 Systems, a co-founder of full-service research companies in Afghanistan (ACSOR), Bosnia & Herzegovina (MIB) and Kenya (Infinite Insight). With Matthew Warshaw (also D3) and colleagues from Bulgaria (Kantcho Stoychev and Andrei Raichev) he has co-founded Research Control Solutions. A key driver for Dr. Jodice is capacity building - at home and abroad - at the individual, team, and company levels.</p>" data-staff_team="Management" data-staff_yearsexp="40" data-staff_degrees="B.A. in History (Gordon College), M.A. and Ph.D. in Government (Harvard)" data-staff_languages="English" data-staff_countryexp="Afghanistan, Bosnia, Herzegovina, and Kenya">
-            <img src="images/headshots/david-jodice.jpg" class="img-circle center-block" alt="David Jodice" />
-            <h4>David A. Jodice, Ph.D.</h4>
-            <p>President and Chief Executive Officer</p>
-          </a>
-        </div>
-        <div class="grid-item circle-card executive management middle-east-and-north-africa english">
-          <a href="#" class="circle-card-content" data-details_name="Member 7 Name" data-details_title="President & Chief Executive Officer"
-            data-details_bio="<p>Dr. Jodice has led research teams on cross-national political instability and violence (Science Center Berlin), surveys in developing countries (Research Management Services) and full-service opinion, media and market research (D3 Systems, Inc.) from 1977 to 2015. He is the Founder and President of D3 Systems, a co-founder of full-service research companies in Afghanistan (ACSOR), Bosnia & Herzegovina (MIB) and Kenya (Infinite Insight). With Matthew Warshaw (also D3) and colleagues from Bulgaria (Kantcho Stoychev and Andrei Raichev) he has co-founded Research Control Solutions. A key driver for Dr. Jodice is capacity building - at home and abroad - at the individual, team, and company levels.</p>" data-staff_team="Management" data-staff_yearsexp="40" data-staff_degrees="B.A. in History (Gordon College), M.A. and Ph.D. in Government (Harvard)" data-staff_languages="English" data-staff_countryexp="Afghanistan, Bosnia, Herzegovina, and Kenya">
-            <img src="images/headshots/david-jodice.jpg" class="img-circle center-block" alt="David Jodice" />
-            <h4>David A. Jodice, Ph.D.</h4>
-            <p>President and Chief Executive Officer</p>
-          </a>
-        </div>
-        <div class="grid-item circle-card executive management middle-east-and-north-africa english">
-          <a href="#" class="circle-card-content" data-details_name="Member 8 Name" data-details_title="President & Chief Executive Officer"
-            data-details_bio="<p>Dr. Jodice has led research teams on cross-national political instability and violence (Science Center Berlin), surveys in developing countries (Research Management Services) and full-service opinion, media and market research (D3 Systems, Inc.) from 1977 to 2015. He is the Founder and President of D3 Systems, a co-founder of full-service research companies in Afghanistan (ACSOR), Bosnia & Herzegovina (MIB) and Kenya (Infinite Insight). With Matthew Warshaw (also D3) and colleagues from Bulgaria (Kantcho Stoychev and Andrei Raichev) he has co-founded Research Control Solutions. A key driver for Dr. Jodice is capacity building - at home and abroad - at the individual, team, and company levels.</p>" data-staff_team="Management" data-staff_yearsexp="40" data-staff_degrees="B.A. in History (Gordon College), M.A. and Ph.D. in Government (Harvard)" data-staff_languages="English" data-staff_countryexp="Afghanistan, Bosnia, Herzegovina, and Kenya">
-            <img src="images/headshots/david-jodice.jpg" class="img-circle center-block" alt="David Jodice" />
-            <h4>David A. Jodice, Ph.D.</h4>
-            <p>President and Chief Executive Officer</p>
-          </a>
-        </div>
-        <div class="grid-item circle-card executive management middle-east-and-north-africa english">
-          <a href="#" class="circle-card-content" data-details_name="Member 9 Name" data-details_title="President & Chief Executive Officer"
-            data-details_bio="<p>Dr. Jodice has led research teams on cross-national political instability and violence (Science Center Berlin), surveys in developing countries (Research Management Services) and full-service opinion, media and market research (D3 Systems, Inc.) from 1977 to 2015. He is the Founder and President of D3 Systems, a co-founder of full-service research companies in Afghanistan (ACSOR), Bosnia & Herzegovina (MIB) and Kenya (Infinite Insight). With Matthew Warshaw (also D3) and colleagues from Bulgaria (Kantcho Stoychev and Andrei Raichev) he has co-founded Research Control Solutions. A key driver for Dr. Jodice is capacity building - at home and abroad - at the individual, team, and company levels.</p>" data-staff_team="Management" data-staff_yearsexp="40" data-staff_degrees="B.A. in History (Gordon College), M.A. and Ph.D. in Government (Harvard)" data-staff_languages="English" data-staff_countryexp="Afghanistan, Bosnia, Herzegovina, and Kenya">
-            <img src="images/headshots/david-jodice.jpg" class="img-circle center-block" alt="David Jodice" />
-            <h4>David A. Jodice, Ph.D.</h4>
-            <p>President and Chief Executive Officer</p>
-          </a>
-        </div>
-        <div class="grid-item circle-card executive management middle-east-and-north-africa english">
-          <a href="#" class="circle-card-content" data-details_name="Member 10 Name" data-details_title="President & Chief Executive Officer"
-            data-details_bio="<p>Dr. Jodice has led research teams on cross-national political instability and violence (Science Center Berlin), surveys in developing countries (Research Management Services) and full-service opinion, media and market research (D3 Systems, Inc.) from 1977 to 2015. He is the Founder and President of D3 Systems, a co-founder of full-service research companies in Afghanistan (ACSOR), Bosnia & Herzegovina (MIB) and Kenya (Infinite Insight). With Matthew Warshaw (also D3) and colleagues from Bulgaria (Kantcho Stoychev and Andrei Raichev) he has co-founded Research Control Solutions. A key driver for Dr. Jodice is capacity building - at home and abroad - at the individual, team, and company levels.</p>" data-staff_team="Management" data-staff_yearsexp="40" data-staff_degrees="B.A. in History (Gordon College), M.A. and Ph.D. in Government (Harvard)" data-staff_languages="English" data-staff_countryexp="Afghanistan, Bosnia, Herzegovina, and Kenya">
-            <img src="images/headshots/david-jodice.jpg" class="img-circle center-block" alt="David Jodice" />
-            <h4>David A. Jodice, Ph.D.</h4>
-            <p>President and Chief Executive Officer</p>
-          </a>
-        </div>
-        <div class="grid-item circle-card executive management middle-east-and-north-africa english">
-          <a href="#" class="circle-card-content" data-details_name="Member 11 Name" data-details_title="President & Chief Executive Officer"
-            data-details_bio="<p>Dr. Jodice has led research teams on cross-national political instability and violence (Science Center Berlin), surveys in developing countries (Research Management Services) and full-service opinion, media and market research (D3 Systems, Inc.) from 1977 to 2015. He is the Founder and President of D3 Systems, a co-founder of full-service research companies in Afghanistan (ACSOR), Bosnia & Herzegovina (MIB) and Kenya (Infinite Insight). With Matthew Warshaw (also D3) and colleagues from Bulgaria (Kantcho Stoychev and Andrei Raichev) he has co-founded Research Control Solutions. A key driver for Dr. Jodice is capacity building - at home and abroad - at the individual, team, and company levels.</p>" data-staff_team="Management" data-staff_yearsexp="40" data-staff_degrees="B.A. in History (Gordon College), M.A. and Ph.D. in Government (Harvard)" data-staff_languages="English" data-staff_countryexp="Afghanistan, Bosnia, Herzegovina, and Kenya">
-            <img src="images/headshots/david-jodice.jpg" class="img-circle center-block" alt="David Jodice" />
-            <h4>David A. Jodice, Ph.D.</h4>
-            <p>President and Chief Executive Officer</p>
-          </a>
-        </div>
-        <div class="grid-item circle-card executive management middle-east-and-north-africa english">
-          <a href="#" class="circle-card-content" data-details_name="Member 12 Name" data-details_title="President & Chief Executive Officer"
-            data-details_bio="<p>Dr. Jodice has led research teams on cross-national political instability and violence (Science Center Berlin), surveys in developing countries (Research Management Services) and full-service opinion, media and market research (D3 Systems, Inc.) from 1977 to 2015. He is the Founder and President of D3 Systems, a co-founder of full-service research companies in Afghanistan (ACSOR), Bosnia & Herzegovina (MIB) and Kenya (Infinite Insight). With Matthew Warshaw (also D3) and colleagues from Bulgaria (Kantcho Stoychev and Andrei Raichev) he has co-founded Research Control Solutions. A key driver for Dr. Jodice is capacity building - at home and abroad - at the individual, team, and company levels.</p>" data-staff_team="Management" data-staff_yearsexp="40" data-staff_degrees="B.A. in History (Gordon College), M.A. and Ph.D. in Government (Harvard)" data-staff_languages="English" data-staff_countryexp="Afghanistan, Bosnia, Herzegovina, and Kenya">
-            <img src="images/headshots/david-jodice.jpg" class="img-circle center-block" alt="David Jodice" />
-            <h4>David A. Jodice, Ph.D.</h4>
-            <p>President and Chief Executive Officer</p>
-          </a>
-        </div>        
-      </ul><!--grid-->
+        <?php
+          $staff = new WP_Query(array(
+            'post_type' => 'staff',
+            'posts_per_page' => -1,
+            'post_status' => 'publish'
+          ));
+
+          if($staff->have_posts()): while($staff->have_posts()): $staff->the_post();
+            $staff_teams_terms = wp_get_post_terms($post->ID, 'team');
+            $staff_teams_filter = array();
+            $staff_teams = array();
+            foreach($staff_teams_terms as $staff_teams_term){
+              $staff_teams_filter[] = $staff_teams_term->slug;
+              $staff_teams[] = $staff_team_term->name;
+            }
+
+            $staff_regions_terms = wp_get_post_terms($post->ID, 'region_expertise');
+            $staff_regions_filter = array();
+            $staff_regions = array();
+            foreach($staff_regions_terms as $staff_regions_term){
+              $staff_regions_filter[] = $staff_regions_term->slug;
+              $staff_regions[] = $staff_regions_term->name;
+            }
+
+            $staff_languages_terms = wp_get_post_terms($post-ID, 'language');
+            $staff_languages_filter = array();
+            $staff_languages = array();
+            foreach($staff_languages_terms as $staff_languages_term){
+              $staff_languages_filter[] = $staff_languages_term->slug;
+              $staff_languages[] = $staff_languages_term->name;
+            }
+
+            $staff_filter_items = array_merge($staff_teams_filter, $staff_regions_filter, $staff_languages_filter);
+            $staff_filter_items = implode(" ", $staff_filter_items);  ?>
+
+
+            <div class="grid-item circle-card <?php echo $staff_filter_items; ?>">
+              <a href="#" class="circle-card-content" data-details_name="<?php the_title(); ?>" data-details_title="<?php the_field('staff_position'); ?>" data-details_bio="<?php the_field('staff_bio'); ?>" data-staff_team="<?php echo implode(', ', $staff_teams); ?>" data-staff_degrees="<?php the_field('staff_degrees'); ?>" data-staff_languages="<?php echo implode(', ', $staff_languages); ?>" data-staff_countryexp="<?php echo implode(', ', $staff_regions); ?>">
+                <img src="<?php the_field('staff_image'); ?>" class="img-circle center-block" alt="<?php the_title(); ?>" />
+                <h4><?php the_title(); ?></h4>
+                <p><?php the_field('staff_position'); ?></p>
+              </a>
+            </div>
+        <?php endwhile; endif; ?>
+      </div><!--grid-->
     </div>
-  </section>
+  </section><?php //this section starts in header-our-network.php ?>
   <section id="subsidiaries">
     <div class="hero" style="background-image:url('images/pointing-to-phone.jpg'); background-position:center center;">
       <div class="container">
