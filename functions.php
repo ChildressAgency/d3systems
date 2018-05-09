@@ -287,8 +287,109 @@ function d3systems_header_fallback_menu(){ ?>
   </ul>
 <?php }
 
-add_action('init', 'd3systems_create_our_work_taxonomies');
-function d3systems_create_our_work_taxonomies(){
+add_action('init', 'd3systems_create_post_types');
+function d3systems_create_post_types(){
+  //staff post type
+  $staff_labels = array(
+    'name' => 'Staff',
+    'singular_name' => 'Staff',
+    'menu_name' => 'Staff',
+    'add_new_item' => 'Add New Staff',
+    'search_items' => 'Search Staff',
+    'edit_items' => 'Edit Staff',
+    'view_item' => 'View Staff',
+    'all_items' => 'All Staff',
+    'new_item' => 'New Staff',
+    'not_found' => 'Staff Not Found'
+  );
+  $staff_args = array(
+    'labels' => $staff_labels,
+    'capability_type' => 'post',
+    'public' => true,
+    'menu_position' => 5,
+    'menu_icon' => 'dashicons-groups',
+    'query_var' => 'staff',
+    'supports' => array(
+      'title',
+      'editor',
+      'custom_fields'
+    )
+  );
+  register_post_type('staff', $staff_args);
+  
+  //staff taxonomies
+  $team_labels = array(
+    'name' => 'Teams',
+    'singular_name' => 'Team',
+    'search_items' => 'Search Teams',
+    'all_items' => 'All Teams',
+    'parent_item' => 'Parent Team',
+    'parent_item_colon' => 'Parent Team:',
+    'edit_item' => 'Edit Team',
+    'update_item' => 'Update Team',
+    'add_new_item' => 'Add New Team',
+    'new_item_name' => 'New Team Name',
+    'menu_name' => 'Teams'
+  );
+  $team_args = array(
+    'hierarchical' => true,
+    'labels' => $team_labels,
+    'show_ui' => true,
+    'show_admin_column' => true,
+    'query_var' => 'teams'
+  );
+  register_taxonomy('team', 'staff', $team_args);
+
+  $regional_expertise_labels = array(
+    'name' => 'Regional Expertise',
+    'singular_name' => 'Regional Expertise',
+    'search_items' => 'Search Regional Expertise',
+    'all_items' => 'All Regional Expertise',
+    'parent_item' => 'Parent Regional Expertise',
+    'parent_item_colon' => 'Parent Regional Expertise:',
+    'edit_item' => 'Edit Regional Expertise',
+    'update_item' => 'Update Regional Expertise',
+    'add_new_item' => 'Add New Regional Expertise',
+    'new_item_name' => 'New Regional Expertise Name',
+    'menu_name' => 'Regional Expertise'
+  );
+  $regional_expertise_args = array(
+    'hierarchical' => true,
+    'labels' => $regional_expertise_labels,
+    'show_ui' => true,
+    'show_admin_column' => true,
+    'query_var' => 'regional_expertise'
+  );
+  register_taxonomy('regional_expertise', 'staff', $regional_expertise_args);
+
+  $languages_labels = array(
+    'name' => 'Languages',
+    'singular_name' => 'Language',
+    'search_items' => 'Search Languages',
+    'all_items' => 'All Languages',
+    'parent_item' => 'Parent Language',
+    'parent_item_colon' => 'Parent Language:',
+    'edit_item' => 'Edit Language',
+    'update_item' => 'Update Language',
+    'add_new_item' => 'Add New Language',
+    'new_item_name' => 'New Language Name',
+    'menu_name' => 'Languages'
+  );
+  $languages_args = array(
+    'hierarchical' => true,
+    'labels' => $languages_labels,
+    'show_ui' => true,
+    'show_admin_column' => true,
+    'query_var' => 'languages'
+  );
+  register_taxonomy('language', 'staff', $languages_args);
+  
+  //subsidiaries
+}
+
+add_action('init', 'd3systems_create_taxonomies');
+function d3systems_create_taxonomies(){
+  //our work taxonomies
   $topic_labels = array(
     'name' => 'Topics',
     'singular_name' => 'Topic',
@@ -309,7 +410,7 @@ function d3systems_create_our_work_taxonomies(){
     'show_admin_column' => true,
     'query_var' => 'topics',
   );
-  register_taxonomy('topic', $topic_args);
+  register_taxonomy('topic', 'post', $topic_args);
 
   $country_labels = array(
     'name' => 'Countries',
@@ -331,5 +432,7 @@ function d3systems_create_our_work_taxonomies(){
     'show_admin_column' => true,
     'query_var' => 'countries'
   );
-  register_taxonomy('country', $country_args);
+  register_taxonomy('country', 'post', $country_args);
+  
+  //our staff taxonomies
 }
