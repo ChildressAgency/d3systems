@@ -438,6 +438,30 @@ function d3systems_create_post_types(){
       'custom_fields'
     )
   );
+  register_post_type('client', $clients_args);
+
+  //clients taxonomies
+  $client_division_labels = array(
+    'name' => 'Client Divisions',
+    'singular_name' => 'Client Division',
+    'search_items' => 'Search Client Divisions',
+    'all_items' => 'All Client Divisions',
+    'parent_item' => 'Parent Client Division',
+    'parent_item_colon' => 'Parent Client Division:',
+    'edit_item' => 'Edit Client Division',
+    'update_item' => 'Update Client Division',
+    'add_new_item' => 'Add New Client Division',
+    'new_item_name' => 'New Client Division Name',
+    'menu_name' => 'Client Divisions'
+  );
+  $client_division_args = array(
+    'hierarchical' => true,
+    'labels' => $client_division_labels,
+    'show_ui' => true,
+    'show_admin_column' => true,
+    'query_var' => 'client_division'
+  );
+  register_taxonomy('client_division', 'client', $client_division_args);
 }
 
 add_action('init', 'd3systems_create_taxonomies');
