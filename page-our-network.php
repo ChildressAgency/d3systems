@@ -121,7 +121,7 @@
             if($subsidiaries->have_posts()): while($subsidiaries->have_posts()): $subsidiaries->the_post(); ?>
               <div class="grid-item circle-card">
                 <a href="#" class="circle-card-content" data-subsidiary_address="<?php the_field('subsidiary_address_1'); ?><br /><?php the_field('subsidiary_address_2'); ?><br /><?php the_field('subsidiary_address_3'); ?>" data-subsidiary_phone="<?php the_field('subsidiary_phone'); ?>" data-subsidiary_contact="<?php if(get_field('subsidiary_email')){ echo "<a href='" . get_field('subsidiary_email') . "'>" . get_field('subsidiary_email') . "</a><br />"; } if(get_field('subsidiary_website')){ echo "<a href='" . get_field('subsidiary_website') . ">Visit Website</a>"; ?>" data-details_name="<?php the_field('subsidiary_name'); ?>" data-details_title="<?php the_field('subsidiary_title'); ?>" data-details_bio="<?php the_field('subsidiary_details'); ?>">
-                  <span class="gradient-circle-border">
+                  <span class="">
                     <img src="<?php the_field('subsidiary_logo'); ?>" class="img-circle center-block" alt="<?php the_field('subsidiary_name'); ?>" />
                   </span>
                   <h4><?php the_field('subsidiary_name'); ?></h4>
@@ -173,7 +173,7 @@
                   if($clients->have_posts()): while($clients->have_posts()): $clients->the_post(); ?>
                     <div class="grid-item circle-card">
                       <a href="<?php the_sub_field('client_link'); ?>" class="circle-card-content">
-                        <img src="<?php the_sub_field('client_logo'); ?>" class="img-circle gradient-circle-border img-responsive center-block" alt="" />
+                        <img src="<?php the_sub_field('client_logo'); ?>" class="img-circle img-responsive center-block" alt="" />
                         <h4><?php the_title(); ?></h4>
                       </a>
                     </div>

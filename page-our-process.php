@@ -103,7 +103,7 @@
                       <div class="media">
                         <?php if(get_sub_field('designs_content_block_section_image')): ?>
                           <div class="media-left media-middle">
-                            <span class="gradient-circle-border">
+                            <span class="">
                               <img src="<?php the_sub_field('designs_content_block_section_image'); ?>" class="img-circle" alt="" />
                             </span>
                           </div>
@@ -139,7 +139,7 @@
                       <div class="media">
                         <?php if(get_sub_field('data_content_block_section_image')): ?>
                           <div class="media-left media-middle">
-                            <span class="gradient-circle-border">
+                            <span class="">
                               <img src="<?php the_sub_field('data_content_block_section_image'); ?>" class="img-circle" alt="" />
                             </span>
                           </div>
@@ -174,7 +174,7 @@
                       <div class="media">
                         <?php if(get_sub_field('decisions_content_block_section_image')): ?>
                           <div class="media-left media-middle">
-                            <span class="gradient-circle-border">
+                            <span class="">
                               <img src="<?php the_sub_field('decisions_content_block_section_image'); ?>" class="img-circle" alt="" />
                             </span>
                           </div>
