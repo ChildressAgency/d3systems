@@ -1487,6 +1487,19 @@ g#Layer_244{
   margin-bottom:40px;
 }
 
+.google-map-link{
+  color:#fff;
+  border-color:#fff;
+}
+.google-map-link:hover,
+.google-map-link:focus{
+  color:#fff;
+}
+.google-map-link:after,
+.google-map-link:hover:after{
+  background-color:#fff;
+}
+
 
 @media (max-width:767px){
   .header-logo>img{

@@ -1,8 +1,19 @@
 <?php if(!is_page('contact')): ?>
   <section id="super-footer">
     <div class="container">
-      <h2><?php the_field('superfooter_title'); ?></h2>
-      <a href="<?php the_field('superfooter_link'); ?>" class="btn-main"><?php the_field('superfooter_link_text'); ?></a>
+      <?php 
+        if(get_field('super_footer_title')){
+          echo '<h2>' . get_field('super_footer_title') . '</h2>';
+          if(get_field('super_footer_link')){
+            echo '<a href="' . get_field('super_footer_link') . '" class="btn-main">' . get_field('super_footer_link_text') . '</a>';
+          }
+        else{
+          echo '<h2>' . get_field('default_super_footer_title', 'option') . '</h2>';
+          if(get_field('default_super_footer_link', 'option')){
+            echo '<a href="' . get_field('default_super_footer_link', 'option') . '" class="btn-main">' . get_field('default_super_footer_link_text') . '</a>';
+          }
+        }
+      ?>
     </div>
   </section>
 <?php endif; ?>
@@ -18,7 +29,7 @@
             <li>Recruitment: <span class="value"><?php the_field('recruitment_email', 'option'); ?></span></li>
             <li>General: <span class="value"><?php the_field('general_email', 'option'); ?></span></li>
           </ul>
-          <p><?php the_field('street_address', 'option'); ?><br /><?php the_field('city_state_zip', 'option'); ?><br /><span class="value"><?php the_field('phone', 'option'); ?></span></p>
+          <p><a href="<?php the_field('google_map_link'); ?>" class="google-map-link"><?php the_field('street_address', 'option'); ?><br /><?php the_field('city_state_zip', 'option'); ?></a><br /><span class="value"><?php the_field('phone', 'option'); ?></span></p>
         </div>
         <div class="col-sm-5">
           <h3>Subsidiaries</h3>

@@ -15,9 +15,9 @@
   <div class="post-card-thumb">
     <img src="<?php echo $featured_image_url; ?>" class="img-responsive center-block" alt="" />
     <h2 class="post-card-thumb-caption">
-      <span class="summary-card-title-part" style="color:#fff;"><?php the_field('post_pre_title'); ?></span>
-      <span class="summary-card-title-main" style="color:#fff;"><?php the_field('post_main_title'); ?></span>
-      <span class="summary-card-title-part" style="color:#fff;"><?php the_field('post_sub_title'); ?></span>
+      <span class="summary-card-title-part" style="color:<?php the_field('post_pre_title_color'); ?>;"><?php the_field('post_pre_title'); ?></span>
+      <span class="summary-card-title-main" style="color:<?php the_field('post_main_title_color'); ?>;"><?php the_field('post_main_title'); ?></span>
+      <span class="summary-card-title-part" style="color:<?php the_field('post_sub_title_color'); ?>;"><?php the_field('post_sub_title'); ?></span>
     </h2>
     <div class="post-caption-overlay"></div>
   </div>
