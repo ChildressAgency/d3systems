@@ -120,11 +120,11 @@
 
             if($subsidiaries->have_posts()): while($subsidiaries->have_posts()): $subsidiaries->the_post(); ?>
               <div class="grid-item circle-card">
-                <a href="#" class="circle-card-content" data-subsidiary_address="<?php the_field('subsidiary_address_1'); ?><br /><?php the_field('subsidiary_address_2'); ?><br /><?php the_field('subsidiary_address_3'); ?>" data-subsidiary_phone="<?php the_field('subsidiary_phone'); ?>" data-subsidiary_contact="<?php if(get_field('subsidiary_email')){ echo "<a href='" . get_field('subsidiary_email') . "'>" . get_field('subsidiary_email') . "</a><br />"; } if(get_field('subsidiary_website')){ echo "<a href='" . get_field('subsidiary_website') . ">Visit Website</a>"; ?>" data-details_name="<?php the_field('subsidiary_name'); ?>" data-details_title="<?php the_field('subsidiary_title'); ?>" data-details_bio="<?php the_field('subsidiary_details'); ?>">
+                <a href="#" class="circle-card-content" data-subsidiary_address="<?php the_field('subsidiary_address_1'); ?><br /><?php the_field('subsidiary_address_2'); ?><br /><?php the_field('subsidiary_address_3'); ?>" data-subsidiary_phone="<?php the_field('subsidiary_phone'); ?>" data-subsidiary_contact="<?php if(get_field('subsidiary_email')){ echo "<a href='" . get_field('subsidiary_email') . "'>" . get_field('subsidiary_email') . "</a><br />"; } if(get_field('subsidiary_website')){ echo "<a href='" . get_field('subsidiary_website') . ">Visit Website</a>"; ?>" data-details_name="<?php the_title(); ?>" data-details_title="<?php the_field('subsidiary_title'); ?>" data-details_bio="<?php the_field('subsidiary_details'); ?>">
                   <span class="">
-                    <img src="<?php the_field('subsidiary_logo'); ?>" class="img-circle center-block" alt="<?php the_field('subsidiary_name'); ?>" />
+                    <img src="<?php the_field('subsidiary_logo'); ?>" class="img-circle center-block" alt="<?php the_title(); ?>" />
                   </span>
-                  <h4><?php the_field('subsidiary_name'); ?></h4>
+                  <h4><?php the_title(); ?></h4>
                   <p><?php the_field('subsidiary_title'); ?></p>
                 </a>
               </div>
