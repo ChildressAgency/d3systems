@@ -426,7 +426,7 @@ function d3systems_create_post_types(){
     'not_found' => 'Client Not Found'
   );
   $clients_args = array(
-    'labels' => $clients_args,
+    'labels' => $clients_labels,
     'capability_type' => 'post',
     'public' => true,
     'menu_position' => 7,
@@ -510,6 +510,4 @@ function d3systems_create_taxonomies(){
     'query_var' => 'countries'
   );
   register_taxonomy('country', 'post', $country_args);
-  
-  //our staff taxonomies
 }
