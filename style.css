@@ -819,18 +819,18 @@ a:hover:after{
   animation-delay:2s;
 }
 
-g:hover>*{
+.globe-wrapper.global-reach g:hover>*{
   fill:#f2f2f2 !important;
 }
 g#Layer_244{
   pointer-events:none;
 }
-.globe-wrapper.americas g#americas>*,
+.globe-wrapper.the-americas-and-the-caribbean g#the-americas-and-the-caribbean>*,
 .globe-wrapper.sub-saharan-africa g#sub-saharan-africa>*,
-.globe-wrapper.middle-east-north-africa g#middle-east-north-africa>*,
-.globe-wrapper.south-east-asia-oceana g#south-east-asia-oceana>*,
+.globe-wrapper.middle-east-and-north-africa g#middle-east-and-north-africa>*,
+.globe-wrapper.east-southeast-asia-and-oceana g#east-southeast-asia-and-oceana>*,
 .globe-wrapper.europe g#europe>*,
-.globe-wrapper.central-asia g#central-asia>*{
+.globe-wrapper.central-and-south-asia g#central-and-south-asia>*{
   fill:#f2f2f2 !important;
 }
 #global-reach-nav{
@@ -1132,11 +1132,11 @@ g#Layer_244{
   margin-bottom:40px;
 }
 .main-content-header{
-  background-color:#ebebeb;
+  background-color:#fcfafa;
   padding:15px;
 }
 .main-content-header h2{
-  font-size:16px;
+  font-size:40px;
   margin-top:0;
   margin-bottom:0;
 }

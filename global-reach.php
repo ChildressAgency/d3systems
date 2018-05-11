@@ -24,7 +24,8 @@ get_header('global-reach'); ?>
             <section class="sidebar-section">
               <h2 class="sidebar-section-title">Regional Expertise</h2>
               <div class="sidebar-section-content">
-                <p>D3 has experience in the following countries:</p>
+                <hr />
+                <h3>D3 has experience in the following countries:</h3>
                 <hr />
                 <?php
                   $countries = get_field('experience_countries');
@@ -35,7 +36,6 @@ get_header('global-reach'); ?>
                       <?php endforeach; ?>
                     </ul>
                   <?php endif; ?>
-                <hr />
               </div>
               <div class="sidebar-section-footer">
                 <a href="<?php echo home_url('contact'); ?>">Get in Touch<span class="glyphicon glyphicon-menu-right"></span></a>
@@ -70,13 +70,6 @@ get_header('global-reach'); ?>
                   <?php get_template_part('partials/post-card'); ?>
                 </section>
             <?php endwhile; endif; wp_reset_postdata(); ?>
-
-            <section class="sidebar-section">
-              <div class="sidebar-social">
-                <h3>Get in Touch</h3>
-                <?php get_template_part('partials/social-media'); ?>
-              </div>
-            </section>
           </nav>
         </div>
         <div class="col-sm-8" id="right">
