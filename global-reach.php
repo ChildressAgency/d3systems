@@ -42,34 +42,6 @@ get_header('global-reach'); ?>
               </div>
             </section>
 
-            <?php
-              if(get_field('post_to_display') == 'Select A Post'){
-                $featured_post_id = get_field('featured_post');
-                $featured_post_args = array(
-                  'post_type' => 'posts',
-                  'p' => $featured_post_id
-                );
-              }
-              else{
-                $random_country = $countries[array_rand($countries)];
-                $featured_post_args = array(
-                  'post_type' => 'posts',
-                  'posts_per_page' => 1,
-                  'tax_query' => array(
-                    array(
-                      'taxonomy' => 'country',
-                      'terms' => $random_country->term_id
-                    )
-                  )
-                );
-              }
-
-              $featured_post = new WP_Query($featured_post_args);
-              if($featured_post->have_posts()): while($featured_post->have_posts()): $featured_post->the_post(); ?>
-                <section class="sidebar-section">
-                  <?php get_template_part('partials/post-card'); ?>
-                </section>
-            <?php endwhile; endif; wp_reset_postdata(); ?>
           </nav>
         </div>
         <div class="col-sm-8" id="right">
