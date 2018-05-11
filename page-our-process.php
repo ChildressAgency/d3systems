@@ -44,11 +44,6 @@
                   <h3><?php the_field('designs_sidebar_title'); ?></h3>
                   <hr />
                   <?php the_field('designs_sidebar_content'); ?>
-                  <div class="sub-section-links">
-                    <?php foreach($designs_blocks as $designs_block): ?>
-                      <a href="#<?php echo sanitize_title($designs_block['designs_content_block_title']); ?>" class="smooth-scroll" data-scroll_offset="220"><?php echo $designs_block['designs_content_block_title']; ?></a>
-                    <?php endforeach; reset($designs_blocks); ?>
-                  </div>
                 </div>
               </section>
               <section class="sidebar-sub-section" data-process_section="data">
@@ -58,11 +53,6 @@
                   <h3><?php the_field('data_sidebar_title'); ?></h3>
                   <hr />
                   <?php the_field('data_sidebar_content'); ?>
-                  <div class="sub-section-links">
-                    <?php foreach($data_blocks as $data_block): ?>
-                      <a href="#<?php echo sanitize_title($data_block['data_content_block_title']); ?>" class="smooth-scroll" data-scroll_offset="220"><?php echo $data_block['data_content_block_title']; ?></a>
-                    <?php endforeach; reset($data_blocks); ?>
-                  </div>
                 </div>
               </section>
               <section class="sidebar-sub-section" data-process_section="decisions">
@@ -72,11 +62,6 @@
                   <h3><?php the_field('decisions_sidebar_title'); ?></h3>
                   <hr />
                   <?php the_field('decisions_sidebar_content'); ?>
-                  <div class="sub-section-links">
-                    <?php foreach($decisions_blocks as $decisions_block): ?>
-                      <a href="#<?php echo sanitize_title($decisions_block['decisions_content_block_title']); ?>" class="smooth-scroll" data-scroll_offset="220"><?php echo $decisions_block['decisions_content_block_title']; ?></a>
-                    <?php endforeach; reset($decisions_blocks); ?>
-                  </div>
                 </div>
               </section>
               <div class="sidebar-section-footer">
