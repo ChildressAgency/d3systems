@@ -319,23 +319,28 @@ a:hover:after{
   background-color:#f0e7e8;
 }
 #designs-card.icon-card:before{
-  height:77px;
-  width:77px;
-  /*background-position:13px -30px;*/
-  background-image:url(images/designs-white-background-square-crop.svg);
+  height:95px;
+  width:100px;
+  background-position:11px 0px;
+  top:-110px;
+  /*background-image:url(images/designs-white-background-square-crop.svg);*/
+  background-image:url(images/design-com-icon.png);
 }
 #data-card.icon-card:before{
-  height:74px;
-  width:76px;
-  left:9px;
-  /*background-position:-68px -30px;*/
-  background-image:url(images/data-white-background-square-crop.svg);
+  height:80px;
+  width:100px;
+  background-position:10px 2px;
+  top:-100px;
+  /*background-image:url(images/data-white-background-square-crop.svg);*/
+  background-image:url(images/decisions-com-icon.png);
 }
 #decisions-card.icon-card:before{
-  height:69px;
-  width:69px;
-  /*background-position:-151px -34px;*/
-  background-image:url(images/decisions-white-background-square-crop.svg);
+  height:85px;
+  width:100px;
+  background-position:14px 0px;
+  top:-107px;
+  /*background-image:url(images/decisions-white-background-square-crop.svg);*/
+  background-image:url(images/data-com-icon.png);
 }
 .icon-card h2{
   font-family:Georgia, serif;
