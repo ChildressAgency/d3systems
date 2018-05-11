@@ -13,8 +13,8 @@ body{
 a{
   -webkit-transition:all .3s ease;
   transition:all .3s ease;
-  color:#00f;
-  border-bottom:1px dotted #00f;
+  color:#d61f26;
+  border-bottom:1px dotted #d61f26;
   position:relative;
 }
 a:after{
@@ -22,7 +22,7 @@ a:after{
   position:absolute;
   height:1px;
   width:0;
-  background-color:#00f;
+  background-color:#d61f26;
   bottom:-1px;
   left:0;
   -webkit-transition:width .3s ease;
@@ -32,7 +32,7 @@ a:hover,
 a:focus{
   text-decoration:none;
   /*border-bottom-style:solid;*/
-  color:#00f;
+  color:#d61f26;
 }
 a:hover:after{
   width:100%;
@@ -76,7 +76,7 @@ a:hover:after{
   padding-top:25px;
   padding-bottom:25px;
   background-color:#fff;
-  z-index:999;
+  z-index:99999;
 }
 #navbar{
   margin-top:10px;
@@ -470,7 +470,7 @@ a:hover:after{
 }
 .circle-card-content h4{
   font-size:14px;
-  border-bottom:1px dotted #00f;
+  border-bottom:1px dotted #d61f26;
   display:inline-block;
   position:relative;
 }
@@ -479,7 +479,7 @@ a:hover:after{
   position:absolute;
   height:1px;
   width:0;
-  background-color:#00f;
+  background-color:#d61f26;
   bottom:-1px;
   left:0;
   -webkit-transition:width .3s ease;
@@ -564,6 +564,9 @@ a:hover:after{
   margin:-20px 0 0 -15px;
   -webkit-transition:none;
   transition:none;
+}
+.client-section{
+  margin-bottom:60px;
 }
 .circle-card .client-inner{
   width:200px;
@@ -932,7 +935,7 @@ g#Layer_244{
 }
 .sidebar-section-content ul>li>a:hover,
 .sidebar-section-content ul>li>a:focus{
-  color:#00f;
+  color:#d61f26;
   text-decoration:none;
 }
 .sidebar-section-footer{
@@ -1248,9 +1251,16 @@ g#Layer_244{
   padding-top:40px;
   padding-bottom:40px;
 }
+#main{
+  padding-top:40px;
+  padding-bottom:40px;
+}
 .post{
   background-color:#fff;
   box-shadow:0px 0px 20px #ddd;
+  max-width:750px;
+  margin-left:auto;
+  margin-right:auto;
 }
 .post .post-category{
   font-size:16px;
@@ -1344,6 +1354,9 @@ g#Layer_244{
 .contact-form{
   box-shadow:0px 0px 20px #ddd;
   padding-bottom:25px;
+  max-width:750px;
+  margin-left:auto;
+  margin-right:auto;
 }
 .contact-form .form-group{
   padding-left:15px;
@@ -1535,6 +1548,13 @@ g#Layer_244{
   background-color:#fff;
 }
 
+.career-opp{
+  margin-top:40px;
+}
+#main .post + .post{
+  margin-top:40px;
+}
+
 
 @media (max-width:767px){
   .header-logo>img{
@@ -1586,6 +1606,15 @@ g#Layer_244{
   #our-work-nav.nav-tabs .nav-tab-label{
     padding-left:15px;
     padding-right:15px;
+  }
+  .process-main-content .media-left{
+    display:block;
+    text-align:center;
+  }
+  .process-main-content .media-body{
+    display:block;
+    width:auto;
+    margin-top:25px;
   }
 }
 @media (min-width:768px){

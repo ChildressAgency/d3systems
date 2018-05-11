@@ -21,7 +21,7 @@
     <![endif]-->
 </head>
 
-<body <?php body_class(); ?>
+<body <?php body_class(); ?>>
   <nav id="header-nav" class="sticky">
     <div class="container">
       <div class="navbar-header">

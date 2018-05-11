@@ -7,10 +7,11 @@
           if(get_field('super_footer_link')){
             echo '<a href="' . get_field('super_footer_link') . '" class="btn-main">' . get_field('super_footer_link_text') . '</a>';
           }
+        }
         else{
           echo '<h2>' . get_field('default_super_footer_title', 'option') . '</h2>';
           if(get_field('default_super_footer_link', 'option')){
-            echo '<a href="' . get_field('default_super_footer_link', 'option') . '" class="btn-main">' . get_field('default_super_footer_link_text') . '</a>';
+            echo '<a href="' . get_field('default_super_footer_link', 'option') . '" class="btn-main">' . get_field('default_super_footer_link_text','option') . '</a>';
           }
         }
       ?>

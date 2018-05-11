@@ -34,6 +34,14 @@ function d3systems_scripts(){
   );
 
   wp_register_script(
+    'modernizr',
+    get_template_directory_uri() . '/js/modernizr.custom.js',
+    array('jquery'),
+    '',
+    false
+  );
+
+  wp_register_script(
     'd3systems-scripts', 
     get_template_directory_uri() . '/js/d3systems-scripts.js', 
     array('jquery'), 
@@ -43,6 +51,7 @@ function d3systems_scripts(){
   
   wp_enqueue_script('bootstrap-script');
   wp_enqueue_script('fontawesome');
+  wp_enqueue_script('modernizr');
   wp_enqueue_script('d3systems-scripts');  
 }
 
@@ -144,7 +153,8 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			if ( $args->has_children && $depth === 0 ) {
 				$atts['href']   		= '#';
                                 $atts['href'] = ! empty( $item->url ) ? $item->url : '';
-				$atts['data-toggle']	= 'dropdown';
+        
+        //$atts['data-toggle']	= 'dropdown';
 				$atts['class']			= 'dropdown-toggle';
 				$atts['aria-haspopup']	= 'true';
 			} else {

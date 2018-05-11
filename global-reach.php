@@ -43,7 +43,7 @@ get_header('global-reach'); ?>
             </section>
 
             <?php
-              if(get_field('post_to_display') = 'Select A Post'){
+              if(get_field('post_to_display') == 'Select A Post'){
                 $featured_post_id = get_field('featured_post');
                 $featured_post_args = array(
                   'post_type' => 'posts',
@@ -103,7 +103,7 @@ get_header('global-reach'); ?>
                     <div class="main-content-body">
                       <div class="circle-card">
                         <a href="<?php the_sub_field('spotlight_link'); ?>" class="circle-card-content">
-                          <span class="gradient-circle-border">
+                          <span class="">
                             <img src="<?php the_sub_field('spotlight_image'); ?>" class="img-circle center-block" alt="" />
                           </span>
                           <?php the_sub_field('spotlight_content'); ?>

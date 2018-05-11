@@ -112,7 +112,6 @@ jQuery(document).ready(function($){
   });
 
   
-
   $('#our-process-sidebar').affix({
     offset:{
       top: function(){

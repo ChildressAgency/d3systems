@@ -16,7 +16,7 @@
     <div id="sub-progress" class="justified-nav">
       <ul class="nav nav-tabs nav-justified">
         <?php foreach($designs_blocks as $designs_block): ?>
-          <li><a href="#<?php echo sanitize_title($designs_block['designs_content_block_title']; ?>" class="smooth-scroll" data-scroll_offset="220"><?php echo $designs_block['designs_content_block_title']; ?></a></li>
+          <li><a href="#<?php echo sanitize_title($designs_block['designs_content_block_title']); ?>" class="smooth-scroll" data-scroll_offset="220"><?php echo $designs_block['designs_content_block_title']; ?></a></li>
         <?php endforeach; reset($designs_blocks); ?>
         <?php foreach($data_blocks as $data_block): ?>
           <li><a href="#<?php echo sanitize_title($data_block['data_content_block_title']); ?>" class="smooth-scroll" data-scroll_offset="220"><?php echo $data_block['data_content_block_title']; ?></a></li>
@@ -89,7 +89,7 @@
           <div class="process-main-content" role="main">
             <div id="designs">
               <?php foreach($designs_blocks as $designs_block): ?>
-                <section id="<?php echo sanitize_title($designs_block['designs_content_block_title']; ?>" class="main-section">
+                <section id="<?php echo sanitize_title($designs_block['designs_content_block_title']); ?>" class="main-section">
                   <header class="main-content-header">
                     <h2><?php echo $designs_block['designs_content_block_title']; ?></h2>
                   </header>
@@ -99,21 +99,21 @@
                       <img src="<?php echo $designs_block['designs_content_block_top_image']; ?>" class="img-responsive center-block" alt="" />
                     <?php endif; ?>
 
-                    <?php if(have_rows('designs_content_block_sections')): while(have_rows('designs_content_block_section')): the_row(); ?>
+                    <?php foreach($designs_block['designs_content_block_sections'] as $designs_block_section): ?>
                       <div class="media">
-                        <?php if(get_sub_field('designs_content_block_section_image')): ?>
+                        <?php if($designs_block_section['designs_content_block_section_image']): ?>
                           <div class="media-left media-middle">
                             <span class="">
-                              <img src="<?php the_sub_field('designs_content_block_section_image'); ?>" class="img-circle" alt="" />
+                              <img src="<?php echo $designs_block_section['designs_content_block_section_image']; ?>" class="" alt="" />
                             </span>
                           </div>
                         <?php endif; ?>
                         <div class="media-body media-middle">
-                          <h4 class="media-heading"><?php the_sub_field('designs_content_block_section_title'); ?></h4>
-                          <?php the_sub_field('designs_content_block_section_content'); ?>
+                          <h4 class="media-heading"><?php echo $designs_block_section['designs_content_block_section_title']; ?></h4>
+                          <?php echo $designs_block_section['designs_content_block_section_content']; ?>
                         </div>
                       </div>
-                    <?php endwhile; endif; ?>
+                    <?php endforeach; ?>
 
                   </div>
                   <?php if($infographic): ?>
@@ -135,21 +135,21 @@
                       <img src="<?php echo $data_block['data_content_block_top_image']; ?>" class="img-responsive center-block" alt="" />
                     <?php endif; ?>
 
-                    <?php if(have_rows('data_content_block_sections')): while(have_rows('data_content_block_sections')): the_row(); ?>
+                    <?php foreach($data_block['data_content_block_sections'] as $data_block_section): ?>
                       <div class="media">
-                        <?php if(get_sub_field('data_content_block_section_image')): ?>
+                        <?php if($data_block_section['data_content_block_section_image']): ?>
                           <div class="media-left media-middle">
                             <span class="">
-                              <img src="<?php the_sub_field('data_content_block_section_image'); ?>" class="img-circle" alt="" />
+                              <img src="<?php echo $data_block_section['data_content_block_section_image']; ?>" class="" alt="" />
                             </span>
                           </div>
                         <?php endif; ?>
                         <div class="media-body media-middle">
-                          <h4 class="media-heading"><?php the_sub_field('data_content_block_section_title'); ?></h4>
-                          <?php the_sub_field('data_content_block_section_content'); ?>
+                          <h4 class="media-heading"><?php echo $data_block_section['data_content_block_section_title']; ?></h4>
+                          <?php echo $data_block_section['data_content_block_section_content']; ?>
                         </div>
                       </div>
-                    <?php endwhile; endif; ?>
+                    <?php endforeach; ?>
 
                   </div>
                   <?php if($infographic):  ?>
@@ -170,21 +170,21 @@
                       <img src="<?php echo $decisions_block['decisions_content_block_top_image']; ?>" class="img-responsive center-block" alt="" />
                     <?php endif; ?>
 
-                    <?php if(have_rows('decisions_content_block_sections')): while(have_rows('decisions_content_block_sections')): the_row(); ?>
+                    <?php foreach($decisions_block['decisions_content_block_sections'] as $decisions_block_section): ?>
                       <div class="media">
-                        <?php if(get_sub_field('decisions_content_block_section_image')): ?>
+                        <?php if($decisions_block_section['decisions_content_block_section_image']): ?>
                           <div class="media-left media-middle">
                             <span class="">
-                              <img src="<?php the_sub_field('decisions_content_block_section_image'); ?>" class="img-circle" alt="" />
+                              <img src="<?php echo $decisions_block_section['decisions_content_block_section_image']; ?>" class="" alt="" />
                             </span>
                           </div>
                         <?php endif; ?>
                         <div class="media-body media-middle">
-                          <h4 class="media-heading"><?php the_sub_field('decisions_content_block_section_title'); ?></h4>
-                          <?php the_sub_field('decisions_content_block_section_content'); ?>
+                          <h4 class="media-heading"><?php echo $decisions_block_section['decisions_content_block_section_title']; ?></h4>
+                          <?php echo $decisions_block_section['decisions_content_block_section_content']; ?>
                         </div>
                       </div>
-                    <?php endwhile; endif; ?>
+                    <?php endforeach; ?>
 
                   </div>
                   <a href="<?php echo $infographic['url']; ?>" target="_blank" class="infographic-link"><?php echo $infographic['caption']; ?></a>

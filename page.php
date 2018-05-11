@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 <div class="container">
-  <main class="post">
+  <main id="main">
+  <div class="post">
     <header class="post-header">
       <?php if(get_field('post_pre_title') || get_field('post_main_title') || get_field('post_sub_title')): ?>
         <h1>
@@ -14,6 +15,7 @@
         </h1>
         <hr style="border-color:#999;" />
         <h4 class="post-date"><?php echo get_the_date('M\. j, Y'); ?></h4>
+      <?php endif; ?>
     </header>
     <article>
       <?php 
@@ -28,6 +30,7 @@
         }
       ?>
     </article>
+  </div>
   </main>
 </div>
 <?php get_footer(); ?>
