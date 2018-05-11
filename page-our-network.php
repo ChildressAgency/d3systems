@@ -21,12 +21,12 @@
           </ul>
         </li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Regional Expertise</a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Country Expertise</a>
           <ul class="dropdown-menu">
             <?php
-              $regional_expertise = get_terms('regional_expertise', array('hide_empty' => 0));
-              foreach($regional_expertise as $region){
-                echo '<li><a href="#" class="filter" data-filter=".' . $region->slug . '">' . $region->name . '</a></li>';
+              $country_expertise = get_terms('country_expertise', array('hide_empty' => 0));
+              foreach($country_expertise as $country){
+                echo '<li><a href="#" class="filter" data-filter=".' . $country->slug . '">' . $country->name . '</a></li>';
               }
             ?>
           </ul>
@@ -60,12 +60,12 @@
               $staff_teams[] = $staff_team_term->name;
             }
 
-            $staff_regions_terms = wp_get_post_terms($post->ID, 'region_expertise');
-            $staff_regions_filter = array();
-            $staff_regions = array();
-            foreach($staff_regions_terms as $staff_regions_term){
-              $staff_regions_filter[] = $staff_regions_term->slug;
-              $staff_regions[] = $staff_regions_term->name;
+            $staff_countries_terms = wp_get_post_terms($post->ID, 'country_expertise');
+            $staff_countries_filter = array();
+            $staff_countries = array();
+            foreach($staff_countries_terms as $staff_countries_term){
+              $staff_countries_filter[] = $staff_countries_term->slug;
+              $staff_countries[] = $staff_countries_term->name;
             }
 
             $staff_languages_terms = wp_get_post_terms($post-ID, 'language');
@@ -76,12 +76,12 @@
               $staff_languages[] = $staff_languages_term->name;
             }
 
-            $staff_filter_items = array_merge($staff_teams_filter, $staff_regions_filter, $staff_languages_filter);
+            $staff_filter_items = array_merge($staff_teams_filter, $staff_countries_filter, $staff_languages_filter);
             $staff_filter_items = implode(" ", $staff_filter_items);  ?>
 
 
             <div class="grid-item circle-card <?php echo $staff_filter_items; ?>">
-              <a href="#" class="circle-card-content" data-details_name="<?php the_title(); ?>" data-details_title="<?php the_field('staff_position'); ?>" data-details_bio="<?php the_field('staff_bio'); ?>" data-staff_team="<?php echo implode(', ', $staff_teams); ?>" data-staff_degrees="<?php the_field('staff_degrees'); ?>" data-staff_languages="<?php echo implode(', ', $staff_languages); ?>" data-staff_countryexp="<?php echo implode(', ', $staff_regions); ?>">
+              <a href="#" class="circle-card-content" data-details_name="<?php the_title(); ?>" data-details_title="<?php the_field('staff_position'); ?>" data-details_bio="<?php the_field('staff_bio'); ?>" data-staff_team="<?php echo implode(', ', $staff_teams); ?>" data-staff_yearsexp="<?php the_field('years_experience'); ?>" data-staff_degrees="<?php the_field('staff_degrees'); ?>" data-staff_languages="<?php echo implode(', ', $staff_languages); ?>" data-staff_countryexp="<?php echo implode(', ', $staff_countries); ?>">
                 <img src="<?php the_field('staff_image'); ?>" class="img-circle center-block" alt="<?php the_title(); ?>" />
                 <h4><?php the_title(); ?></h4>
                 <p><?php the_field('staff_position'); ?></p>
