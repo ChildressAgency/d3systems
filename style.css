@@ -657,6 +657,11 @@ a:hover:after{
   border:none;
   border-radius:0;
 }
+.justified-nav .nav-tabs>li>a:focus{
+  background-color:#fff;
+  color:#191919;
+}
+
 .justified-nav .nav-tabs>li{
   box-shadow:3px 0px 0px -2px #191919;
   -webkit-transition:all .3s ease;
@@ -1554,6 +1559,11 @@ g#Layer_244{
 #main .post + .post{
   margin-top:40px;
 }
+.nav-tabs.nav-justified>.active>a, 
+.nav-tabs.nav-justified>.active>a:focus, 
+.nav-tabs.nav-justified>.active>a:hover{
+  border:none;
+}
 
 
 @media (max-width:767px){
@@ -1641,5 +1651,15 @@ g#Layer_244{
 @media (min-width:768px) and (max-width:991px){
   #our-process-sidebar.nav-sidebar{
     max-width:220px;
+  }
+}
+@media (min-width:992px) and (max-width:1199px){
+  #our-process-sidebar.nav-sidebar{
+    max-width:300px;
+  }
+}
+@media (min-width:1200px){
+  #our-process-sidebar.nav-sidebar{
+    max-width:365px;
   }
 }

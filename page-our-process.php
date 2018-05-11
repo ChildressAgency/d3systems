@@ -1,10 +1,10 @@
-<?php get_header(); ?>
+<?php get_header('our-process'); ?>
   <nav id="page-navs" class="hidden-xs">
     <div id="page-progress" class="justified-nav our-process-main-nav">
       <ul class="nav nav-tabs nav-justified">
-        <li><a href="#our-process-content" class="smooth-scroll">Designs</a></li>
-        <li><a href="#data" class="smooth-scroll">Data</a></li>
-        <li><a href="#decisions" class="smooth-scroll">Decisions</a></li>
+        <li><a href="#our-process-content" class="smooth-scroll" data-scroll_offset="180">Designs</a></li>
+        <li><a href="#data" class="smooth-scroll" data-scroll_offset="200">Data</a></li>
+        <li><a href="#decisions" class="smooth-scroll" data-scroll_offset="200">Decisions</a></li>
       </ul>
     </div>
     <?php
@@ -88,7 +88,7 @@
         <div class="col-sm-8">
           <div class="process-main-content" role="main">
             <div id="designs">
-              <?php foreach($designs_blocks as $designs_block): ?>
+              <?php $i=1; $len=count($designs_blocks); foreach($designs_blocks as $designs_block): ?>
                 <section id="<?php echo sanitize_title($designs_block['designs_content_block_title']); ?>" class="main-section">
                   <header class="main-content-header">
                     <h2><?php echo $designs_block['designs_content_block_title']; ?></h2>
@@ -116,16 +116,16 @@
                     <?php endforeach; ?>
 
                   </div>
-                  <?php if($infographic): ?>
+                  <?php if($infographic && $i==$len): ?>
                     <a href="<?php echo $infographic['url']; ?>" target="_blank" class="infographic-link"><?php echo $infographic['caption']; ?></a>
                   <?php endif; ?>
                 </section>
-              <?php endforeach; ?>
+              <?php $i++; endforeach; ?>
 
             </div>
 
             <div id="data">
-              <?php foreach($data_blocks as $data_block): ?>
+              <?php $i=1; $len=count($data_blocks); foreach($data_blocks as $data_block): ?>
                 <section id="<?php echo sanitize_title($data_block['data_content_block_title']); ?>" class="main-section">
                   <header class="main-content-header">
                     <h2><?php echo $data_block['data_content_block_title']; ?></h2>
@@ -152,15 +152,15 @@
                     <?php endforeach; ?>
 
                   </div>
-                  <?php if($infographic):  ?>
+                  <?php if($infographic && $i==$len):  ?>
                     <a href="<?php echo $infographic['url']; ?>" target="_blank" class="infographic-link"><?php echo $infographic['caption']; ?></a>
                   <?php endif; ?>
                 </section>
-              <?php endforeach; ?>
+              <?php $i++; endforeach; ?>
             </div>
 
             <div id="decisions">
-              <?php foreach($decisions_blocks as $decisions_block): ?>
+              <?php $i=1; $len=count($decisions_blocks); foreach($decisions_blocks as $decisions_block): ?>
                 <section id="<?php echo sanitize_title($decisions_block['decisions_content_block_title']); ?>" class="main-section">
                   <header class="main-content-header">
                     <h2><?php echo $decisions_block['decisions_content_block_title']; ?></h2>
@@ -187,9 +187,11 @@
                     <?php endforeach; ?>
 
                   </div>
-                  <a href="<?php echo $infographic['url']; ?>" target="_blank" class="infographic-link"><?php echo $infographic['caption']; ?></a>
+                  <?php if($infographic && $i==$len): ?>
+                    <a href="<?php echo $infographic['url']; ?>" target="_blank" class="infographic-link"><?php echo $infographic['caption']; ?></a>
+                  <?php endif; ?>
                 </section>
-              <?php endforeach; ?>
+              <?php $i++; endforeach; ?>
             </div>
           </div>
         </div>
