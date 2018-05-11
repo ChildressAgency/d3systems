@@ -151,12 +151,12 @@
       </div>
     <?php endif; ?>
     <div id="clients-grid">
-      <?php if(have_rows('clients')): while(have_rows('clients')): the_row(); ?>
+      <?php if(have_rows('client_categories')): while(have_rows('client_categories')): the_row(); ?>
         <div id="<?php echo sanitize_title(get_sub_field('client_category_title')); ?>" class="client-section">
           <div class="container">
             <h2><?php the_sub_field('client_category_title'); ?></h2>
             <div class="grid">
-              <?php if(have_rows('client_logos')): while(have_rows('client_logos')): the_row(); ?>
+              <?php if(have_rows('clients')): while(have_rows('clients')): the_row(); ?>
                 <div class="grid-item circle-card">
                   <div class="client-inner">
                     <img src="<?php the_sub_field('client_logo'); ?>" class="img-responsive center-block" alt="<?php the_sub_field('client_name'); ?>" />
