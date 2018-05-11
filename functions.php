@@ -413,6 +413,7 @@ function d3systems_create_post_types(){
   register_post_type('subsidiary', $subsidiaries_args);
 
   //clients
+  /*
   $clients_labels = array(
     'name' => 'Clients',
     'singular_name' => 'Client',
@@ -438,9 +439,10 @@ function d3systems_create_post_types(){
       'custom_fields'
     )
   );
-  register_post_type('client', $clients_args);
+  register_post_type('client', $clients_args); */
 
   //clients taxonomies
+  /*
   $client_division_labels = array(
     'name' => 'Client Divisions',
     'singular_name' => 'Client Division',
@@ -461,7 +463,7 @@ function d3systems_create_post_types(){
     'show_admin_column' => true,
     'query_var' => 'client_division'
   );
-  register_taxonomy('client_division', 'client', $client_division_args);
+  register_taxonomy('client_division', 'client', $client_division_args); */
 }
 
 add_action('init', 'd3systems_create_taxonomies');
