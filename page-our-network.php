@@ -151,37 +151,25 @@
       </div>
     <?php endif; ?>
     <div id="clients-grid">
-      <?php 
-        $client_divisions = get_terms('client_division', array('hide_empty' => 0, 'meta_key' => 'display_order', 'orderby' => 'meta_value'));
-        foreach($client_divisions as $client_division): ?>
-          <div id="<?php echo $client_division->slug; ?>" class="client-section">
-            <div class="container">
-              <h2><?php echo $client_division->name; ?></h2>
-              <div class="grid">
-                <?php
-                  $clients = new WP_Query(array(
-                    'post_type' => 'client',
-                    'posts_per_page' => -1,
-                    'tax_query' => array(
-                      array(
-                        'taxonomy' => 'client_division',
-                        'terms' => $client_division->term_id
-                      )
-                    )
-                  ));
-
-                  if($clients->have_posts()): while($clients->have_posts()): $clients->the_post(); ?>
-                    <div class="grid-item circle-card">
-                      <a href="<?php the_sub_field('client_link'); ?>" class="circle-card-content">
-                        <img src="<?php the_sub_field('client_logo'); ?>" class="img-circle img-responsive center-block" alt="" />
-                        <h4><?php the_title(); ?></h4>
-                      </a>
-                    </div>
-                <?php endwhile; endif; wp_reset_postdata(); ?>
-              </div><!-- .grid -->
-            </div><!-- .container -->
-          </div><!-- .client-section -->
-        <?php endforeach; ?>
+      <?php if(have_rows('clients')): while(have_rows('clients')): the_row(); ?>
+        <div id="<?php echo sanitize_title(get_sub_field('client_category_title')); ?>" class="client-section">
+          <div class="container">
+            <h2><?php the_sub_field('client_category_title'); ?></h2>
+            <div class="grid">
+              <?php if(have_rows('clients')): while(have_rows('clients')): the_row(); ?>
+                <div class="grid-item circle-card">
+                  <div class="client-inner">
+                    <img src="<?php the_sub_field('client_logo'); ?>" class="img-responsive center-block" alt="<?php the_sub_field('client_name'); ?>" />
+                    <span class="client-name-overlay">
+                      <span class="client-name"><?php the_sub_field('client_name'); ?></span>
+                    </span>
+                  </div>
+                </div>
+              <?php endwhile; endif; ?>
+            </div>
+          </div>
+        </div>
+      <?php endwhile; endif; ?>
     </div>
   </section>
 
