@@ -452,6 +452,9 @@ a:hover:after{
   /*min-height:320px;*/
   text-align:center;
 }
+#clients-grid .circle-card{
+  width:auto;
+}
 .circle-card>.circle-card-content{
   display:block;
   position:relative;
@@ -555,8 +558,10 @@ a:hover:after{
   opacity:0;
   color:#fff;
 }
-.circle-card.details-expanded>a:after{
-  top:105%;
+/*.circle-card.details-expanded>a:after{*/
+.circle-card.staff-marker>a:after{
+  /*top:105%;*/
+  bottom:-20px;
   border:solid transparent;
   content:"";
   height:0;
@@ -572,6 +577,10 @@ a:hover:after{
 }
 .client-section{
   margin-bottom:60px;
+  text-align:center;
+}
+.client-section h2{
+  text-align:left;
 }
 .circle-card .client-inner{
   width:200px;
@@ -604,6 +613,7 @@ a:hover:after{
   position:absolute;
   top:50%;
   transform:translate(-50%, -50%);
+  width:100%;
 }
 .circle-card .client-inner:hover>.client-name-overlay{
   opacity:1;

@@ -441,7 +441,7 @@ $.fn.revealer = function(){
     // extra amount of pixels to scroll the window
     scrollExtra = 0,
     // extra margin when expanded (between preview overlay and the next items)
-    marginExpanded = 85,
+    marginExpanded = 40,
     $window = $(window), winsize,
     $body = $('html, body'),
     // transitionend events
@@ -574,7 +574,7 @@ $.fn.revealer = function(){
     if (typeof preview != 'undefined') {
 
       // not in the same row
-      if (previewPos !== position) {
+      /*if (previewPos !== position) {
         // if position > previewPos then we need to take te current preview´s height in consideration when scrolling the window
         if (position > previewPos) {
           scrollExtra = preview.height;
@@ -585,8 +585,8 @@ $.fn.revealer = function(){
       else {
         preview.update($item);
         return false;
-      }
-
+      }*/
+      hidePreview();
     }
 
     // update previewPos
@@ -660,9 +660,9 @@ $.fn.revealer = function(){
       if (current !== -1) {
         var $currentItem = $items.eq(current);
         $currentItem.removeClass('details-expanded');
-        this.$item.addClass('details-expanded');
+       this.$item.addClass('details-expanded');
         // position the preview correctly
-        //this.positionPreview();
+        this.positionPreview();
       }
 
       // update current value
@@ -704,14 +704,14 @@ $.fn.revealer = function(){
         // set the height for the preview and the item
         this.setHeights();
         // scroll to position the preview in the right place
-        //this.positionPreview();
+        this.positionPreview();
       }, this), 25);
-
     },
     close: function () {
 
       var self = this;
           self.$item.removeClass('details-expanded');
+          self.$item.removeClass('staff-marker');
 
       var onEndFn = function () {
           if (support) {
@@ -722,12 +722,14 @@ $.fn.revealer = function(){
 
       setTimeout($.proxy(function () {
 
-        if (typeof this.$largeImg !== 'undefined') {
-          this.$largeImg.fadeOut('fast');
+        if (typeof this.$details !== 'undefined') {
+          this.$details.fadeOut('fast');
         }
+
         this.$details.css('height', 0);
         // the current expanded item (might be different from this.$item)
         var $expandedItem = $items.eq(this.expandedIdx);
+        //console.log($expandedItem);
         $expandedItem.css('height', $expandedItem.data('height')).on(transEndEventName, onEndFn);
 
         if (!support) {
@@ -742,13 +744,18 @@ $.fn.revealer = function(){
     calcHeight: function () {
 
       //var heightPreview = winsize.height - this.$item.data('height') - marginExpanded,
-      var heightPreview = winsize.height - this.$item.data('height') - marginExpanded,
-        itemHeight = winsize.height;
-        //console.log();
+      //var staff_details_height = $('#details').height();
+      var staff_details_height = this.$details.height();
+      //var heightPreview = winsize.height - this.$item.data('height') - marginExpanded;
+      var heightPreview = staff_details_height;
+      //var itemHeight = winsize.height - this.$item.data('height');
+      var itemHeight = this.$item.data('height') + staff_details_height + marginExpanded;
+      //console.log(staff_details_height);
 
       if (heightPreview < settings.minHeight) {
         heightPreview = settings.minHeight;
-        itemHeight = settings.minHeight + this.$item.data('height') + marginExpanded;
+        //itemHeight = settings.minHeight + this.$item.data('height') + marginExpanded;
+        //itemHeight = this.$item.data('height') + marginExpanded + staff_details_height;
       }
 
       this.height = heightPreview;
@@ -765,15 +772,21 @@ $.fn.revealer = function(){
           self.$item.addClass('details-expanded');
         };
 
-      //this.calcHeight();
+      this.calcHeight();
       //this.$staff_details.css('height', this.height);
-      var staff_details_height = $('#details').height();
-      var itemHeight = this.$item.data('height') + marginExpanded + staff_details_height;
+      //var staff_details_height = $('#details').height();
+      //var itemHeight = this.$item.data('height') + marginExpanded + staff_details_height;
 
-      this.$details.slideDown();
+      //this.$details.slideDown();
+      //this.$details.animate({height : });
       //console.log(staff_details_height);
-      this.$item.css('height', itemHeight).on(transEndEventName, onEndFn);
-      this.$details.animate({'opacity':'1'}, 400);
+
+      self.$item.animate({height: this.itemHeight}, 400, 'linear', function(){
+        self.$details.animate({opacity:'1'}, 400, 'linear', function(){
+          self.$item.addClass('staff-marker');
+        });
+      }).on(transEndEventName, onEndFn);
+      //this.$details;
 
       //this.$item.css('height', $('#staff_details').height()).on(transEndEventName, onEndFn);
       //var staff_details_height = this.$item.find('#staff-details');
@@ -785,9 +798,12 @@ $.fn.revealer = function(){
 
     },
     positionPreview: function () {
-      var position = this.$item.data('offsetTop'),
+      var navHeight = $('#header-nav').outerHeight();
+      //console.log(navHeight);
+      var position = this.$item.data('offsetTop') - (navHeight),
         previewOffsetT = this.$details.offset().top - scrollExtra,
-        scrollVal = this.height + this.$item.data('height') + marginExpanded <= winsize.height ? position : this.height < winsize.height ? previewOffsetT - (winsize.height - this.height) : previewOffsetT;
+        //scrollVal = this.height + this.$item.data('height') + marginExpanded <= winsize.height ? position : this.height < winsize.height ? previewOffsetT - (winsize.height - this.height) : previewOffsetT;
+        scrollVal = position;
 
       $body.animate({ scrollTop: scrollVal }, settings.speed);
 
