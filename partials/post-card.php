@@ -9,7 +9,10 @@
       $category_color = get_field('category_color', $acf_cat_id);
     }
 
-    $featured_image_url = wp_get_attachment_url(get_post_thumbnail_id());
+    if(has_post_thumbnail()){
+      //$featured_image_url = wp_get_attachment_url(get_post_thumbnail_id());
+      $featured_image_url = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
+    }
   ?>
   <h3 class="post-card-category" style="background-color:<?php echo $category_color; ?>;"><?php echo $cur_category->name; ?></h3>
   <div class="post-card-thumb">

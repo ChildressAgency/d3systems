@@ -52,7 +52,7 @@
                   </p>
                   <p>Topics: 
                     <?php
-                      $topics_list = wp_get_post_terms($post-ID, 'topic');
+                      $topics_list = wp_get_post_terms($post->ID, 'topic');
                       $t = 0;
                       $topics_count = count($topics_list);
                       foreach($topics_list as $topic){

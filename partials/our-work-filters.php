@@ -17,7 +17,7 @@
     <ul class="dropdown-menu">
       <li><a href="<?php echo home_url('our-work'); ?>">Show All</a></li>
       <?php
-        $topics = get_terms('topics', array('hide_empty' => 0));
+        $topics = get_terms('topic', array('hide_empty' => 0));
         foreach($topics as $topic){
           echo '<li><a href="' . esc_url(get_term_link($topic)) . '">' . $topic->name . '</a></li>';
         }
@@ -29,7 +29,7 @@
     <ul class="dropdown-menu">
       <li><a href="<?php echo home_url('our-work'); ?>">Show All</a></li>
       <?php
-        $countries = get_terms('countries', array('hide_empty' => 0));
+        $countries = get_terms('country', array('hide_empty' => 0));
         foreach($countries as $country){
           echo '<li><a href="' . esc_url(get_term_link($country)) . '">' . $country->name . '</a></li>';
         }

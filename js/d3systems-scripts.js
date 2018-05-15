@@ -225,10 +225,13 @@ jQuery(document).ready(function($){
 
   //our-work
   if(typeof $.fn.masonry == 'function'){
-    $('#our-work-grid').masonry({
+    var $our_work_grid = $('#our-work-grid').masonry({
       itemSelector: '.work-grid-item',
       columnWidth: '.grid-sizer',
       percentPosition:true
+    });
+    $our_work_grid.imagesLoaded().progress(function(){
+      $our_work_grid.masonry('layout');
     });
   }
 
