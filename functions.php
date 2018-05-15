@@ -42,6 +42,21 @@ function d3systems_scripts(){
   );
 
   wp_register_script(
+    'masonry',
+    get_template_directory_uri() . '/js/masonry.min.js',
+    array('jquery'),
+    '',
+    false
+  );
+  wp_register_script(
+    'imagesloaded',
+    get_template_directory_uri() . '/js/imagesloaded.pkgd.min.js',
+    array('jquery'),
+    '',
+    false
+  );
+
+  wp_register_script(
     'd3systems-scripts', 
     get_template_directory_uri() . '/js/d3systems-scripts.js', 
     array('jquery'), 
@@ -52,6 +67,10 @@ function d3systems_scripts(){
   wp_enqueue_script('bootstrap-script');
   wp_enqueue_script('fontawesome');
   wp_enqueue_script('modernizr');
+  if(is_home()){
+    wp_enqueue_script('masonry');
+    wp_enqueue_script('imagesloaded');
+  }
   wp_enqueue_script('d3systems-scripts');  
 }
 
@@ -414,7 +433,7 @@ function d3systems_create_post_types(){
     'menu_position' => 6,
     'menu_icon' => 'dashicons-networking',
     'query_var' => 'subsidiaries',
-    'support' => array(
+    'supports' => array(
       'title',
       'editor', 
       'custom_fields'
@@ -422,58 +441,31 @@ function d3systems_create_post_types(){
   );
   register_post_type('subsidiary', $subsidiaries_args);
 
-  //clients
-  /*
-  $clients_labels = array(
-    'name' => 'Clients',
-    'singular_name' => 'Client',
-    'menu_name' => 'Clients',
-    'add_new_item' => 'Add Client',
-    'search_items' => 'Search Clients',
-    'edit_item' => 'Edit Client',
-    'view_item' => 'View Client',
-    'all_items' => 'All Clients',
-    'new_item' => 'New Client',
-    'not_found' => 'Client Not Found'
-  );
-  $clients_args = array(
-    'labels' => $clients_labels,
+  //temp post types for importing
+  /*$events_news_args = array(
+    'labels' => array('name' => 'News & Events'),
     'capability_type' => 'post',
     'public' => true,
-    'menu_position' => 7,
-    'menu_icon' => 'dashicons-groups',
-    'query_var' => 'client',
     'supports' => array(
       'title',
       'editor',
-      'custom_fields'
+      'excerpt',
+      'thumbnail'
     )
   );
-  register_post_type('client', $clients_args); */
-
-  //clients taxonomies
-  /*
-  $client_division_labels = array(
-    'name' => 'Client Divisions',
-    'singular_name' => 'Client Division',
-    'search_items' => 'Search Client Divisions',
-    'all_items' => 'All Client Divisions',
-    'parent_item' => 'Parent Client Division',
-    'parent_item_colon' => 'Parent Client Division:',
-    'edit_item' => 'Edit Client Division',
-    'update_item' => 'Update Client Division',
-    'add_new_item' => 'Add New Client Division',
-    'new_item_name' => 'New Client Division Name',
-    'menu_name' => 'Client Divisions'
+  register_post_type('news-events', $events_news_args);
+  $research_args = array(
+    'labels' => array('name' => 'Research & Publications'),
+    'capability_type' => 'post',
+    'public' => true,
+    'supports' => array(
+      'title',
+      'editor',
+      'excerpt',
+      'thumbnail'
+    )
   );
-  $client_division_args = array(
-    'hierarchical' => true,
-    'labels' => $client_division_labels,
-    'show_ui' => true,
-    'show_admin_column' => true,
-    'query_var' => 'client_division'
-  );
-  register_taxonomy('client_division', 'client', $client_division_args); */
+  register_post_type('research', $research_args);*/
 }
 
 add_action('init', 'd3systems_create_taxonomies');
@@ -499,7 +491,7 @@ function d3systems_create_taxonomies(){
     'show_admin_column' => true,
     'query_var' => 'topics',
   );
-  register_taxonomy('topic', 'post', $topic_args);
+  register_taxonomy('topic', array('post'), $topic_args);
 
   $country_labels = array(
     'name' => 'Countries',
@@ -521,7 +513,7 @@ function d3systems_create_taxonomies(){
     'show_admin_column' => true,
     'query_var' => 'countries'
   );
-  register_taxonomy('country', 'post', $country_args);
+  register_taxonomy('country', array('post'), $country_args);
 }
 
 if(function_exists('acf_add_options_page')){
