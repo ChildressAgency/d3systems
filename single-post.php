@@ -6,13 +6,14 @@
         <div class="row">
           <div class="col-sm-8">
             <main class="post">
-              <?php $countries_list = ''; $topics_list = ''; ?>
+              <?php $countries_list = ''; $topics_list = ''; $post_id = ''; ?>
               <?php if(have_posts()): while(have_posts()): the_post(); ?>
                 <?php 
                   $category_color = '#f7d2d4';
                   $cur_categories = get_the_terms(get_the_ID(), 'category');
                   $cur_category = $cur_categories[0];
                   $acf_cat_id = 'category_' . $cur_category->term_id;
+                  $post_id = $post->ID;
 
                   if(get_field('category_color', $acf_cat_id)){
                     $category_color = get_field('category_color', $acf_cat_id);
@@ -105,6 +106,7 @@
                 $sidebar_topic = new WP_Query(array(
                   'post_type' => 'post',
                   'posts_per_page' => 1,
+                  'post__not_in' => array($post_id),
                   'tax_query' => array(
                     array(
                       'taxonomy' => 'topic',
