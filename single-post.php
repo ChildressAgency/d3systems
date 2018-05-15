@@ -6,7 +6,7 @@
         <div class="row">
           <div class="col-sm-8">
             <main class="post">
-              <?php $countries_list = ''; $topics_list = ''; $post_id = ''; ?>
+              <?php $countries_list = array(); $topics_list = array(); $post_id = ''; ?>
               <?php if(have_posts()): while(have_posts()): the_post(); ?>
                 <?php 
                   $category_color = '#f7d2d4';
@@ -102,43 +102,47 @@
                 </div>
               </section>
               <?php
-                $topic = $topics_list[0];
-                $sidebar_topic = new WP_Query(array(
-                  'post_type' => 'post',
-                  'posts_per_page' => 1,
-                  'post__not_in' => array($post_id),
-                  'tax_query' => array(
-                    array(
-                      'taxonomy' => 'topic',
-                      'terms' => $topic->term_id
+                if(!empty($topics_list)){
+                  $topic = $topics_list[0];
+                  $sidebar_topic = new WP_Query(array(
+                    'post_type' => 'post',
+                    'posts_per_page' => 1,
+                    'post__not_in' => array($post_id),
+                    'tax_query' => array(
+                      array(
+                        'taxonomy' => 'topic',
+                        'terms' => $topic->term_id
+                      )
                     )
-                  )
-                ));
+                  ));
 
-                if($sidebar_topic->have_posts()): while($sidebar_topic->have_posts()): $sidebar_topic->the_post(); ?>
-                  <section class="sidebar-section">
-                    <?php get_template_part('partials/post-card'); ?>
-                  </section>
-              <?php endwhile; endif; wp_reset_postdata(); ?>
+                  if($sidebar_topic->have_posts()): while($sidebar_topic->have_posts()): $sidebar_topic->the_post(); ?>
+                    <section class="sidebar-section">
+                      <?php get_template_part('partials/post-card'); ?>
+                    </section>
+                  <?php endwhile; endif; wp_reset_postdata();
+                }
 
-              <?php 
-                $country = $country_list[0];
-                $sidebar_country = new WP_Query(array(
-                  'post_type' => 'post',
-                  'posts_per_page' => 1,
-                  'tax_query' => array(
-                    array(
-                      'taxonomy' => 'country',
-                      'terms' => $country->term_id
+                if(!empty($countries_list)){
+                  $country = $countries_list[0];
+                  $sidebar_country = new WP_Query(array(
+                    'post_type' => 'post',
+                    'posts_per_page' => 1,
+                    'post__not_in' => array($post_id),
+                    'tax_query' => array(
+                      array(
+                        'taxonomy' => 'country',
+                        'terms' => $country->term_id
+                      )
                     )
-                  )
-                ));
+                  ));
 
-                if($sidebar_country->have_posts()): while($sidebar_country->have_posts()): $sidebar_country->the_post(); ?>
-                  <section class="sidebar-section">
-                    <?php get_template_part('partials/post-card'); ?>
-                  </section>
-              <?php endwhile; endif; wp_reset_postdata(); ?>
+                  if($sidebar_country->have_posts()): while($sidebar_country->have_posts()): $sidebar_country->the_post(); ?>
+                    <section class="sidebar-section">
+                      <?php get_template_part('partials/post-card'); ?>
+                    </section>
+                  <?php endwhile; endif; wp_reset_postdata();
+                } ?>
               <section class="sidebar-section">
                 <div class="sidebar-social">
                   <h3>Get in Touch</h3>

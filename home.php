@@ -4,9 +4,9 @@
       <?php get_template_part('partials/our-work-filters'); ?>
       <?php if(have_posts()): ?>
         <div id="our-work-grid">
-          <div class="grid-sizer col-sm-4"></div>
+          <div class="grid-sizer col-sm-6 col-md-4"></div>
           <?php while(have_posts()): the_post(); ?>
-            <div class="work-grid-item col-sm-4">
+            <div class="work-grid-item col-sm-6 col-md-4">
               <?php get_template_part('partials/post-card'); ?>
             </div>
           <?php endwhile; ?>

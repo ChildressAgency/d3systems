@@ -1647,6 +1647,11 @@ g#Layer_244{
     width:auto;
     margin-top:25px;
   }
+  #our-work-grid .work-grid-item{
+    right:0;
+    margin-right:auto;
+    margin-left:auto;
+  }
 }
 @media (min-width:768px){
   #navbar .navbar-nav{

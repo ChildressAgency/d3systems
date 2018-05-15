@@ -67,7 +67,7 @@ function d3systems_scripts(){
   wp_enqueue_script('bootstrap-script');
   wp_enqueue_script('fontawesome');
   wp_enqueue_script('modernizr');
-  if(is_home()){
+  if(is_home() || is_archive()){
     wp_enqueue_script('masonry');
     wp_enqueue_script('imagesloaded');
   }
