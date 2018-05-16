@@ -366,7 +366,7 @@ a:hover:after{
 #filter-nav a:focus:after,
 #our-work-nav a:after,
 #our-work-nav a:hover:after,
-#our-work-nav a:focus{
+#our-work-nav a:focus:after{
   height:0;
   background-color:transparent;
 }

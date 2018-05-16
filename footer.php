@@ -54,6 +54,19 @@
     </div>
   </footer>
   <?php wp_footer(); ?>
+  <?php if(is_archive()): ?>
+    <script>
+      jQuery(document).ready(function($) {
+        $.fn.almEmpty = function(alm){
+          $('.alm-masonry').css({'opacity': '1'});
+          var el = $(alm.content),
+          msg = 'Sorry, there is nothing to display.';
+          el.append('<main class="post"><article><p>' + msg +'</p></article></main>'); // Append to ALM		
+          //console.log("Nothing found in this Ajax Load More query :(");
+        };
+      });
+    </script>
+  <?php endif; ?>
 </body>
 
 </html>

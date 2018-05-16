@@ -11,7 +11,12 @@
                 <?php 
                   $category_color = '#f7d2d4';
                   $cur_categories = get_the_terms(get_the_ID(), 'category');
-                  $cur_category = $cur_categories[0];
+                  if(!empty($cur_categories)){
+                    $cur_category = $cur_categories[0];
+                  }
+                  else{
+                    $cur_category = get_term_by('slug', 'd3-news', 'category');
+                  }
                   $acf_cat_id = 'category_' . $cur_category->term_id;
                   $post_id = $post->ID;
 
