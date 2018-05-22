@@ -325,7 +325,7 @@ function d3systems_create_post_types(){
     'menu_name' => 'Staff',
     'add_new_item' => 'Add New Staff',
     'search_items' => 'Search Staff',
-    'edit_items' => 'Edit Staff',
+    'edit_item' => 'Edit Staff',
     'view_item' => 'View Staff',
     'all_items' => 'All Staff',
     'new_item' => 'New Staff',
