@@ -73,6 +73,7 @@
         <div class="col-sm-8">
           <div class="process-main-content" role="main">
             <div id="designs">
+              <span class="our-process-offset"></span>
               <?php $i=1; $len=count($designs_blocks); foreach($designs_blocks as $designs_block): ?>
                 <section id="<?php echo sanitize_title($designs_block['designs_content_block_title']); ?>" class="main-section">
                   <header class="main-content-header">
@@ -110,6 +111,7 @@
             </div>
 
             <div id="data">
+              <span class="our-process-offset"></span>
               <?php $i=1; $len=count($data_blocks); foreach($data_blocks as $data_block): ?>
                 <section id="<?php echo sanitize_title($data_block['data_content_block_title']); ?>" class="main-section">
                   <header class="main-content-header">
@@ -145,6 +147,7 @@
             </div>
 
             <div id="decisions">
+              <span class="our-process-offset"></span>
               <?php $i=1; $len=count($decisions_blocks); foreach($decisions_blocks as $decisions_block): ?>
                 <section id="<?php echo sanitize_title($decisions_block['decisions_content_block_title']); ?>" class="main-section">
                   <header class="main-content-header">
