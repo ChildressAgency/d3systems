@@ -1,7 +1,11 @@
 <?php get_header(); ?>
 <div class="container">
   <main class="post">
-    <?php if(have_posts()): while(have_posts()): the_post(); ?>
+    <?php if(have_posts()): ?>
+      <div class="search-results">
+        <p>You searched for: <?php echo get_search_query(); ?></p>
+      </div>
+      <?php while(have_posts()): the_post(); ?>
       <?php if(is_singular()): ?>
 
         <header class="post-header">
@@ -20,17 +24,7 @@
           <?php endif; ?>
         </header>
         <article>
-          <?php 
-            if(have_posts()){
-              while(have_posts()){
-                the_post();
-                the_content();
-              }
-            }
-            else{
-              echo '<p>Sorry, there was no content.</p>';
-            }
-          ?>
+          <?php the_content(); ?>
         </article>
       
       <?php else: ?>
@@ -42,7 +36,11 @@
         </div>
 
       <?php endif; ?>
-    <?php endwhile; endif; ?>
+    <?php endwhile; else: ?>
+      <div class="search-results">
+        <p>Sorry, nothing was found.</p>
+      </div>
+    <?php endif; ?>
   </main>
 </div>
 <?php get_footer(); ?>
