@@ -30,7 +30,7 @@
             <li>Recruitment: <span class="value"><?php the_field('recruitment_email', 'option'); ?></span></li>
             <li>General: <span class="value"><?php the_field('general_email', 'option'); ?></span></li>
           </ul>
-          <p><a href="<?php the_field('google_map_link'); ?>" class="google-map-link"><?php the_field('street_address', 'option'); ?><br /><?php the_field('city_state_zip', 'option'); ?></a><br /><span class="value"><?php the_field('phone', 'option'); ?></span></p>
+          <p><a href="<?php the_field('google_map_link', 'option'); ?>" class="google-map-link"><?php the_field('street_address', 'option'); ?><br /><?php the_field('city_state_zip', 'option'); ?></a><br /><span class="value"><?php the_field('phone', 'option'); ?></span></p>
         </div>
         <div class="col-sm-5">
           <h3>Subsidiaries</h3>
