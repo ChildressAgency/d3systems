@@ -26,9 +26,9 @@
         <div class="col-sm-4">
           <h3>Contact Us</h3>
           <ul class="list-unstyled">
-            <li>Research: <span class="value"><?php the_field('research_email', 'option'); ?></span></li>
-            <li>Recruitment: <span class="value"><?php the_field('recruitment_email', 'option'); ?></span></li>
-            <li>General: <span class="value"><?php the_field('general_email', 'option'); ?></span></li>
+            <li>Research: <a href="<?php echo add_query_arg('send-to', get_field('research_email', 'option'), home_url('contact')); ?>" class="value"><?php the_field('research_email', 'option'); ?></a></li>
+            <li>Recruitment: <a href="<?php echo add_query_arg('send-to', get_field('recruitment_email', 'option'), home_url('contact')); ?>" class="value"><?php the_field('recruitment_email', 'option'); ?></a></li>
+            <li>General: <a href="<?php echo add_query_arg('send-to', get_field('general_email', 'option'), home_url('contact')); ?>" class="value"><?php the_field('general_email', 'option'); ?></a></li>
           </ul>
           <p>
             <a href="<?php the_field('google_map_link', 'option'); ?>" class="google-map-link" target="_blank"><?php the_field('street_address', 'option'); ?><br /><?php the_field('city_state_zip', 'option'); ?></a>
