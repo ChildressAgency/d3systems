@@ -351,6 +351,11 @@ a:hover:after{
 #our-work-nav.nav-tabs{
   border-bottom:none;
 }
+#our-work-nav.nav-tabs{
+  z-index:9999;
+  background-color:#fff;
+  display:inline-block;
+}
 #filter-nav>li>a,
 #our-work-nav>li>a{
   padding:2px 35px;
@@ -1386,7 +1391,7 @@ g#Layer_244{
   width:0%;
   background-color:#00f;
   position:absolute;
-  bottom:-3px;
+  bottom:0px;
   z-index:9;
 }
 

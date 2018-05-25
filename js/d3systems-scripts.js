@@ -117,7 +117,17 @@ jQuery(document).ready(function($){
     }
   });
 
-  
+  var $our_work_nav = $('#our-work-nav');
+  $our_work_nav.on('affix.bs.affix', function(){
+    $(this).css({ 'top' : header_height});
+  });
+  $our_work_nav.affix({
+    offset:{
+      top: function(){
+        return hero_height - header_height;
+      }
+    }
+  })
 
   
   $('#our-process-sidebar').affix({
