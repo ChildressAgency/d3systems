@@ -57,21 +57,46 @@
       </div>
     </div>
   </nav>
-  <?php
-    $hero_background_image = get_stylesheet_directory_uri() . '/images/urban-thailand.jpg';
-    $hero_background_image_css = '';
+  <div class="hero option-hero">
+    <?php 
+      $page_id = '';
+      if(is_home() || is_tax('topic') || is_tax('countries') || is_archive()){
+        $our_work_page = get_page_by_path('our-work');
+        $page_id = $our_work_page->ID;
+      }
 
-    if(get_field('hero_background_image')){
-      $hero_background_image = get_field('hero_background_image');
-      $hero_background_image_css = get_field('hero_background_image_css');
-    } 
-  ?>
+      if(get_field('hero_style_setting', $page_id) == 'carousel'): ?>
 
-  <div class="hero" style="background-image:url(<?php echo $hero_background_image; ?>); <?php echo $hero_background_image_css; ?>">
-    <div class="container">
-      <div class="hero-caption">
-        <h1><?php the_field('hero_title'); ?></h1>
-        <p><?php the_field('hero_caption'); ?></p>
+        <div id="hero-carousel" class="carousel slide" data-interval="false" data-ride="carousel">
+          <div class="carousel-inner" role="listbox">
+            <?php if(have_rows('carousel_slides', $page_id)): $cs=0; while(have_rows('carousel_slides', $page_id)): the_row(); ?>
+              <div class="item<?php if($cs == 0){ echo ' active'; } ?>" style="background-image:url(<?php the_sub_field('carousel_slide_image'); ?>);"></div>
+            <?php $cs++; endwhile; endif; ?>
+            <div class="hero-caption">
+              <h1><?php the_field('hero_title', $page_id); ?></h1>
+              <p><?php the_field('hero_caption', $page_id); ?></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-progress-bar"></div>
+
+    <?php else: 
+      $hero_background_image = get_stylesheet_directory_uri() . '/images/urban-thailand.jpg';
+      $hero_background_image_css = '';
+
+      if(get_field('hero_background_image', $page_id)){
+        $hero_background_image = get_field('hero_background_image', $page_id);
+        $hero_background_image_css = get_field('hero_background_image_css', $page_id);
+      } ?>
+
+      <div class="hero" style="background-image:url(<?php echo $hero_background_image; ?>); <?php echo $hero_background_image_css; ?>">
+        <div class="container">
+          <div class="hero-caption">
+            <h1><?php the_field('hero_title', $page_id); ?></h1>
+            <p><?php the_field('hero_caption', $page_id); ?></p>
+          </div>
+        </div>        
       </div>
-    </div>
+
+    <?php endif; ?>
   </div>

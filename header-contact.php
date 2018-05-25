@@ -74,20 +74,20 @@
       <div class="carousel-progress-bar"></div>
 
     <?php else: 
-
+      $test = '';
       $hero_background_image = get_stylesheet_directory_uri() . '/images/urban-thailand.jpg';
       $hero_background_image_css = '';
 
-      if(get_field('hero_background_image')){
-        $hero_background_image = get_field('hero_background_image');
-        $hero_background_image_css = get_field('hero_background_image_css');
+      if(get_field('hero_background_image', $test)){
+        $hero_background_image = get_field('hero_background_image', $test);
+        $hero_background_image_css = get_field('hero_background_image_css', $test);
       } ?>
 
       <div class="hero" style="background-image:url(<?php echo $hero_background_image; ?>); <?php echo $hero_background_image_css; ?>">
         <div class="container">
           <div class="hero-caption">
-            <h1><?php the_field('hero_title'); ?></h1>
-            <p><?php the_field('hero_caption'); ?></p>
+            <h1><?php the_field('hero_title', $test); ?></h1>
+            <p><?php the_field('hero_caption', $test); ?></p>
           </div>
         </div>        
       </div>

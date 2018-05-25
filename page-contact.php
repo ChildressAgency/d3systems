@@ -1,4 +1,4 @@
-<?php get_header('contact'); ?>
+<?php get_header(); ?>
   <div id="contact-page">
     <div class="container">
       <main class="contact-form">
