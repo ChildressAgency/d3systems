@@ -19,6 +19,12 @@ jQuery(document).ready(function($){
     $(this).removeClass('open');
   });
 
+  if($(window.location.hash).length){
+    $('html,body').animate({
+      scrollTop:$(window.location.hash).offset().top - 215
+    });
+  }
+
   //smooth scroll anchors
   $('.smooth-scroll').on('click', function (e) {
     e.preventDefault;
@@ -39,7 +45,7 @@ jQuery(document).ready(function($){
   }); 
   
   //grid functions
-  $('.circle-card-content').on('click', function(e){
+  $('[href="#"]').on('click', function(e){
     e.preventDefault();
   });
   
@@ -180,13 +186,33 @@ jQuery(document).ready(function($){
 
   //end affix settings
 
+  //scroll indicator on our-process page
+  
   if($('.scroll-indicator-container').length){
+    /*
     $(window).on('scroll', function(){
       var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
       var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
       var scrolled = (winScroll / height) * 100;
       document.getElementById("scroll-indicator").style.width = scrolled + '%';
-    });
+    });*/
+    /*  
+    var $indicator_main = $('.scroll-indicator-container');
+    var $scroll_progress = $('#scroll-indicator');
+    var transform_support = $scroll_progress.css('transform');
+    transform_support = (transform_support == 'none' || transform_support == '') ? false : true;
+
+    function sync_scroll_progress(){
+      var win_height = $(window).height(),
+          doc_height = $('#our-process-content').height(),
+          scroll_top = $(window).scrollTop() - 508,
+          track_length = (doc_height - win_height) + 740,
+          pct_scrolled = Math.floor(scroll_top/track_length * 100);
+          $scroll_progress.css('transform', 'translate3d(' + (-100 + pct_scrolled) + '%,0,0)');
+    }
+    $(window).on('scroll load', function(){
+      requestAnimationFrame(sync_scroll_progress);
+    });*/
   }
 
   //https://medium.com/talk-like/detecting-if-an-element-is-in-the-viewport-jquery-a6a4405a3ea2
@@ -209,9 +235,9 @@ jQuery(document).ready(function($){
       
       if($('#' + process_section).isInViewport()){
         //console.log(process_section + ' true');
-        $('.sidebar-sub-section').each(function(){
+        //$('.sidebar-sub-section').each(function(){
           //$(this).find('.sidebar-section-content').slideUp();
-        });
+        //});
         $($self).find('.sidebar-section-content').slideDown();
         $($self).find('.sidebar-section-title').removeClass('process-notshown');
       }
@@ -219,6 +245,20 @@ jQuery(document).ready(function($){
         //console.log(process_section + ' false');
         $($self).find('.sidebar-section-content').slideUp();
         $($self).find('.sidebar-section-title').addClass('process-notshown');
+      }
+    });
+
+    $('.main-section').each(function(){
+      var $main_section = $(this);
+      var $main_section_id = $main_section.attr('id');
+      var element_top = $main_section.offset().top;
+      var viewport_top = $(window).scrollTop();
+
+      if(element_top < (viewport_top + 220)){
+        $('#sub-progress>ul').find('[href="#' + $main_section_id + '"]').addClass('show-progress');
+      }
+      else{
+        $('#sub-progress>ul').find('[href="#' + $main_section_id + '"]').removeClass('show-progress');
       }
     });
   });
@@ -264,6 +304,13 @@ jQuery(document).ready(function($){
       barInterval = setInterval(carousel_progress_bar, 30);
     }
   );
+
+  $('.globe-wrapper g').on('click', function(){
+    var $page_name = $(this).attr('id');
+    var url_base = location.href.substring(0, location.href.lastIndexOf('/')+1);
+    var new_location = url_base + $page_name;
+    window.location = new_location;
+  });
 
 });
 
