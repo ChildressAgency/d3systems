@@ -12,7 +12,7 @@ get_header('global-reach'); ?>
       <li<?php if(is_page('middle-east-and-north-africa')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('middle-east-and-north-africa'); ?>">Middle East and North Africa</a></li>
       <li<?php if(is_page('sub-saharan-africa')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('sub-saharan-africa'); ?>">Sub-Saharan Africa</a></li>
       <li<?php if(is_page('central-and-south-asia')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('central-and-south-asia'); ?>">Central and South Asia</a></li>
-      <li<?php if(is_page('east-southeast-asia-and-oceana')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('east-southeast-asia-and-oceana'); ?>">East Southeast Asia and Oceana</a>
+      <li<?php if(is_page('east-southeast-asia-and-oceana')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('east-southeast-asia-and-oceana'); ?>">East Asia, Southeast Asia, & Oceana</a>
     </ul>
   </div>
   <?php if(!is_page('global-reach')): ?>
@@ -31,8 +31,12 @@ get_header('global-reach'); ?>
                   $countries = get_field('experience_countries');
                   if($countries): ?>
                     <ul>
-                      <?php foreach($countries as $country): ?>
-                        <li><a href="<?php echo get_term_link($country); ?>"><?php echo $country->name; ?></a></li>
+                      <?php foreach($countries as $country):
+                        if($country->count > 0): ?>
+                          <li><a href="<?php echo get_term_link($country); ?>"><?php echo $country->name; ?></a></li>
+                        <?php else: ?>
+                          <li><?php echo $country->name; ?></li>
+                        <?php endif; ?>
                       <?php endforeach; ?>
                     </ul>
                   <?php endif; ?>
@@ -67,7 +71,7 @@ get_header('global-reach'); ?>
                     </header>
                     <div class="main-content-body">
                       <div class="circle-card">
-                        <a href="<?php the_sub_field('spotlight_link'); ?>" class="circle-card-content">
+                        <a href="<?php the_sub_field('spotlight_link'); ?>" class="circle-card-content" target="_blank">
                           <span class="">
                             <img src="<?php the_sub_field('spotlight_image'); ?>" class="img-circle center-block" alt="" />
                           </span>
