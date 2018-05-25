@@ -21,7 +21,7 @@
           </ul>
         </li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Country Expertise</a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Regional Expertise</a>
           <ul class="dropdown-menu">
             <?php
               $country_expertise = get_terms('country_expertise', array('hide_empty' => 0));
@@ -123,7 +123,7 @@
                 <a href="#" class="circle-card-content" 
                   data-subsidiary_address="<?php the_field('subsidiary_address_1'); ?><br /><?php the_field('subsidiary_address_2'); ?><br /><?php the_field('subsidiary_address_3'); ?>" 
                   data-subsidiary_phone="<?php the_field('subsidiary_phone'); ?>" 
-                  data-subsidiary_contact="<a href='<?php the_field('subsidiary_email'); ?>'><?php the_field('subsidiary_email'); ?></a><br /><a href='<?php the_field('subsidiary_website'); ?>'>Visit Website</a>" 
+                  data-subsidiary_contact="<a href='<?php the_field('subsidiary_email'); ?>'><?php the_field('subsidiary_email'); ?></a><br /><a href='<?php the_field('subsidiary_website'); ?>' target='_blank'>Visit Website</a>" 
                   data-details_name="<?php the_title(); ?>" 
                   data-details_title="<?php the_field('subsidiary_title'); ?>" 
                   data-details_bio="<?php the_field('subsidiary_details'); ?>">
