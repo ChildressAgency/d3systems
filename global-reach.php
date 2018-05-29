@@ -4,7 +4,7 @@
 */
 
 get_header('global-reach'); ?>
-  <div id="global-reach-nav" class="justified-nav">
+  <div id="page-navs" class="justified-nav">
     <ul class="nav nav-tabs nav-justified">
       <li<?php if(is_page('global-reach')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('global-reach'); ?>">Global Reach</a></li>
       <li<?php if(is_page('the-americas-and-the-caribbean')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('the-americas-and-the-caribbean'); ?>">The Americas and the Caribbean</a></li>
@@ -12,11 +12,11 @@ get_header('global-reach'); ?>
       <li<?php if(is_page('middle-east-and-north-africa')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('middle-east-and-north-africa'); ?>">Middle East and North Africa</a></li>
       <li<?php if(is_page('sub-saharan-africa')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('sub-saharan-africa'); ?>">Sub-Saharan Africa</a></li>
       <li<?php if(is_page('central-and-south-asia')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('central-and-south-asia'); ?>">Central and South Asia</a></li>
-      <li<?php if(is_page('east-southeast-asia-and-oceana')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('east-southeast-asia-and-oceana'); ?>">East Asia, Southeast Asia, & Oceana</a>
+      <li<?php if(is_page('east-asia-southeast-asia-and-oceana')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('east-asia-southeast-asia-and-oceana'); ?>">East Asia, Southeast Asia, & Oceana</a>
     </ul>
   </div>
   <?php if(!is_page('global-reach')): ?>
-  <div class="global-reach-content">
+  <div class="global-reach-content parallax-scroll">
     <div class="container">
       <div class="row parallax">
         <div class="col-sm-4" id="left">

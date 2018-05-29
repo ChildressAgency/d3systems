@@ -13,8 +13,6 @@
         <h1>
           <span class="post-title-part"><?php echo get_the_title(); ?></span>
         </h1>
-        <hr style="border-color:#999;" />
-        <h4 class="post-date"><?php echo get_the_date('M\. j, Y'); ?></h4>
       <?php endif; ?>
     </header>
     <article>

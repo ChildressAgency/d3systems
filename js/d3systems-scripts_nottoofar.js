@@ -2,22 +2,21 @@ jQuery(document).ready(function($){
   //var headerNav = document.getElementById("header-nav");
   var $headerNav = $('#header-nav');
   var $stickyNav = $('.sticky-nav');
-  var headerNavHeight, stickyNavHeight, headerOffset;
-
-  var $window = $(window);
+  var headerNavHeight = $headerNav.outerHeight(true);
+  var stickyNavHeight = $('.sticky-nav').outerHeight(true);
+  // hash link offsets for header plus 40px margin
+  var headerOffset = headerNavHeight + stickyNavHeight + 40;
 
   function setNavHeightAndOffset(){
     headerNavHeight = $headerNav.outerHeight(true);
-    stickyNavHeight = $stickyNav.outerHeight(true);
-
-    headerOffset = headerNavHeight + stickyNavHeight;
+    stickyNavHeight
   }
-  setNavHeightAndOffset();
-  $window.on('resize', function(){ setNavHeightAndOffset(); });
+
+  var $window = $(window);
 
   //sticky nav
   $window.on('scroll', function(){
-    var navbarPosition = $headerNav.offset().top;
+    var navbarPosition = $headerNav.position().top;
 
     if($window.scrollTop() >= navbarPosition){
       $headerNav.addClass('sticky');
@@ -25,7 +24,7 @@ jQuery(document).ready(function($){
     else{
       $headerNav.removeClass('sticky');
     }
-  });
+  }
 
   $('#navbar .dropdown').hover(function(){
     $(this).addClass('open');
@@ -34,28 +33,24 @@ jQuery(document).ready(function($){
   });
 
   if($(window.location.hash).length){
-    //$('html,body').animate({
-    //  scrollTop:$(window.location.hash).offset().top - headerOffset
-    //});
-
-    $('html, body').hide();
-    setTimeout(function(){
-      $('html, body').scrollTop(0).show();
-      $('html, body').animate({
-        scrollTop: $(window.location.hash).offset().top - headerOffset - 20
-      }, 1000)
-    }, 0);
+    $('html,body').animate({
+      scrollTop:$(window.location.hash).offset().top - headerOffset
+    });
   }
 
   //smooth scroll anchors
   $('.smooth-scroll').on('click', function (e) {
     e.preventDefault;
+    var scroll_offset = 120;
+    if($(this).data('scroll_offset')){
+      scroll_offset = $(this).data('scroll_offset');
+    }
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
       var target = $(this.hash);
       target = target.length ? target : $('[name="' + this.hash.slice(1) + '"]');
       if (target.length) {
         $('html,body').animate({
-          scrollTop: target.offset().top - headerOffset
+          scrollTop: target.offset().top - scroll_offset
         }, 1000);
         return false;
       }
@@ -67,10 +62,11 @@ jQuery(document).ready(function($){
     e.preventDefault();
   });
   
-  $('#staff_grid').revealer();
-  $('#subsidiaries_grid').revealer();
+  var staff_grid = $('#staff_grid').revealer();
+  var subsidiaries_grid = $('#subsidiaries_grid').revealer();
 
   var $filters = $('#filter-nav').on('click', '.filter', function(e){
+    e.preventDefault();
     var $filter = $(this).data('filter');
     $('#filter-nav li').removeClass('active');
     $(this).parent().addClass('active');
@@ -86,6 +82,7 @@ jQuery(document).ready(function($){
       $('#staff_grid>' + $filter).each(function(){
         $(this).fadeIn(400);
       });
+      //$('#grid>.grid-item').not($filter).hide();
     }
     $filters.removeClass('active');
     $(this).addClass('active');
@@ -94,177 +91,113 @@ jQuery(document).ready(function($){
 
   //affix settings on global reach and our process pages 
   
-  var $globalReachNav = $('#global-reach-nav'),
-      $globalReachContent = $('.global-reach-content'),
-      $pageNavs = $('#page-navs');
-
-  var heroHeight, globalReachNavHeight, pageNavsHeight, superFooterHeight, footerHeight, sidebarHeight;
-
-  function setAffixHeightsAndOffsets(){
-    heroHeight = $('.hero').outerHeight(true);
-    //globalReachNavHeight = $globalReachNav.outerHeight(true);
-    pageNavsHeight = $pageNavs.outerHeight(true);
-    
-    superFooterHeight = $('#super-footer').outerHeight(true);
-    footerHeight = $('#footer').outerHeight(true);
-
-    sidebarHeight = $globalReachContent.outerHeight(true);
-
-    $globalReachContent.css({ 'min-height' : sidebarHeight + 80 });
-  }
-
-  setAffixHeightsAndOffsets();
-  $window.on('resize', function(){ setAffixHeightsAndOffsets(); });
+  var header_height = $('#header-nav').outerHeight(true),
+      hero_height = $('.hero').outerHeight(true),
+      global_reach_nav_height = $('#global-reach-nav').outerHeight(true),
+      page_navs_height = $('#page-navs').outerHeight(true),
+      super_footer_height = $('#super-footer').outerHeight(true),
+      footer_height = $('footer').outerHeight(true),
+      sidebar_height = $('.global-reach-content').outerHeight(true);
+  $('.global-reach-content').css({'min-height':sidebar_height +80});
   
-  /*$globalReachNav.on('affix.bs.affix', function () {
-    $(this).css({ 'top': headerNavHeight });
-    $(this).next().css({ 'margin-top': globalReachNavHeight + 40 });//40 for the padding
+  $('#global-reach-nav').on('affix.bs.affix', function () {
+    $(this).css({ 'top': header_height });
+    $(this).next().css({ 'margin-top': global_reach_nav_height + 40 });//40 for the padding
   });
-  $globalReachNav.on('affix-top.bs.affix', function () {
+  $('#global-reach-nav').on('affix-top.bs.affix', function () {
     $(this).next().css({ 'margin-top': 0 });
   });
-  $globalReachNav.affix({
+  $('#global-reach-nav').affix({
     offset:{
       top: function(){
-        return heroHeight - headerNavHeight;
+        return hero_height - header_height;
       }
     }
-  });*/
-
-  $pageNavs.on('affix.bs.affix', function () {
-    $(this).css({ 'top': headerNavHeight });
-    $(this).next().css({ 'margin-top': pageNavsHeight + 40 });
   });
-  $pageNavs.on('affix-top.bs.affix', function () {
+
+  $('#page-navs').on('affix.bs.affix', function () {
+    $(this).css({ 'top': header_height });
+    $(this).next().css({ 'margin-top': page_navs_height });
+  });
+  $('#page-navs').on('affix-top.bs.affix', function () {
     $(this).next().css({ 'margin-top': 0 });
   });
-  $pageNavs.affix({
+  $('#page-navs').affix({
     offset:{
       top: function(){
-        return heroHeight - headerNavHeight;
+        return hero_height - header_height;
       }
     }
   });
 
-  var $ourWorkNav = $('#our-work-nav');
-  $ourWorkNav.on('affix.bs.affix', function(){
-    $(this).css({ 'top' : headerNavHeight});
+  var $our_work_nav = $('#our-work-nav');
+  $our_work_nav.on('affix.bs.affix', function(){
+    $(this).css({ 'top' : header_height});
   });
-  $ourWorkNav.affix({
+  $our_work_nav.affix({
     offset:{
       top: function(){
-        return heroHeight - headerNavHeight;
-      }
-    }
-  });
-
-  //our-process-affix
-  var $designsSidebar = $('#designs .our-process-sidebar2'),
-      $dataSidebar = $('#data .our-process-sidebar2'),
-      $decisionsSidebar = $('#decisions .our-process-sidebar2');
-  
-  var designsMainHeight = $('#designs-main').outerHeight(true),
-      dataMainHeight = $('#data-main').outerHeight(true),
-      decisionsMainHeight = $('#decisions-main').outerHeight(true);
-
-  $designsSidebar.on('affix.bs.affix', function(){
-    $(this).css({ 'top' : headerOffset + 40 });
-  });
-  $designsSidebar.affix({
-    offset:{
-      top: function(){
-        return heroHeight - headerOffset + 40;
-      },
-      bottom: function(){
-        return this.bottom = footerHeight + superFooterHeight + decisionsMainHeight + dataMainHeight + headerOffset;
-      }
-    }
-  });
-
-  $dataSidebar.on('affix.bs.affix', function(){
-    $(this).css({ 'top' : headerOffset + 40 });
-  });
-  $dataSidebar.affix({
-    offset:{
-      top: function(){
-        return designsMainHeight + heroHeight + stickyNavHeight - headerNavHeight;
-      },
-      bottom: function(){
-        return this.bottom = footerHeight + superFooterHeight + decisionsMainHeight + headerOffset;
-      }
-    }
-  });
-
-  $decisionsSidebar.on('affix.bs.affix', function(){
-    $(this).css({ 'top' : headerOffset + 40});
-  });
-  $decisionsSidebar.affix({
-    offset:{
-      top: function(){
-        return designsMainHeight + dataMainHeight + heroHeight + stickyNavHeight - headerNavHeight;
-      },
-      bottom: function(){
-        return this.bottom = footerHeight + superFooterHeight + headerOffset;
+        return hero_height - header_height;
       }
     }
   });
   
-  /*$('#our-process-sidebar').affix({
+  $('#our-process-sidebar').affix({
     offset:{
       top: function(){
-        var windowTop = $('.nav-sidebar').offset().top;
-        var topMargins = parseInt($('.nav-sidebar').children(0).css("margin-top"), 10);
+        var window_top = $('.nav-sidebar').offset().top;
+        var top_margins = parseInt($('.nav-sidebar').children(0).css("margin-top"), 10);
 
-        return this.top = windowTop - topMargins - headerNavHeight - pageNavsHeight -20;
+        return this.top = window_top - top_margins - header_height - page_navs_height -20;
       },
       bottom: function(){
-        return this.bottom = footerHeight + superFooterHeight +40;
+        return this.bottom = footer_height + super_footer_height +40;
       }
     }
   }).on('affix.bs.affix', function(){
-    $(this).css({'top':headerNavHeight + pageNavsHeight + 40});
-  });*/
+    $(this).css({'top':header_height + page_navs_height + 40});
+  });
 
 
   //https://stackoverflow.com/questions/44688708/how-to-create-the-parallax-effect-in-2-uneven-columns-so-they-end-even-at-the-en
 
-  if($('.parallax-scroll').length){
+  if($('.global-reach-content').length){
     var $sidebar = $('#left'),
-        sidebarHeight = $sidebar.outerHeight(true);
-    var $mainContent = $('#right'),
-        mainContentHeight = $mainContent.outerHeight(true);
-    var $tallColumn, $shortColumn, tallColumnHeight, shortColumnHeight;
+        sidebar_height = $sidebar.outerHeight(true);
+    var $main_content = $('#right'),
+        main_content_height = $main_content.outerHeight(true);
+    var $tall_column, $short_column, tall_column_height, short_column_height;
 
-    $window.on("load resize scroll", function (e) {
-      if(sidebarHeight > mainContentHeight){
-        $tallColumn = $sidebar;
-        tallColumnHeight = sidebarHeight;
+    $(window).on("load resize scroll", function (e) {
+      if(sidebar_height > main_content_height){
+        $tall_column = $sidebar;
+        tall_column_height = sidebar_height;
 
-        $shortColumn = $mainContent;
-        shortColumnHeight = mainContentHeight;
+        $short_column = $main_content;
+        short_column_height = main_content_height;
       }
       else{
-        $tallColumn = $mainContent;
-        tallColumnHeight = mainContentHeight;
+        $tall_column = $main_content;
+        tall_column_height = main_content_height;
 
-        $shortColumn = $sidebar;
-        shortColumnHeight = sidebarHeight;
+        $short_column = $sidebar;
+        short_column_height = sidebar_height;
       }
-      var travel = tallColumnHeight - shortColumnHeight;
+      var travel = tall_column_height - short_column_height;
       
       //top of columns
-      var topOfColumns = $('.parallax').offset().top - headerNavHeight - stickyNavHeight;
-      var columns = $('.parallax').outerHeight() - $window.innerHeight() + headerOffset;
+      var topOfColumns = $('.parallax').offset().top - header_height - global_reach_nav_height;
+      var columns = $('.parallax').outerHeight() - $(window).innerHeight() + header_height + global_reach_nav_height;
       var scrollInterval = columns / travel;
 
       //where the magic happens
-      var a = Math.round(($window.scrollTop() - topOfColumns) / scrollInterval);
+      var a = Math.round(($(window).scrollTop() - topOfColumns) / scrollInterval);
       //find the bottom of the right column and give a Bool (true)
-      var b = $window.scrollTop() >= $shortColumn.offset().top + shortColumnHeight - $window.innerHeight();
+      var b = $(window).scrollTop() >= $short_column.offset().top + $short_column.outerHeight() - window.innerHeight;
 
       //if the user scrolls to the top of the columns and the user has not scrolled to the bottom of the right column
-      if ($window.scrollTop() >= topOfColumns && b === false) {
-        $shortColumn.css({
+      if ($(window).scrollTop() >= topOfColumns && b === false) {
+        $short_column.css({
           "-webkit-transform": "translate3d(0px, " + a + "px, 0px)",
           "-moz-transform": "translate3d(0px, " + a + "px, 0px)",
           "-ms-transform": "translateY(" + a + "px)",
@@ -278,112 +211,136 @@ jQuery(document).ready(function($){
   //end affix settings
 
   //scroll indicator on our-process page
+  
+  if($('.scroll-indicator-container').length){
+    /*
+    $(window).on('scroll', function(){
+      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var scrolled = (winScroll / height) * 100;
+      document.getElementById("scroll-indicator").style.width = scrolled + '%';
+    });*/
+    /*  
+    var $indicator_main = $('.scroll-indicator-container');
+    var $scroll_progress = $('#scroll-indicator');
+    var transform_support = $scroll_progress.css('transform');
+    transform_support = (transform_support == 'none' || transform_support == '') ? false : true;
+
+    function sync_scroll_progress(){
+      var win_height = $(window).height(),
+          doc_height = $('#our-process-content').height(),
+          scroll_top = $(window).scrollTop() - 508,
+          track_length = (doc_height - win_height) + 740,
+          pct_scrolled = Math.floor(scroll_top/track_length * 100);
+          $scroll_progress.css('transform', 'translate3d(' + (-100 + pct_scrolled) + '%,0,0)');
+    }
+    $(window).on('scroll load', function(){
+      requestAnimationFrame(sync_scroll_progress);
+    });*/
+  }
 
   //https://medium.com/talk-like/detecting-if-an-element-is-in-the-viewport-jquery-a6a4405a3ea2
   $.fn.isInViewport = function(){
-    var elementTop = $(this).offset().top;
-    var elementBottom = elementTop + $(this).outerHeight();
+    var $window = $(window);
 
-    var viewportTop = $window.scrollTop();
-    var viewportBottom = viewportTop + $window.height();
+    var element_top = $(this).offset().top;
+    var element_bottom = element_top + $(this).outerHeight();
 
-    return elementBottom > (viewportTop + headerOffset) && elementTop < (viewportTop + headerOffset);
+    var viewport_top = $window.scrollTop();
+    var viewport_bottom = viewport_top + $window.height();
+
+    return element_bottom > (viewport_top + 185) && element_top < (viewport_top + 220);
   }
 
-  $window.on('resize scroll', function(){
-    /*$('.sidebar-sub-section').each(function(){
+  $(window).on('resize scroll', function(){
+    $('.sidebar-sub-section').each(function(){
       var $self = $(this);
-      var processSection = $(this).data('process_section');
+      var process_section = $(this).data('process_section');
       
-      if($('#' + processSection).isInViewport()){
+      if($('#' + process_section).isInViewport()){
+        //console.log(process_section + ' true');
+        //$('.sidebar-sub-section').each(function(){
+          //$(this).find('.sidebar-section-content').slideUp();
+        //});
         $($self).find('.sidebar-section-content').slideDown();
         $($self).find('.sidebar-section-title').removeClass('process-notshown');
       }
       else{
+        //console.log(process_section + ' false');
         $($self).find('.sidebar-section-content').slideUp();
         $($self).find('.sidebar-section-title').addClass('process-notshown');
       }
-    });*/
+    });
 
     $('.main-section').each(function(){
-      var $mainSection = $(this);
-      var $mainSectionId = $mainSection.attr('id');
-      var elementTop = $mainSection.offset().top;
-      var viewportTop = $window.scrollTop();
+      var $main_section = $(this);
+      var $main_section_id = $main_section.attr('id');
+      var element_top = $main_section.offset().top;
+      var viewport_top = $(window).scrollTop();
 
-      if(elementTop < (viewportTop + headerOffset)){
-        $('#sub-progress>ul').find('[href="#' + $mainSectionId + '"]').addClass('show-progress');
+      if(element_top < (viewport_top + 220)){
+        $('#sub-progress>ul').find('[href="#' + $main_section_id + '"]').addClass('show-progress');
       }
       else{
-        $('#sub-progress>ul').find('[href="#' + $mainSectionId + '"]').removeClass('show-progress');
+        $('#sub-progress>ul').find('[href="#' + $main_section_id + '"]').removeClass('show-progress');
       }
     });
   });
 
+  //our-work
+  //if(typeof $.fn.masonry == 'function'){
+    //var $our_work_grid = $('#our-work-grid').masonry({
+    //  itemSelector: '.work-grid-item',
+    //  columnWidth: '.grid-sizer',
+    //  percentPosition:true
+    //});
+    //$our_work_grid.imagesLoaded().progress(function(){
+    //  $our_work_grid.masonry('layout');
+    //});
+  //}
+
   //carousel progress bar
   var percent = 0,
       bar = $('.carousel-progress-bar'),
-      heroCarousel = $('#hero-carousel');
+      hero_carousel = $('#hero-carousel');
 
-  function carouselProgressBar(){
+  function carousel_progress_bar(){
     bar.css({ 'width' : percent + "%" });
     percent = percent + 0.5;
 
     if(percent>100){
       percent = 0;
-      heroCarousel.carousel('next');
+      hero_carousel.carousel('next');
     }
   }
 
-  heroCarousel.carousel({
+  hero_carousel.carousel({
     interval:false,
     pause:true
   }).on('slid.bs.carousel', function(){});
 
-  var barInterval = setInterval(carouselProgressBar, 30);
-  heroCarousel.hover(
+  var barInterval = setInterval(carousel_progress_bar, 30);
+  hero_carousel.hover(
     function(){
       clearInterval(barInterval);
     },
     function(){
-      barInterval = setInterval(carouselProgressBar, 30);
+      barInterval = setInterval(carousel_progress_bar, 30);
     }
   );
 
   $('.globe-wrapper g').on('click', function(){
-    var $pageName = $(this).attr('id');
-    var urlBase = location.href.substring(0, location.href.lastIndexOf('/')+1);
-    var newLocation = urlBase + $pageName;
-    window.location = newLocation;
+    var $page_name = $(this).attr('id');
+    var url_base = location.href.substring(0, location.href.lastIndexOf('/')+1);
+    var new_location = url_base + $page_name;
+    window.location = new_location;
   });
 
-  if($('#d3-contact-form').length){
-    var checkedField = $('input[name="subject"]:checked', '#d3-contact-form').val();
-    $('#to-field').text(setToField(checkedField));
-  }
-  $('#d3-contact-form input[name="subject"]').on('change', function(){
-    var checkedField = $(this).val();
-    $('#to-field').text(setToField(checkedField));
-  });
-
-  function setToField(checkedField){
-    switch(checkedField){
-      case 'Partner With Us':
-        return 'To: Research';
-      break;
-      case 'Request a Proposal':
-        return 'To: General Information';
-      break;
-      case 'Recruiting Inquiry':
-        return 'To: Human Resources';
-      break;
-      case 'Other':
-        return 'To: General Information';
-      break;
-    }
+  if($('.wpcf7-form').length){
+    
   }
 
-}); // end document ready
+});
 
 /*
 * debouncedresize: special jQuery event that happens once after a window resize

@@ -1,5 +1,5 @@
 <?php get_header('our-process'); ?>
-  <nav id="page-navs" class="hidden-xs">
+  <nav id="page-navs" class="hidden-xs sticky-nav">
     <div id="page-progress" class="justified-nav our-process-main-nav">
       <ul class="nav nav-tabs nav-justified">
         <li><a href="#our-process-content" class="smooth-scroll" data-scroll_offset="180">Designs</a></li>
@@ -31,10 +31,10 @@
     </div>
   </nav>
 
-  <div id="our-process-content">
+  <div id="our-process-content" class="parallax-scroll">
     <div class="container">
-      <div class="row">
-        <div class="col-sm-4">
+      <div class="row parallax">
+        <div class="col-sm-4" id="left">
           <div id="our-process-sidebar" class="nav-sidebar hidden-xs">
             <div class="sidebar-section">
               <section class="sidebar-sub-section" data-process_section="designs">
@@ -70,7 +70,7 @@
             </div>
           </div>
         </div>
-        <div class="col-sm-8">
+        <div class="col-sm-8" id="right">
           <div class="process-main-content" role="main">
             <div id="designs">
               <!--<span class="our-process-offset"></span>-->

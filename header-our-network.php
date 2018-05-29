@@ -56,7 +56,7 @@
         <?php get_search_form(); ?>
       </div>
     </div>
-    <div id="page-progress" class="justified-nav">
+    <div id="page-progress" class="justified-nav sticky-nav">
       <ul class="nav nav-tabs nav-justified">
         <li><a href="#staff">Staff</a></li>
         <li><a href="#subsidiaries">Subsidiaries</a></li>

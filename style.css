@@ -153,7 +153,7 @@ a:hover:after{
   margin-top:0;   
 }
 #header-nav.sticky + .hero{
-  margin-top:137px;
+  margin-top:123px;
 }
 #header-nav.sticky + .hp-hero{
   padding-top:60px;
@@ -740,12 +740,6 @@ a:hover:after{
 #sub-progress>ul>li>a.show-progress:after{
   width:100%;
 }
-#page-progress.justified-nav .nav-tabs>li>a:after,
-#page-progress.justified-nav .nav-tabs>li>a:hover:after,
-#page-progress.justified-nav .nav-tabs>li>a:focus:after{
-  height:0;
-  background-color:transparent;
-}
 
 .hero-global{
   margin-top:135px;
@@ -1196,6 +1190,12 @@ g#Layer_244{
   z-index:9999;
   background-color:#fff;
 }
+#page-navs ul>li>a:not(.show-progress):after,
+#page-navs ul>li>a:not(.show-progress):hover:after,
+#page-navs ul>li>a:not(.show-progress):focus:after{
+  height:0;
+  background-color:transparent;
+}
 .scroll-indicator-container{
   width:100%;
   height:4px;
@@ -1226,7 +1226,7 @@ g#Layer_244{
   margin-bottom:10px;
 }
 #our-process-sidebar .sidebar-section-content{
-  display:none;
+  /*display:none;*/
 }
 #our-process-sidebar{
   padding-left:23px;
@@ -1431,11 +1431,13 @@ g#Layer_244{
 }
 .subject-group .radio-inline .wpcf7-list-item label{
   display:block;
+  cursor:pointer;
 }
 .subject-group input[type="radio"]{
   position:absolute;
   opacity:0;
   margin-left:0;
+  z-index:-1;
 }
 .subject-group .radio-inline input[type="radio"] + .wpcf7-list-item-label{
   font-weight:400;

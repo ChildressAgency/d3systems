@@ -14,14 +14,14 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" media="all"
   />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
-  <link rel="stylesheet" id="d3systems-css" href="style.css" type="text/css" media="all" />
+  <link rel="stylesheet" id="d3systems-css" href="http://dev.childressagency.com/d3systems/wp-content/themes/d3systems/style.css" type="text/css" media="all" />
 
   <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="js/modernizr.custom.js"></script>
-  <script type="text/javascript" src="js/d3systems-scripts.js"></script>
+  <script type="text/javascript" src="http://dev.childressagency.com/d3systems/wp-content/themes/d3systems/js/modernizr.custom.js"></script>
+  <script type="text/javascript" src="http://dev.childressagency.com/d3systems/wp-content/themes/d3systems/js/d3systems-scripts.js"></script>
 
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -79,7 +79,7 @@
       </div>
     </div>
   </div>
-  <nav id="page-navs" class="hidden-xs">
+  <nav id="page-navs" class="hidden-xs sticky-nav">
     <div id="page-progress" class="justified-nav our-process-main-nav">
       <ul class="nav nav-tabs nav-justified">
         <li><a href="#our-process-content" class="smooth-scroll" data-scroll_offset="180">Designs</a></li>
@@ -103,11 +103,11 @@
     </div>
   </nav>
 
-  <div id="our-process-content" class="parallax-scroll">
+  <div id="our-process-content" class="">
     <div class="container">
-      <div class="row parallax">
+      <div class="row" id="designs">
         <div class="col-sm-4" id="left">
-          <div id="our-process-sidebar" class="nav-sidebar hidden-xs">
+          <div class="nav-sidebar hidden-xs our-process-sidebar2">
             <div class="sidebar-section">
               <section class="sidebar-sub-section" data-process_section="designs">
                 <h2 class="sidebar-section-title">Designs</h2>
@@ -124,44 +124,12 @@
                   </div>
                 </div>
               </section>
-              <section class="sidebar-sub-section" data-process_section="data">
-                <h2 class="sidebar-section-title">Data</h2>
-                <div class="sidebar-section-content">
-                  <hr />
-                  <h3>Reliable, representative data - regardless of the target population</h3>
-                  <p>We collect high-fidelity data from challenging global environments and build the capacity of local research firms, strengthening our network with time.</p>
-                  <p>We believe in transparency when you commit to our team. Our process allows us to share continuous updates on progress and limitations while in field so that there is never a time that you're left in the dark.</p>
-                  <p>We collect high-fidelity data from challenging global environments and build the capacity of local research firms, strengthening our network with time.</p>
-                  <p>We believe in transparency when you commit to our team. Our process allows us to share continuous updates on progress and limitations while in field so that there is never a time that you're left in the dark.</p>
-                  <p>We collect high-fidelity data from challenging global environments and build the capacity of local research firms, strengthening our network with time.</p>
-                  <p>We believe in transparency when you commit to our team. Our process allows us to share continuous updates on progress and limitations while in field so that there is never a time that you're left in the dark.</p>
-                  <div class="sub-section-links">
-                    <a href="#field-preparation" class="smooth-scroll" data-scroll_offset="220">Field Preparation</a>
-                    <a href="#field-preparation2" class="smooth-scroll" data-scroll_offset="220">Field Preparation</a>
-                    <a href="#data-processing" class="smooth-scroll" data-scroll_offset="220">Data Processing</a>
-                  </div>
-                </div>
-              </section>
-              <section class="sidebar-sub-section" data-process_section="decisions">
-                <h2 class="sidebar-section-title">Decisions</h2>
-                <div class="sidebar-section-content">
-                  <h3>The D3 process informs your next big move.</h3>
-                  <p>D3 generates analytical insights, contextual narratives, and data visualization for our clients to easily bridge the gap between data science and pure communication.</p>
-                  <p>We conclude our process by turning numbers into insights and decisions. Many of our clients benefit by maintaining their relationship with our team between different projects. this allows best practices to be established and knowledge to be shared between departments.</p>
-                  <div class="sub-section-links">
-                    <a href="#analytical-reporting" class="smooth-scroll" data-scroll_offset="220">Analytical Reporting</a>
-                  </div>
-                </div>
-              </section>
-              <div class="sidebar-section-footer">
-                <a href="#">Get in Touch<span class="glyphicon glyphicon-menu-right"></span></a>
-              </div>
             </div>
           </div>
         </div>
         <div class="col-sm-8" id="right">
           <div class="process-main-content" role="main">
-            <div id="designs">
+            <div id="designs-main">
               <section id="project-orientation" class="main-section">
                 <header class="main-content-header">
                   <h2>Project Orientation</h2>
@@ -175,7 +143,9 @@
                     </div>
                     <div class="media-body media-middle">
                       <h4 class="media-heading">Define Research Objectives</h4>
-                      <p>We work closely with our clients to understand their research goals and target audience. We can assist by tailoring research objectives and designing instruments that enable clients to collect actionable data based on their stated goals.</p>
+                      <p>We work closely with our clients to understand their research goals and target audience. We can assist by tailoring
+                        research objectives and designing instruments that enable clients to collect actionable data based on their
+                        stated goals.</p>
                     </div>
                   </div>
                   <div class="media">
@@ -186,7 +156,12 @@
                     </div>
                     <div class="media-body media-middle">
                       <h4 class="media-heading">Design Detailed Methodology</h4>
-                      <p>We then draft sophisticated Sample Plans that provide detailed explanations of the sample frame, multi-stage probabilities of selection, weighting schemes, and more. We expertly develop scientific methodologies for quantitative, qualitative, and mixed-methods research, in addition to designing experimental and quasi-experimental approaches fro impact evaluations and performance assessments. We can implement surveys, in-depth interviews, focus groups, panels, media monitoring studies, and evaluations, across a variety of modes, including tablets, telephones, pen-and-paper, and online platforms</p>
+                      <p>We then draft sophisticated Sample Plans that provide detailed explanations of the sample frame, multi-stage
+                        probabilities of selection, weighting schemes, and more. We expertly develop scientific methodologies for
+                        quantitative, qualitative, and mixed-methods research, in addition to designing experimental and quasi-experimental
+                        approaches fro impact evaluations and performance assessments. We can implement surveys, in-depth interviews,
+                        focus groups, panels, media monitoring studies, and evaluations, across a variety of modes, including tablets,
+                        telephones, pen-and-paper, and online platforms</p>
                     </div>
                   </div>
                   <div class="media">
@@ -197,7 +172,8 @@
                     </div>
                     <div class="media-body media-middle">
                       <h4 class="media-heading">Determine Accessibility of Target Audience</h4>
-                      <p>Our in-house team of statisticians work closely with local field partners to determine the accessibility of the target population and ensure the sample frame accurately reflects any limitations to ensure optimal sampling.</p>
+                      <p>Our in-house team of statisticians work closely with local field partners to determine the accessibility of
+                        the target population and ensure the sample frame accurately reflects any limitations to ensure optimal sampling.</p>
                     </div>
                   </div>
                 </div>
@@ -216,7 +192,9 @@
                     </div>
                     <div class="media-body media-middle">
                       <h4 class="media-heading">Contextualize</h4>
-                      <p>After receiving the first draft of the questionnaire, we work with the local team to integrate content that is appropriate and relatable to the target audience. When necessary, we conduct cognitive testing to validate questions are perceived in the way they were intended when written.</p>
+                      <p>After receiving the first draft of the questionnaire, we work with the local team to integrate content that
+                        is appropriate and relatable to the target audience. When necessary, we conduct cognitive testing to validate
+                        questions are perceived in the way they were intended when written.</p>
                     </div>
                   </div>
                   <div class="media">
@@ -227,7 +205,8 @@
                     </div>
                     <div class="media-body media-middle">
                       <h4 class="media-heading">Translate & Verify</h4>
-                      <p>Either through back-translations or third--party verifications, we ensure the local language instrument reflects the original meaning behind the English text, so that nothing is lost in translation.</p>
+                      <p>Either through back-translations or third--party verifications, we ensure the local language instrument reflects
+                        the original meaning behind the English text, so that nothing is lost in translation.</p>
                     </div>
                   </div>
                   <div class="media">
@@ -238,7 +217,9 @@
                     </div>
                     <div class="media-body media-middle">
                       <h4 class="media-heading">Pre-Test</h4>
-                      <p>Whenever possible, we conduct rigorous pre-tests to implement the survey instrument and assigned methodology. Based on feedback and/or observations, we liaise between clients and the local field partner to make any necessary adjustments.</p>
+                      <p>Whenever possible, we conduct rigorous pre-tests to implement the survey instrument and assigned methodology.
+                        Based on feedback and/or observations, we liaise between clients and the local field partner to make any
+                        necessary adjustments.</p>
                     </div>
                   </div>
                 </div>
@@ -257,14 +238,47 @@
                     </div>
                     <div class="media-body media-middle">
                       <h4 class="media-heading">Identify and/or Build Capacity of Local Firms</h4>
-                      <p>Over 30 years, we have built a robust international network of field suppliers. Where local capacity does not exist, we travel in-country and invest in building the local team's skillset to ensure the data are captured accurately.</p>
+                      <p>Over 30 years, we have built a robust international network of field suppliers. Where local capacity does not
+                        exist, we travel in-country and invest in building the local team's skillset to ensure the data are captured
+                        accurately.</p>
                     </div>
                   </div>
                 </div>
                 <a href="http://dev.childressagency.com/d3systems/Infographic-Complete-Document.pdf" target="_blank" class="infographic-link">See our full research process here</a>
               </section>
             </div>
-            <div id="data">
+          </div>
+        </div>
+      </div>
+
+      <div class="row" id="data">
+        <div class="col-sm-4">
+          <div class="nav-sidebar hidden-xs our-process-sidebar2">
+            <div class="sidebar-section">
+              <section class="sidebar-sub-section" data-process_section="data">
+                <h2 class="sidebar-section-title">Data</h2>
+                <div class="sidebar-section-content">
+                  <hr />
+                  <h3>Reliable, representative data - regardless of the target population</h3>
+                  <p>We collect high-fidelity data from challenging global environments and build the capacity of local research firms, strengthening our network with time.</p>
+                  <p>We believe in transparency when you commit to our team. Our process allows us to share continuous updates on progress and limitations while in field so that there is never a time that you're left in the dark.</p>
+                  <p>We collect high-fidelity data from challenging global environments and build the capacity of local research firms, strengthening our network with time.</p>
+                  <p>We believe in transparency when you commit to our team. Our process allows us to share continuous updates on progress and limitations while in field so that there is never a time that you're left in the dark.</p>
+                  <p>We collect high-fidelity data from challenging global environments and build the capacity of local research firms, strengthening our network with time.</p>
+                  <p>We believe in transparency when you commit to our team. Our process allows us to share continuous updates on progress and limitations while in field so that there is never a time that you're left in the dark.</p>
+                  <div class="sub-section-links">
+                    <a href="#field-preparation" class="smooth-scroll" data-scroll_offset="220">Field Preparation</a>
+                    <a href="#field-preparation2" class="smooth-scroll" data-scroll_offset="220">Field Preparation</a>
+                    <a href="#data-processing" class="smooth-scroll" data-scroll_offset="220">Data Processing</a>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-8">
+          <div class="process-main-content">
+            <div id="data-main">
               <section id="field-preparation" class="main-section">
                 <header class="main-content-header">
                   <h2>Field Preparation</h2>
@@ -358,7 +372,39 @@
                 <a href="http://dev.childressagency.com/d3systems/Infographic-Complete-Document.pdf" target="_blank" class="infographic-link">See our full research process here</a>
               </section>
             </div>
-            <div id="decisions">
+          </div>
+        </div>
+      </div>
+
+      <div class="row" id="decisions">
+        <div class="col-sm-4">
+          <div class="nav-sidebar hidden-xs our-process-sidebar2">
+            <div class="sidebar-section">
+              <section class="sidebar-sub-section" data-process_section="decisions">
+                <h2 class="sidebar-section-title">Decisions</h2>
+                <div class="sidebar-section-content">
+                  <h3>The D3 process informs your next big move.</h3>
+                  <p>D3 generates analytical insights, contextual narratives, and data visualization for our clients to easily bridge the
+                    gap between data science and pure communication.</p>
+                  <p>We conclude our process by turning numbers into insights and decisions. Many of our clients benefit by maintaining their
+                    relationship with our team between different projects. this allows best practices to be established and knowledge to
+                    be shared between departments.</p>
+                  <div class="sub-section-links">
+                    <a href="#analytical-reporting" class="smooth-scroll" data-scroll_offset="220">Analytical Reporting</a>
+                  </div>
+                </div>
+              </section>
+              <div class="sidebar-section-footer">
+                <a href="#">Get in Touch
+                  <span class="glyphicon glyphicon-menu-right"></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-8">
+          <div class="process-main-content">
+            <div id="decisions-main">
               <section id="analytical-reporting" class="main-section">
                 <header class="main-content-header">
                   <h2>Analytical Reporting</h2>
