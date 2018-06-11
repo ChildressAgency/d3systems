@@ -31,48 +31,35 @@
     </div>
   </nav>
 
-  <div id="our-process-content" class="parallax-scroll">
+  <div id="our-process-content">
     <div class="container">
-      <div class="row parallax">
-        <div class="col-sm-4" id="left">
-          <div id="our-process-sidebar" class="nav-sidebar hidden-xs">
+      <div class="row" id="designs">
+        <div class="col-sm-4">
+          <div class="nav-sidebar hidden-xs our-process-sidebar2">
             <div class="sidebar-section">
+
               <section class="sidebar-sub-section" data-process_section="designs">
-                <h2 class="sidebar-section-title process-notshown">Designs</h2>
+                <h2 class="sidebar-section-title">Designs</h2>
                 <div class="sidebar-section-content">
                   <hr />
                   <h3><?php the_field('designs_sidebar_title'); ?></h3>
                   <hr />
                   <?php the_field('designs_sidebar_content'); ?>
+                  <div class="sub-section-links">
+                    <?php foreach($designs_blocks as $designs_block): ?>
+                      <a href="#<?php echo sanitize_title($designs_block['designs_content_block_title']); ?>" class="smooth-scroll"><?php echo $designs_block['designs_content_block_title']; ?></a>
+                    <?php endforeach; reset($designs_blocks); ?>
+                  </div>
                 </div>
               </section>
-              <section class="sidebar-sub-section" data-process_section="data">
-                <h2 class="sidebar-section-title process-notshown">Data</h2>
-                <div class="sidebar-section-content">
-                  <hr />
-                  <h3><?php the_field('data_sidebar_title'); ?></h3>
-                  <hr />
-                  <?php the_field('data_sidebar_content'); ?>
-                </div>
-              </section>
-              <section class="sidebar-sub-section" data-process_section="decisions">
-                <h2 class="sidebar-section-title process-notshown">Decisions</h2>
-                <div class="sidebar-section-content">
-                  <hr />
-                  <h3><?php the_field('decisions_sidebar_title'); ?></h3>
-                  <hr />
-                  <?php the_field('decisions_sidebar_content'); ?>
-                </div>
-              </section>
-              <div class="sidebar-section-footer">
-                <a href="<?php echo home_url('contact'); ?>">Get in Touch<span class="glyphicon glyphicon-menu-right"></span></a>
-              </div>
+
             </div>
           </div>
         </div>
-        <div class="col-sm-8" id="right">
+
+        <div class="col-sm-8">
           <div class="process-main-content" role="main">
-            <div id="designs">
+            <div id="designs-main">
               <!--<span class="our-process-offset"></span>-->
               <?php $i=1; $len=count($designs_blocks); foreach($designs_blocks as $designs_block): ?>
                 <section id="<?php echo sanitize_title($designs_block['designs_content_block_title']); ?>" class="main-section">
@@ -108,9 +95,37 @@
                 </section>
               <?php $i++; endforeach; ?>
 
-            </div>
+            </div><!-- #designs-main -->
+          </div><!-- .process-main-content -->
+        </div><!-- .col-sm-8 -->
+      </div><!-- #designs.row -->
 
-            <div id="data">
+      <div class="row" id="data">
+        <div class="col-sm-4">
+          <div class="nav-sidebar hidden-xs our-process-sidebar2">
+            <div class="sidebar-section">
+
+              <section class="sidebar-sub-section" data-process_section="data">
+                <h2 class="sidebar-section-title">Data</h2>
+                <div class="sidebar-section-content">
+                  <hr />
+                  <h3><?php the_field('data_sidebar_title'); ?></h3>
+                  <hr />
+                  <?php the_field('data_sidebar_content'); ?>
+                  <div class="sub-section-links">
+                    <?php foreach($data_blocks as $data_block): ?>
+                      <a href="#<?php echo sanitize_title($data_block['data_content_block_title']); ?>" class="smooth-scroll"><?php echo $data_block['data_content_block_title']; ?></a>
+                    <?php endforeach; reset($data_blocks); ?>
+                  </div>
+                </div>
+              </section>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-8">
+          <div class="process-main-content" role="main">
+            <div id="data-main">
               <!--<span class="our-process-offset"></span>-->
               <?php $i=1; $len=count($data_blocks); foreach($data_blocks as $data_block): ?>
                 <section id="<?php echo sanitize_title($data_block['data_content_block_title']); ?>" class="main-section">
@@ -144,9 +159,41 @@
                   <?php endif; ?>
                 </section>
               <?php $i++; endforeach; ?>
-            </div>
+            </div><!-- #data-main -->
+          </div><!-- .process-main-content -->
+        </div><!-- .col-sm-8 -->
+      </div><!-- #data.row -->
+          
+      <div class="row" id="decisions">
+        <div class="col-sm-4">
+          <div class="nav-sidebar hidden-xs our-process-sidebar2">
+            <div class="sidebar-section">
 
-            <div id="decisions">
+              <section class="sidebar-sub-section" data-process_section="decisions">
+                <h2 class="sidebar-section-title">Decisions</h2>
+                <div class="sidebar-section-content">
+                  <hr />
+                  <h3><?php the_field('decisions_sidebar_title'); ?></h3>
+                  <hr />
+                  <?php the_field('decisions_sidebar_content'); ?>
+                  <div class="sub-section-links">
+                    <?php foreach($decisions_blocks as $decisions_block): ?>
+                      <a href="#<?php echo sanitize_title($decisions_block['decisions_content_block_title']); ?>" class="smooth-scroll"><?php echo $decisions_block['decisions_content_block_title']; ?></a>
+                    <?php endforeach; reset($decisions_blocks); ?>
+                  </div>
+                </div>
+              </section>
+              
+              <div class="sidebar-section-footer">
+                <a href="<?php echo home_url('contact'); ?>">Get in Touch<span class="glyphicon glyphicon-menu-right"></span></a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-8">
+          <div class="process-main-content" role="main">
+            <div id="decisions-main">
               <!--<span class="our-process-offset"></span>-->
               <?php $i=1; $len=count($decisions_blocks); foreach($decisions_blocks as $decisions_block): ?>
                 <section id="<?php echo sanitize_title($decisions_block['decisions_content_block_title']); ?>" class="main-section">
@@ -180,11 +227,11 @@
                   <?php endif; ?>
                 </section>
               <?php $i++; endforeach; ?>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+            </div><!-- #decisions-main -->
+          </div><!-- .process-main-content -->
+        </div><!-- .col-sm-8 -->
+      </div><!-- #decisions.row -->
+    </div><!-- .container -->
+  </div><!-- #our-process-content -->
 
 <?php get_footer(); ?>

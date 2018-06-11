@@ -167,6 +167,10 @@ jQuery(document).ready(function($){
       dataMainHeight = $('#data-main').outerHeight(true),
       decisionsMainHeight = $('#decisions-main').outerHeight(true);
 
+  var designsSidebarHeight = $designsSidebar.outerHeight(true),
+      dataSidebarHeight = $dataSidebar.outerHeight(true),
+      decisionsSidebarHeight = $decisionsSidebar.outerHeight(true);
+
   $designsSidebar.on('affix.bs.affix', function(){
     $(this).css({ 'top' : headerOffset + 40 });
   });
@@ -177,6 +181,7 @@ jQuery(document).ready(function($){
       },
       bottom: function(){
         return this.bottom = footerHeight + superFooterHeight + decisionsMainHeight + dataMainHeight + headerOffset;
+        //return this.bottom = footerHeight + superFooterHeight + decisionsSidebarHeight + dataSidebarHeight + headerOffset;
       }
     }
   });
@@ -191,6 +196,7 @@ jQuery(document).ready(function($){
       },
       bottom: function(){
         return this.bottom = footerHeight + superFooterHeight + decisionsMainHeight + headerOffset;
+        //return this.bottom = footerHeight + superFooterHeight + decisionsSidebarHeight + headerOffset;
       }
     }
   });
