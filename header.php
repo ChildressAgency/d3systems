@@ -60,9 +60,13 @@
   <div class="hero option-hero">
     <?php 
       $page_id = '';
-      if(is_home() || is_tax('topic') || is_tax('countries') || is_archive()){
+      if(is_home() || is_tax('topic') || is_tax('countries') || is_archive() || is_single()){
         $our_work_page = get_page_by_path('our-work');
         $page_id = $our_work_page->ID;
+      }
+
+      if((is_single() && get_field('hero_background_image')) || (is_single() && get_field('carousel_slides'))){
+        $page_id = get_the_ID();
       }
 
       if(get_field('hero_style_setting', $page_id) == 'carousel'): ?>
