@@ -1029,11 +1029,11 @@ g#Layer_244{
   position:relative;
 }
 .post-card-thumb .summary-card-title-part{
-  font-size:20px;
+  font-size:18px;
   display:block;
 }
 .post-card-thumb .summary-card-title-main{
-  font-size:40px;
+  font-size:32px;
   font-family:Georgia, serif;
   display:block;
 }
@@ -1332,12 +1332,12 @@ g#Layer_244{
   margin-bottom:0;
 }
 .post-title-part{
-  font-size:70px;
+  font-size:40px;
   display:block;
   font-weight:300;
 }
 .post-title-main{
-  font-size:70px;
+  font-size:55px;
   font-family:Georgia, serif;
   display:block;
   font-weight:bold;
