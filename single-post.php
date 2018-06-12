@@ -43,7 +43,7 @@
                       <p><?php the_sub_field('footnote'); ?></p>
                     <?php endwhile; endif; ?>
                   </div>
-                  <p>This entry was posted on <?php echo get_the_date('F j, Y'); ?>, <?php the_author(); ?>
+                  <p>This entry was posted on <?php echo get_the_date('F j, Y'); ?>
                   <p>Countries: 
                     <?php
                       $countries_list = wp_get_post_terms($post->ID, 'country');
