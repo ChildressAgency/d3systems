@@ -58,7 +58,7 @@
     </div>
   </nav>
   <?php
-    $hero_background_image = get_stylesheet_directory_uri() . '/images/urban-thailand.jpg';
+    $hero_background_image = get_field('default_hero_background_image', 'option');
     $hero_background_image_css = '';
 
     if(get_field('hero_background_image')){

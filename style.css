@@ -1060,7 +1060,9 @@ g#Layer_244{
   transition:opacity .3s ease;
   z-index:5;
 }
-.post-card-thumb:hover .post-card-thumb-caption{
+.post-card-thumb:hover .post-card-thumb-caption,
+.post-card-thumb:hover .post-card-thumb-caption>.summary-card-title-part,
+.post-card-thumb:hover .post-card-thumb-caption>.summary-card-title-main{
   color:#fff !important;
 }
 .post-card-thumb:hover .post-caption-overlay{
