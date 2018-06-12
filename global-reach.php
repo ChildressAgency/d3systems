@@ -29,10 +29,11 @@ get_header('global-reach'); ?>
                 <hr />
                 <?php
                   $countries = get_field('experience_countries');
+                  $countries_with_posts = array();
                   if($countries): ?>
                     <ul>
                       <?php foreach($countries as $country):
-                        if($country->count > 0): ?>
+                        if($country->count > 0): $countries_with_posts[] = $country->term_id; ?>
                           <li><a href="<?php echo get_term_link($country); ?>"><?php echo $country->name; ?></a></li>
                         <?php else: ?>
                           <li><?php echo $country->name; ?></li>
@@ -46,6 +47,37 @@ get_header('global-reach'); ?>
               </div>
             </section>
 
+            <?php 
+              $type_selected = get_field('post_to_display');
+              if($type_selected == 'Select A Post'){
+                $post_to_display = get_field('featured_post');
+                $featured_post_args = array('p' => $post_to_display);
+              }
+              else{
+                $country_to_display = $countries_with_posts[array_rand($countries_with_posts)];
+                $featured_post_args = array(
+                  'post_type' => 'post',
+                  'posts_per_page' => 1,
+                  'orderby' => 'rand',
+                  'order' => 'ASC',
+                  'tax_query' => array(
+                    array(
+                      'taxonomy' => 'country',
+                      'field' => 'term_id',
+                      'terms' => $country_to_display
+                    )
+                  )
+                );
+              }
+
+              //$post_to_show = (int)$post_to_display;
+              //var_dump($post_to_show);
+              $featured_post = new WP_Query($featured_post_args);
+              if($featured_post->have_posts()): while($featured_post->have_posts()): $featured_post->the_post(); ?>
+                <section class="sidebar-section">
+                  <?php get_template_part('partials/post-card'); ?>
+                </section>
+            <?php endwhile; endif; wp_reset_postdata(); ?>
           </nav>
         </div>
         <div class="col-sm-8" id="right">
