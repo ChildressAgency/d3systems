@@ -34,15 +34,24 @@
       <h2>Current Opportunities</h2>
     </header>
     <article>
-      <?php if(have_rows('career_opportunities')): ?>
-        <?php while(have_rows('career_opportunities')): the_row(); ?>
-          <div class="career_opp">
-            <?php the_sub_field('career_opportunity'); ?>
-          </div>
-        <?php endwhile; ?>
-      <?php else: ?>
-        <p>There are no open opportunities at the moment. Please check back at a later time.</p>
-      <?php endif; ?>
+      <?php
+        $no_actives = true;
+        if(have_rows('career_opportunities')){
+          while(have_rows('career_opportunities')){
+            the_row();
+            if(get_sub_field('archive') == 0){
+              $no_actives = false;
+              echo '<div class="career_opp">' . get_sub_field('career_opportunity') . '</div>';
+            }
+          }
+          if($no_actives == true){
+            echo '<p>There are no open opportunities at the moment. Please check back at a later time.</p>';
+          }
+        }
+        else{
+          echo '<p>There are no open opportunities at the moment. Please check back at a later time.</p>';
+        }
+      ?>
     </article>
   </div>
   <div class="post">
