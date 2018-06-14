@@ -2,7 +2,7 @@
   <nav id="page-navs" class="hidden-xs sticky-nav">
     <div id="page-progress" class="justified-nav our-process-main-nav">
       <ul class="nav nav-tabs nav-justified">
-        <li><a href="#our-process-content" class="smooth-scroll" data-scroll_offset="180">Designs</a></li>
+        <li><a href="#designs" class="smooth-scroll" data-scroll_offset="180">Designs</a></li>
         <li><a href="#data" class="smooth-scroll" data-scroll_offset="200">Data</a></li>
         <li><a href="#decisions" class="smooth-scroll" data-scroll_offset="200">Decisions</a></li>
       </ul>

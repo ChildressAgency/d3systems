@@ -42,7 +42,7 @@ jQuery(document).ready(function($){
     setTimeout(function(){
       $('html, body').scrollTop(0).show();
       $('html, body').animate({
-        scrollTop: $(window.location.hash).offset().top - headerOffset - 20
+        scrollTop: $(window.location.hash).offset().top - headerOffset
       }, 1000)
     }, 0);
   }
@@ -99,6 +99,8 @@ jQuery(document).ready(function($){
       $pageNavs = $('#page-navs');
 
   var heroHeight, globalReachNavHeight, pageNavsHeight, superFooterHeight, footerHeight, sidebarHeight;
+  var $designsSidebar, $dataSidebar, $decisionsSidebar, designsMainHeight, dataMainHeight, decisionsMainHeight;
+  var designsSidebarHeight, dataSidebarHeight, decisionsSidebarHeight;
 
   function setAffixHeightsAndOffsets(){
     heroHeight = $('.hero').outerHeight(true);
@@ -111,6 +113,18 @@ jQuery(document).ready(function($){
     sidebarHeight = $globalReachContent.outerHeight(true);
 
     $globalReachContent.css({ 'min-height' : sidebarHeight + 80 });
+
+    $designsSidebar = $('#designs .our-process-sidebar2');
+    $dataSidebar = $('#data .our-process-sidebar2');
+    $decisionsSidebar = $('#decisions .our-process-sidebar2');
+
+    designsMainHeight = $('#designs-main').outerHeight(true);
+    dataMainHeight = $('#data-main').outerHeight(true);
+    decisionsMainHeight = $('#decisions-main').outerHeight(true);
+
+    designsSidebarHeight = $designsSidebar.outerHeight(true);
+    dataSidebarHeight = $dataSidebar.outerHeight(true);
+    decisionsSidebarHeight = $decisionsSidebar.outerHeight(true);
   }
 
   setAffixHeightsAndOffsets();
@@ -159,28 +173,17 @@ jQuery(document).ready(function($){
   });
 
   //our-process-affix
-  var $designsSidebar = $('#designs .our-process-sidebar2'),
-      $dataSidebar = $('#data .our-process-sidebar2'),
-      $decisionsSidebar = $('#decisions .our-process-sidebar2');
-  
-  var designsMainHeight = $('#designs-main').outerHeight(true),
-      dataMainHeight = $('#data-main').outerHeight(true),
-      decisionsMainHeight = $('#decisions-main').outerHeight(true);
-
-  var designsSidebarHeight = $designsSidebar.outerHeight(true),
-      dataSidebarHeight = $dataSidebar.outerHeight(true),
-      decisionsSidebarHeight = $decisionsSidebar.outerHeight(true);
-
+/*
   $designsSidebar.on('affix.bs.affix', function(){
     $(this).css({ 'top' : headerOffset + 40 });
   });
   $designsSidebar.affix({
     offset:{
       top: function(){
-        return heroHeight - headerOffset + 40;
+        return heroHeight - headerOffset +40;
       },
       bottom: function(){
-        return this.bottom = footerHeight + superFooterHeight + decisionsMainHeight + dataMainHeight + headerOffset;
+        return this.bottom = footerHeight + superFooterHeight  + decisionsSidebarHeight + dataMainHeight + headerOffset + 80;
         //return this.bottom = footerHeight + superFooterHeight + decisionsSidebarHeight + dataSidebarHeight + headerOffset;
       }
     }
@@ -189,13 +192,15 @@ jQuery(document).ready(function($){
   $dataSidebar.on('affix.bs.affix', function(){
     $(this).css({ 'top' : headerOffset + 40 });
   });
+  console.log(designsMainHeight + ', ' + heroHeight + ', ' + stickyNavHeight + ', ' + headerNavHeight);
+  console.log($('#data-main').offset().top);
   $dataSidebar.affix({
     offset:{
       top: function(){
-        return designsMainHeight + heroHeight + stickyNavHeight - headerNavHeight;
+        return designsMainHeight + heroHeight + stickyNavHeight - headerNavHeight +80;
       },
       bottom: function(){
-        return this.bottom = footerHeight + superFooterHeight + decisionsMainHeight + headerOffset;
+        return this.bottom = footerHeight + superFooterHeight + decisionsSidebarHeight + 80;
         //return this.bottom = footerHeight + superFooterHeight + decisionsSidebarHeight + headerOffset;
       }
     }
@@ -207,14 +212,14 @@ jQuery(document).ready(function($){
   $decisionsSidebar.affix({
     offset:{
       top: function(){
-        return designsMainHeight + dataMainHeight + heroHeight + stickyNavHeight - headerNavHeight;
+        return designsMainHeight + dataMainHeight + heroHeight + stickyNavHeight - headerNavHeight +80;
       },
       bottom: function(){
-        return this.bottom = footerHeight + superFooterHeight + headerOffset;
+        return this.bottom = footerHeight + superFooterHeight + 80;
       }
     }
   });
-  
+*/ 
   /*$('#our-process-sidebar').affix({
     offset:{
       top: function(){

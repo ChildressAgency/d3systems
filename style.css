@@ -730,15 +730,18 @@ a:hover:after{
 
 #sub-progress .nav-justified{
   padding-top:10px;
-  padding-bottom:10px;
 }
 #sub-progress>ul>li>a:after{
   height:4px;
   background-color:#00f;
-  bottom:-14px;
+  /*bottom:-14px;*/
+  top:38px;
 }
 #sub-progress>ul>li>a.show-progress:after{
   width:100%;
+}
+#sub-progress.justified-nav .nav-tabs>li>a{
+  height:38px;
 }
 
 .hero-global{
@@ -860,7 +863,7 @@ g#Layer_244{
 .globe-wrapper.the-americas-and-the-caribbean g#the-americas-and-the-caribbean>*,
 .globe-wrapper.sub-saharan-africa g#sub-saharan-africa>*,
 .globe-wrapper.middle-east-and-north-africa g#middle-east-and-north-africa>*,
-.globe-wrapper.east-southeast-asia-and-oceana g#east-southeast-asia-and-oceana>*,
+.globe-wrapper.east-asia-southeast-asia-and-oceana g#east-asia-southeast-asia-and-oceana>*,
 .globe-wrapper.europe g#europe>*,
 .globe-wrapper.central-and-south-asia g#central-and-south-asia>*{
   fill:#f2f2f2 !important;
@@ -1736,6 +1739,9 @@ g#Layer_244{
 @media (min-width:768px) and (max-width:991px){
   #our-process-sidebar.nav-sidebar{
     max-width:220px;
+  }
+  .nav-sidebar{
+    max-width:225px;
   }
 }
 @media (min-width:992px) and (max-width:1199px){
