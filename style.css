@@ -1219,7 +1219,7 @@ g#Layer_244{
 #our-process-content{
   background-color:#fcfbfb;
   box-shadow:inset 0px 8px 18px -5px #ddd;
-  padding-top:40px;
+  /*padding-top:40px;*/
   padding-bottom:40px;
   position:relative;
 }
@@ -1646,6 +1646,10 @@ g#Layer_244{
   margin-top:-229px;
   padding-top:229px;
   display:block;
+}
+
+#designs, #data, #decisions{
+  padding-top:40px;
 }
 
 

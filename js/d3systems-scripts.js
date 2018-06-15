@@ -1,3 +1,4 @@
+//$(function(){
 jQuery(document).ready(function($){
   //var headerNav = document.getElementById("header-nav");
   var $headerNav = $('#header-nav');
@@ -11,8 +12,10 @@ jQuery(document).ready(function($){
     stickyNavHeight = $stickyNav.outerHeight(true);
 
     headerOffset = headerNavHeight + stickyNavHeight;
-  }
+}
+
   setNavHeightAndOffset();
+  //$('#our-process-content').imagesLoaded(function () { setNavHeightAndOffset(); setAffixHeightsAndOffsets(); });
   $window.on('resize', function(){ setNavHeightAndOffset(); });
 
   //sticky nav
@@ -55,7 +58,7 @@ jQuery(document).ready(function($){
       target = target.length ? target : $('[name="' + this.hash.slice(1) + '"]');
       if (target.length) {
         $('html,body').animate({
-          scrollTop: target.offset().top - headerOffset
+          scrollTop: target.offset().top - headerOffset +40
         }, 1000);
         return false;
       }
@@ -96,11 +99,13 @@ jQuery(document).ready(function($){
   
   var $globalReachNav = $('#global-reach-nav'),
       $globalReachContent = $('.global-reach-content'),
-      $pageNavs = $('#page-navs');
+      $pageNavs = $('#page-navs'),
+      $designsSidebar = $('#designs .our-process-sidebar2'),
+      $dataSidebar = $('#data .our-process-sidebar2'),
+      $decisionsSidebar = $('#decisions .our-process-sidebar2');
 
   var heroHeight, globalReachNavHeight, pageNavsHeight, superFooterHeight, footerHeight, sidebarHeight;
-  var $designsSidebar, $dataSidebar, $decisionsSidebar, designsMainHeight, dataMainHeight, decisionsMainHeight;
-  var designsSidebarHeight, dataSidebarHeight, decisionsSidebarHeight;
+  var designsMainHeight, dataMainHeight, decisionsMainHeight, designsSidebarHeight, dataSidebarHeight, decisionsSidebarHeight;
 
   function setAffixHeightsAndOffsets(){
     heroHeight = $('.hero').outerHeight(true);
@@ -114,13 +119,10 @@ jQuery(document).ready(function($){
 
     $globalReachContent.css({ 'min-height' : sidebarHeight + 80 });
 
-    $designsSidebar = $('#designs .our-process-sidebar2');
-    $dataSidebar = $('#data .our-process-sidebar2');
-    $decisionsSidebar = $('#decisions .our-process-sidebar2');
 
-    designsMainHeight = $('#designs-main').outerHeight(true);
-    dataMainHeight = $('#data-main').outerHeight(true);
-    decisionsMainHeight = $('#decisions-main').outerHeight(true);
+    designsMainHeight = $('#designs').outerHeight(true);
+    dataMainHeight = $('#data').outerHeight(true);
+    decisionsMainHeight = $('#decisions').outerHeight(true);
 
     designsSidebarHeight = $designsSidebar.outerHeight(true);
     dataSidebarHeight = $dataSidebar.outerHeight(true);
@@ -128,6 +130,7 @@ jQuery(document).ready(function($){
   }
 
   setAffixHeightsAndOffsets();
+  //$('#our-process-content').imagesLoaded(function () { setAffixHeightsAndOffsets(); });
   $window.on('resize', function(){ setAffixHeightsAndOffsets(); });
   
   /*$globalReachNav.on('affix.bs.affix', function () {
@@ -173,6 +176,32 @@ jQuery(document).ready(function($){
   });
 
   //our-process-affix
+
+  $window.on('load', function(){
+    $('.our-process-sidebar2').each(function(){
+      $(this).on('affix.bs.affix', function(){
+        $(this).css({'top' : headerOffset + 40});
+      });
+      $(this).affix({
+        offset: {
+          top: function(e){
+            var $curSection = $(e).closest('.row');
+            return (this.top = $curSection.offset().top - headerOffset);
+          },
+          bottom: function(e){
+            var $nextSection = $(e).closest('.row').next('.row');
+            var bottom = ($nextSection.length ==0) ? (footerHeight + superFooterHeight) : $(document).height() - $nextSection.offset().top;
+            return (this.bottom = bottom);
+          }
+        }
+      });
+    });
+  });
+  $window.on('resize', function(){
+    $('.our-process-sidebar2').each(function(){
+      $(this).affix('checkPosition');
+    });
+  });
 /*
   $designsSidebar.on('affix.bs.affix', function(){
     $(this).css({ 'top' : headerOffset + 40 });
@@ -180,11 +209,12 @@ jQuery(document).ready(function($){
   $designsSidebar.affix({
     offset:{
       top: function(){
-        return heroHeight - headerOffset +40;
+        return (heroHeight - headerOffset + 40);
       },
       bottom: function(){
-        return this.bottom = footerHeight + superFooterHeight  + decisionsSidebarHeight + dataMainHeight + headerOffset + 80;
+        return (this.bottom = footerHeight + superFooterHeight  + decisionsMainHeight + dataMainHeight + 80);
         //return this.bottom = footerHeight + superFooterHeight + decisionsSidebarHeight + dataSidebarHeight + headerOffset;
+        //return this.bottom = footerHeight + superFooterHeight + $('#decisions').outerHeight() + $('#data').outerHeight();
       }
     }
   });
@@ -192,15 +222,13 @@ jQuery(document).ready(function($){
   $dataSidebar.on('affix.bs.affix', function(){
     $(this).css({ 'top' : headerOffset + 40 });
   });
-  console.log(designsMainHeight + ', ' + heroHeight + ', ' + stickyNavHeight + ', ' + headerNavHeight);
-  console.log($('#data-main').offset().top);
   $dataSidebar.affix({
     offset:{
       top: function(){
-        return designsMainHeight + heroHeight + stickyNavHeight - headerNavHeight +80;
+        return (designsMainHeight + heroHeight + stickyNavHeight - headerNavHeight + 40);
       },
       bottom: function(){
-        return this.bottom = footerHeight + superFooterHeight + decisionsSidebarHeight + 80;
+        return (this.bottom = footerHeight + superFooterHeight + decisionsMainHeight + 80);
         //return this.bottom = footerHeight + superFooterHeight + decisionsSidebarHeight + headerOffset;
       }
     }
@@ -212,14 +240,14 @@ jQuery(document).ready(function($){
   $decisionsSidebar.affix({
     offset:{
       top: function(){
-        return designsMainHeight + dataMainHeight + heroHeight + stickyNavHeight - headerNavHeight +80;
+        return (designsMainHeight + dataMainHeight + heroHeight + stickyNavHeight - headerNavHeight + 40);
       },
       bottom: function(){
-        return this.bottom = footerHeight + superFooterHeight + 80;
+        return (this.bottom = footerHeight + superFooterHeight + 40);
       }
     }
   });
-*/ 
+*/
   /*$('#our-process-sidebar').affix({
     offset:{
       top: function(){
