@@ -57,6 +57,25 @@ a:hover:after{
   background-color:transparent;
 }
 
+img.aligncenter{
+  display:block;
+  max-width:100%;
+  height:auto;
+  margin:25px 0px;
+}
+img.alignleft{
+  display:block;
+  max-width:100%;
+  height:auto;
+  margin:25px 25px 25px 0px;
+}
+img.alignright{
+  display:block;
+  max-width:100%;
+  height:auto;
+  margin:25px 0px 25px 25px;
+}
+
 
 .landing-page-wrapper{
   display:table;
@@ -1030,6 +1049,9 @@ g#Layer_244{
 }
 .post-card-thumb{
   position:relative;
+}
+.post-card-thumb>a{
+  display:block;
 }
 .post-card-thumb .summary-card-title-part{
   font-size:18px;

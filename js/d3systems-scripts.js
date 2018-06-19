@@ -176,7 +176,7 @@ jQuery(document).ready(function($){
   });
 
   //our-process-affix
-
+/*
   $window.on('load', function(){
     $('.our-process-sidebar2').each(function(){
       $(this).on('affix.bs.affix', function(){
@@ -201,7 +201,7 @@ jQuery(document).ready(function($){
     $('.our-process-sidebar2').each(function(){
       $(this).affix('checkPosition');
     });
-  });
+  });*/
 /*
   $designsSidebar.on('affix.bs.affix', function(){
     $(this).css({ 'top' : headerOffset + 40 });

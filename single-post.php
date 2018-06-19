@@ -51,7 +51,7 @@
                       $country_count = count($countries_list);
                       foreach($countries_list as $country){
                         echo '<a href="' . esc_url(get_term_link($country)) . '">' . $country->name . '</a>';
-                        if($c < $country_count){ echo ' | '; }
+                        if($c < $country_count - 1){ echo ' | '; }
                         $c++;
                       }
                     ?>
@@ -63,7 +63,7 @@
                       $topics_count = count($topics_list);
                       foreach($topics_list as $topic){
                         echo '<a href="' . esc_url(get_term_link($topic)) . '">' . $topic->name . '</a>';
-                        if($t < $topics_count){ echo ' | '; }
+                        if($t < $topics_count - 1){ echo ' | '; }
                         $t++;
                       }
                     ?>
@@ -80,26 +80,29 @@
                 <h3>Filter Results:</h3>
                 <ul>
                   <li>Type: <?php echo $cur_category->name; ?></li>
-                  <li>Topic: 
-                    <?php 
-                      $t = 0;
-                      foreach($topics_list as $topic){
-                        echo '<a href="' . esc_url(get_term_link($topic)) . '">' . $topic->name . '</a>';
-                        if($t < $topics_count){ echo ', '; } 
-                        $t++;
-                      }
-                    ?>
-                  </li>
-                  <li>Country: 
-                    <?php
-                      $c=0;
-                      foreach($countries_list as $country){
-                        echo '<a href="' . esc_url(get_term_link($country)) . '">' . $country->name . '</a>';
-                        if($c < $country_count){ echo ', '; }
-                        $c++;
-                      }
-                    ?>                    
-                  </li>
+                  <?php if($topics_count > 0): ?>
+                    <li>Topic: 
+                      <?php 
+                        $t = 0;
+                        foreach($topics_list as $topic){
+                          echo '<a href="' . esc_url(get_term_link($topic)) . '">' . $topic->name . '</a>';
+                          if($t < $topics_count - 1){ echo ', '; } 
+                          $t++;
+                        }
+                      ?>
+                    </li>
+                  <?php endif; if($country_count > 0): ?>
+                    <li>Country: 
+                      <?php
+                        $c=0;
+                        foreach($countries_list as $country){
+                          echo '<a href="' . esc_url(get_term_link($country)) . '">' . $country->name . '</a>';
+                          if($c < $country_count - 1){ echo ', '; }
+                          $c++;
+                        }
+                      ?>                    
+                    </li>
+                  <?php endif; ?>
                   <li>Date: <?php echo get_the_date('Y'); ?></li>
                 </ul>
                 <div class="sidebar-section-footer">
@@ -160,4 +163,11 @@
       </section>
     </div>
   </div>
+<script>
+  var $ourWorkSingleSection = $('#our-work-single');
+  var ourWorkHeaderNavHeight = $('#header-nav').outerHeight(true);
+  $('html, body').animate({
+    scrollTop: $ourWorkSingleSection.offset().top - ourWorkHeaderNavHeight
+  }, 1000);
+</script>
 <?php get_footer(); ?>

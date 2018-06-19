@@ -21,13 +21,15 @@
   ?>
   <h3 class="post-card-category" style="background-color:<?php echo $category_color; ?>;"><?php echo $cur_category->name; ?></h3>
   <div class="post-card-thumb">
-    <img src="<?php echo $featured_image_url; ?>" class="img-responsive center-block" alt="" />
-    <h2 class="post-card-thumb-caption">
-      <span class="summary-card-title-part" style="color:<?php the_field('post_pre_title_color'); ?>;"><?php the_field('post_pre_title'); ?></span>
-      <span class="summary-card-title-main" style="color:<?php the_field('post_main_title_color'); ?>;"><?php the_field('post_main_title'); ?></span>
-      <span class="summary-card-title-part" style="color:<?php the_field('post_sub_title_color'); ?>;"><?php the_field('post_sub_title'); ?></span>
-    </h2>
-    <div class="post-caption-overlay"></div>
+    <a href="<?php the_permalink(); ?>">
+      <img src="<?php echo $featured_image_url; ?>" class="img-responsive center-block" alt="" />
+      <h2 class="post-card-thumb-caption">
+        <span class="summary-card-title-part" style="color:<?php the_field('post_pre_title_color'); ?>;"><?php the_field('post_pre_title'); ?></span>
+        <span class="summary-card-title-main" style="color:<?php the_field('post_main_title_color'); ?>;"><?php the_field('post_main_title'); ?></span>
+        <span class="summary-card-title-part" style="color:<?php the_field('post_sub_title_color'); ?>;"><?php the_field('post_sub_title'); ?></span>
+      </h2>
+      <div class="post-caption-overlay"></div>
+    </a>
   </div>
   <div class="post-card-content">
     <h4 class="post-date"><?php echo get_the_date('M\. j, Y'); ?></h4>
