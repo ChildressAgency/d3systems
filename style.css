@@ -325,11 +325,22 @@ img.alignright{
 .icon-card{
   position:relative;
 }
+.icon-card>img{
+  position:absolute;
+  top:-110px;
+  left:50%;
+  -webkit-transform:translateX(-50%);
+  transform:translateX(-50%);
+  background-color:#f0e7e8;
+  padding-left:10px;
+  padding-right:10px;
+  max-width:110px;
+}
+/*
 .icon-card:before{
   content:"";
   position:absolute;
   top:-96px;
-  /*background-image:url(images/sprites.png);*/
   background-repeat:no-repeat;
   left:0;
   right:0;
@@ -342,7 +353,6 @@ img.alignright{
   width:100px;
   background-position:11px 0px;
   top:-110px;
-  /*background-image:url(images/designs-white-background-square-crop.svg);*/
   background-image:url(images/design-com-icon.png);
 }
 #data-card.icon-card:before{
@@ -350,7 +360,6 @@ img.alignright{
   width:100px;
   background-position:10px 2px;
   top:-100px;
-  /*background-image:url(images/data-white-background-square-crop.svg);*/
   background-image:url(images/decisions-com-icon.png);
 }
 #decisions-card.icon-card:before{
@@ -358,9 +367,9 @@ img.alignright{
   width:100px;
   background-position:14px 0px;
   top:-107px;
-  /*background-image:url(images/decisions-white-background-square-crop.svg);*/
   background-image:url(images/data-com-icon.png);
 }
+*/
 .icon-card h2{
   font-family:Georgia, serif;
   text-align:center;
@@ -1740,6 +1749,9 @@ g#Layer_244{
     right:0;
     margin-right:auto;
     margin-left:auto;
+  }
+  #competency-cards .col-sm-height{
+    margin-top:70px;
   }
 }
 @media (min-width:768px){
