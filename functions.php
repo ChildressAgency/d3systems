@@ -369,7 +369,7 @@ function d3systems_create_post_types(){
   );
   register_taxonomy('team', 'staff', $team_args);
 
-  $country_expertise_labels = array(
+  $regional_expertise_labels = array(
     'name' => 'Regional Expertise',
     'singular_name' => 'Regional Expertise',
     'search_items' => 'Search Regional Expertise',
@@ -381,6 +381,28 @@ function d3systems_create_post_types(){
     'add_new_item' => 'Add New Regional Expertise',
     'new_item_name' => 'New Regional Expertise Name',
     'menu_name' => 'Regional Expertise'
+  );
+  $regional_expertise_args = array(
+    'hierarchical' => true,
+    'labels' => $regional_expertise_labels,
+    'show_ui' => true,
+    'show_admin_column' => true,
+    'query_var' => 'regional_expertise'
+  );
+  register_taxonomy('regional_expertise', 'staff', $regional_expertise_args);
+
+  $country_expertise_labels = array(
+    'name' => 'Country Expertise',
+    'singular_name' => 'Country Expertise',
+    'search_items' => 'Search Country Expertise',
+    'all_items' => 'All Country Expertise',
+    'parent_item' => 'Parent Country Expertise',
+    'parent_item_colon' => 'Parent Country Expertise:',
+    'edit_item' => 'Edit Country Expertise',
+    'update_item' => 'Update Country Expertise',
+    'add_new_item' => 'Add New Country Expertise',
+    'new_item_name' => 'New Country Expertise Name',
+    'menu_name' => 'Country Expertise'
   );
   $country_expertise_args = array(
     'hierarchical' => true,
