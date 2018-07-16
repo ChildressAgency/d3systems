@@ -54,20 +54,22 @@ get_header('global-reach'); ?>
                 $featured_post_args = array('p' => $post_to_display);
               }
               else{
-                $country_to_display = $countries_with_posts[array_rand($countries_with_posts)];
                 $featured_post_args = array(
                   'post_type' => 'post',
                   'posts_per_page' => 1,
                   'orderby' => 'rand',
                   'order' => 'ASC',
-                  'tax_query' => array(
-                    array(
-                      'taxonomy' => 'country',
-                      'field' => 'term_id',
-                      'terms' => $country_to_display
-                    )
-                  )
                 );
+
+                if(!empty($countries_with_posts)){
+                  $country_to_display = $countries_with_posts[array_rand($countries_with_posts)];
+
+                  $featured_pos_args['tax_query'] = array(array(
+                    'taxonomy' => 'country',
+                    'field' => 'term_id',
+                    'terms' => $country_to_display
+                  ));
+                }
               }
 
               //$post_to_show = (int)$post_to_display;
