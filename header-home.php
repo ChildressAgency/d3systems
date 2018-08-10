@@ -27,9 +27,9 @@
       <nav id="header-nav">
         <div class="container">
           <div class="navbar-header">
-            <a href="<?php echo home_url(); ?>" class="header-logo">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo.png" class="img-responsive" alt="D3 Systems Logo" />
-            </a>
+        <a href="<?php echo home_url(); ?>" class="header-logo">
+          <img src="<?php echo get_field('header_logo', 'option') ? get_field('header_logo', 'option') : get_stylesheet_directory_uri() . '/images/logo.png'; ?>" class="img-responsive" alt="D3 Systems Logo" />
+        </a>
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="expanded" aria-controls="navbar">
               <span class="sr-only">Toggle Navigation</span>
               <span class="icon-bar"></span>
