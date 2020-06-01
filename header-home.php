@@ -49,9 +49,9 @@
 </head>
 
 <body <?php body_class(); ?>>
-  <div class="landing-page-wrapper">
+  <div class="landing-page-wrapper<?php if(get_field('homepage_video')){ echo ' landing-page-video'; } ?>">
     <div class="landing-page-wrapper-inner">
-      <nav id="header-nav">
+      <nav id="header-nav"<?php if(get_field('homepage_video')){ echo ' class="sticky"'; } ?>>
         <div class="container">
           <div class="navbar-header">
         <a href="<?php echo home_url(); ?>" class="header-logo">
@@ -102,7 +102,7 @@
       </section>
 
       <?php if(get_field('homepage_video')): ?>
-        <div id="homepage-video" class="container" style="margin-top:60px; max-width:900px;">
+        <div id="homepage-video" class="container" style="margin-top:60px; margin-bottom:120px; max-width:900px;">
           <div class="embed-responsive embed-responsive-16by9">
             <?php the_field('homepage_video'); ?>
           </div> 

@@ -179,8 +179,12 @@ img.alignright{
 #header-nav.sticky + .hero{
   margin-top:123px;
 }
+
 #header-nav.sticky + .hp-hero{
   padding-top:60px;
+}
+.landing-page-video #header-nav.sticky + .hp-hero{
+  padding-top: 125px;
 }
 
 #hero{
