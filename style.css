@@ -57,7 +57,8 @@ a:hover:after{
   background-color:transparent;
 }
 
-img.aligncenter{
+img.aligncenter,
+img.alignnone{
   display:block;
   max-width:100%;
   height:auto;
@@ -96,6 +97,7 @@ img.alignright{
   padding-bottom:25px;
   background-color:#fff;
   z-index:99999;
+	transform: translate3d(0,0,0);
 }
 #navbar{
   margin-top:10px;
@@ -169,7 +171,10 @@ img.alignright{
   position:fixed;
   top:0;
   width:100%;
-  margin-top:0;   
+  margin-top:0;
+	-webkit-backface-visibility:hidden;
+	backface-visibility:hidden;
+	-webkit-overflow-scrolling:touch;
 }
 #header-nav.sticky + .hero{
   margin-top:123px;
@@ -891,7 +896,7 @@ g#Layer_244{
 .globe-wrapper.the-americas-and-the-caribbean g#the-americas-and-the-caribbean>*,
 .globe-wrapper.sub-saharan-africa g#sub-saharan-africa>*,
 .globe-wrapper.middle-east-and-north-africa g#middle-east-and-north-africa>*,
-.globe-wrapper.east-asia-southeast-asia-and-oceana g#east-asia-southeast-asia-and-oceana>*,
+.globe-wrapper.east-asia-southeast-asia-and-oceania g#east-asia-southeast-asia-and-oceania>*,
 .globe-wrapper.europe g#europe>*,
 .globe-wrapper.central-and-south-asia g#central-and-south-asia>*{
   fill:#f2f2f2 !important;
@@ -1061,6 +1066,8 @@ g#Layer_244{
 }
 .post-card-thumb>a{
   display:block;
+  min-height:247px;
+  background-color:#ddd;
 }
 .post-card-thumb .summary-card-title-part{
   font-size:18px;
@@ -1686,6 +1693,9 @@ g#Layer_244{
 
 
 @media (max-width:767px){
+	#header-nav.sticky{
+		position:relative;
+	}
   .header-logo>img{
     float:left;
     margin-left:15px;

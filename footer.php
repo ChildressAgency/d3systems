@@ -29,6 +29,7 @@
             <li>Research: <a href="<?php echo add_query_arg('subject', 'Partner+With+Us', home_url('contact')); ?>" class="value"><?php the_field('research_email', 'option'); ?></a></li>
             <li>Recruitment: <a href="<?php echo add_query_arg('subject', 'Recruiting+Inquiry', home_url('contact')); ?>" class="value"><?php the_field('recruitment_email', 'option'); ?></a></li>
             <li>General: <a href="<?php echo add_query_arg('subject', 'Request+a+Proposal', home_url('contact')); ?>" class="value"><?php the_field('general_email', 'option'); ?></a></li>
+			<li>Privacy: <a href="<?php echo add_query_arg('subject', 'Privacy', home_url('contact')); ?>" class="value"><?php the_field('privacy_email', 'option'); ?></a></li>
           </ul>
           <p>
             <a href="<?php the_field('google_map_link', 'option'); ?>" class="google-map-link" target="_blank"><?php the_field('street_address', 'option'); ?><br /><?php the_field('city_state_zip', 'option'); ?></a>
@@ -51,6 +52,9 @@
       <hr />
       <?php get_template_part('partials/footer-stats'); ?>
       <div class="colophon">
+		  <p>
+			  <a href="<?php echo home_url('privacy-statement'); ?>" target="_blank">D3 Privacy Statement</a>
+		  </p><br />
         <p>&copy;<?php echo date('Y'); ?> D3 Systems, Inc.</p>
         <p>website created by <a href="https://childressagency.com" target="_blank">The Childress Agency</a></p>
       </div>

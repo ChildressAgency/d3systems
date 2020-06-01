@@ -1,11 +1,11 @@
 <?php
-
+/*
 add_action('wp_footer', 'show_template');
 function show_template() {
 	global $template;
 	print_r($template);
 }
-
+*/
 add_action('wp_enqueue_scripts', 'jquery_cdn');
 function jquery_cdn(){
   if(!is_admin()){
@@ -364,6 +364,7 @@ function d3systems_create_post_types(){
     'hierarchical' => true,
     'labels' => $team_labels,
     'show_ui' => true,
+	  'show_in_rest' => true,
     'show_admin_column' => true,
     'query_var' => 'teams'
   );
@@ -386,6 +387,7 @@ function d3systems_create_post_types(){
     'hierarchical' => true,
     'labels' => $regional_expertise_labels,
     'show_ui' => true,
+	  'show_in_rest' => true,
     'show_admin_column' => true,
     'query_var' => 'regional_expertise'
   );
@@ -408,6 +410,7 @@ function d3systems_create_post_types(){
     'hierarchical' => true,
     'labels' => $country_expertise_labels,
     'show_ui' => true,
+	  'show_in_rest' => true,
     'show_admin_column' => true,
     'query_var' => 'country_expertise'
   );
@@ -430,6 +433,7 @@ function d3systems_create_post_types(){
     'hierarchical' => true,
     'labels' => $languages_labels,
     'show_ui' => true,
+	  'show_in_rest' => true,
     'show_admin_column' => true,
     'query_var' => 'languages'
   );
@@ -510,6 +514,7 @@ function d3systems_create_taxonomies(){
     'hierarchical' => true,
     'labels' => $topic_labels,
     'show_ui' => true,
+	  'show_in_rest' => true,
     'show_admin_column' => true,
     'query_var' => 'topics',
   );
@@ -532,6 +537,7 @@ function d3systems_create_taxonomies(){
     'hierarchical' => true,
     'labels' => $country_labels,
     'show_ui' => true,
+	  'show_in_rest' => true,
     'show_admin_column' => true,
     'query_var' => 'countries'
   );

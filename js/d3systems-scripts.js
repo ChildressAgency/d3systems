@@ -416,6 +416,9 @@ jQuery(document).ready(function($){
       case 'Recruiting Inquiry':
         return 'To: Human Resources';
       break;
+		case 'Privacy':
+			return 'To: Privacy';
+		break;
       case 'Other':
         return 'To: General Information';
       break;

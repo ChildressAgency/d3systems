@@ -12,7 +12,7 @@ get_header('global-reach'); ?>
       <li<?php if(is_page('middle-east-and-north-africa')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('middle-east-and-north-africa'); ?>">Middle East and North Africa</a></li>
       <li<?php if(is_page('sub-saharan-africa')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('sub-saharan-africa'); ?>">Sub-Saharan Africa</a></li>
       <li<?php if(is_page('central-and-south-asia')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('central-and-south-asia'); ?>">Central and South Asia</a></li>
-      <li<?php if(is_page('east-asia-southeast-asia-and-oceana')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('east-asia-southeast-asia-and-oceana'); ?>">East Asia, Southeast Asia, & Oceana</a>
+      <li<?php if(is_page('east-asia-southeast-asia-and-oceania')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('east-asia-southeast-asia-and-oceania'); ?>">East Asia, Southeast Asia, & Oceania</a>
     </ul>
   </div>
   <?php if(!is_page('global-reach')): ?>
@@ -63,6 +63,19 @@ get_header('global-reach'); ?>
 
                 if(!empty($countries_with_posts)){
                   $country_to_display = $countries_with_posts[array_rand($countries_with_posts)];
+                  //$featured_post_args = array(
+                  //  'tax_query' => array(
+                  //    array(
+                  //      'taxonomy' => 'country',
+                  //      'field' => 'term_id',
+                  //      'terms' => $country_to_display
+                  //    )
+                  //  )
+                  //);
+
+                  //$featured_post_args['tax_query'][]['taxonomy'] = 'country';
+                  //$featured_post_args['tax_query'][]['field'] = 'term_id';
+                  //$featured_post_args['tax_query'][]['terms'] = $country_to_display;
 
                   $featured_pos_args['tax_query'] = array(array(
                     'taxonomy' => 'country',
