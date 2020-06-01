@@ -444,6 +444,9 @@ img.alignright{
   font-size:12px;
 }
 
+#our-network-video{
+  margin-top: 215px;
+}
 #staff,
 #subsidiaries-grid,
 #clients-grid{
@@ -453,6 +456,9 @@ img.alignright{
 #staff{
   /*min-height:615px;*/
   margin-top:137px;
+}
+#our-network-video + #staff{
+  margin-top: 40px;
 }
 #staff_grid{
   min-height:615px;
@@ -1254,6 +1260,10 @@ g#Layer_244{
   transition:transform .3s ease;
 }
 
+#our-process-video{
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
 #our-process-content{
   background-color:#fcfbfb;
   box-shadow:inset 0px 8px 18px -5px #ddd;
@@ -1762,6 +1772,9 @@ g#Layer_244{
   }
   #competency-cards .col-sm-height{
     margin-top:70px;
+  }
+  #our-network-video{
+    margin-top: 25px;
   }
 }
 @media (min-width:768px){

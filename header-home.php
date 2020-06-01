@@ -100,6 +100,15 @@
           </p>
         </div>
       </section>
+
+      <?php if(get_field('homepage_video')): ?>
+        <div id="homepage-video" class="container" style="margin-top:60px; max-width:900px;">
+          <div class="embed-responsive embed-responsive-16by9">
+            <?php the_field('homepage_video'); ?>
+          </div> 
+        </div>
+      <?php endif; ?>
+      
     </div><!-- landing-page-wrapper-inner -->
     <a href="#competency-cards" id="scroll-down" class="smooth-scroll"></a>
   </div><!-- landing-page-wrapper -->

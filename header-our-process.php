@@ -108,3 +108,11 @@
       </div>
     </div>
   </div>
+
+  <?php if(get_field('our_process_video')): ?>
+    <div id="our-process-video" class="container" style="max-width: 800px;">
+      <div class="embed-responsive embed-responsive-16by9">
+        <?php the_field('our_process_video'); ?>
+      </div>
+    </div>
+  <?php endif; ?>
