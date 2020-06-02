@@ -104,7 +104,7 @@ jQuery(document).ready(function($){
       $dataSidebar = $('#data .our-process-sidebar2'),
       $decisionsSidebar = $('#decisions .our-process-sidebar2');
 
-  var heroHeight, globalReachNavHeight, pageNavsHeight, superFooterHeight, footerHeight, sidebarHeight;
+  var heroHeight, globalReachNavHeight, pageNavsHeight, superFooterHeight, footerHeight, sidebarHeight, videoHeight;
   var designsMainHeight, dataMainHeight, decisionsMainHeight, designsSidebarHeight, dataSidebarHeight, decisionsSidebarHeight;
 
   function setAffixHeightsAndOffsets(){
@@ -127,6 +127,8 @@ jQuery(document).ready(function($){
     designsSidebarHeight = $designsSidebar.outerHeight(true);
     dataSidebarHeight = $dataSidebar.outerHeight(true);
     decisionsSidebarHeight = $decisionsSidebar.outerHeight(true);
+
+    videoHeight = $('.video-enabled').outerHeight(true);
   }
 
   setAffixHeightsAndOffsets();
@@ -149,16 +151,25 @@ jQuery(document).ready(function($){
   });*/
 
   $pageNavs.on('affix.bs.affix', function () {
-    $(this).css({ 'top': headerNavHeight });
-    $(this).next().css({ 'margin-top': pageNavsHeight + 40 });
+
+    $thisNav = $(this);
+    $thisNav.css({ 'top': headerNavHeight });
+    $thisNav.next().css({ 'margin-top': pageNavsHeight + 40 });
   });
   $pageNavs.on('affix-top.bs.affix', function () {
     $(this).next().css({ 'margin-top': 0 });
   });
+
+  var affixOffset = heroHeight - headerNavHeight;
+  if($pageNavs.data('video_enabled') == true){
+    affixOffset = heroHeight + videoHeight - headerNavHeight;
+    console.log(affixOffset);
+  }
   $pageNavs.affix({
     offset:{
       top: function(){
-        return heroHeight - headerNavHeight;
+        //return heroHeight - headerNavHeight;
+        return affixOffset;
       }
     }
   });

@@ -1,5 +1,5 @@
 <?php get_header('our-process'); ?>
-  <nav id="page-navs" class="hidden-xs sticky-nav">
+  <nav id="page-navs" class="hidden-xs sticky-nav"<?php if(get_field('our_process_video')){ echo ' data-video_enabled="true"'; } ?>>
     <div id="page-progress" class="justified-nav our-process-main-nav">
       <ul class="nav nav-tabs nav-justified">
         <li><a href="#designs" class="smooth-scroll" data-scroll_offset="180">Designs</a></li>
