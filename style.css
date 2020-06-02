@@ -449,7 +449,9 @@ img.alignright{
 }
 
 #our-network-video{
-  margin-top: 215px;
+  /*margin-top: 215px;*/
+  margin-top: 40px;
+  margin-bottom: 60px;
 }
 #staff,
 #subsidiaries-grid,
@@ -459,7 +461,7 @@ img.alignright{
 }
 #staff{
   /*min-height:615px;*/
-  margin-top:137px;
+  margin-top:178px;
 }
 #our-network-video + #staff{
   margin-top: 40px;
@@ -1779,6 +1781,9 @@ g#Layer_244{
   }
   #our-network-video{
     margin-top: 25px;
+  }
+  #staff{
+    margin-top: 0px;
   }
 }
 @media (min-width:768px){

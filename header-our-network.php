@@ -98,14 +98,6 @@
     </div>
   </nav>
 
-  <?php if(get_field('our_network_video')): ?>
-    <div id="our-network-video" class="container" style="max-width: 800px;">
-      <div class="embed-responsive embed-responsive-16by9">
-        <?php the_field('our_network_video'); ?>
-      </div>
-    </div>
-  <?php endif; ?>
-
   <section id="staff">
     <div class="hero" style="background-image:url(<?php the_field('hero_background_image'); ?>); <?php the_field('hero_background_image_css'); ?>">
       <div class="container">

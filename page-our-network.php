@@ -6,6 +6,15 @@
       </div>
     </div>
   <?php endif; ?>
+
+  <?php if(get_field('our_network_video')): ?>
+    <div id="our-network-video" class="container" style="max-width: 800px;">
+      <div class="embed-responsive embed-responsive-16by9">
+        <?php the_field('our_network_video'); ?>
+      </div>
+    </div>
+  <?php endif; ?>
+
     <div class="container">
       <ul id="filter-nav" class="nav nav-tabs">
         <li class="active"><a href="#" class="filter" data-filter=".all">All Staff</a></li>
