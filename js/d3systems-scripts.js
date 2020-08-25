@@ -12,7 +12,7 @@ jQuery(document).ready(function($){
     stickyNavHeight = $stickyNav.outerHeight(true);
 
     headerOffset = headerNavHeight + stickyNavHeight;
-}
+  }
 
   setNavHeightAndOffset();
   //$('#our-process-content').imagesLoaded(function () { setNavHeightAndOffset(); setAffixHeightsAndOffsets(); });
@@ -655,7 +655,6 @@ $.fn.revealer = function(){
       initEvents();
 
     });
-
   }
 
   // add more items to the grid.
@@ -729,6 +728,16 @@ $.fn.revealer = function(){
 
     });
     //$items.children('.grid').css('background-color', 'red');
+    var urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('staff_bio')) {
+      var staffMember = urlParams.get('staff_bio');
+      var staffMemberGrid = $('#' + staffMember);
+      staffMemberGrid.data({
+        offsetTop: staffMemberGrid.offset().top,
+        height: staffMemberGrid.height()
+      });
+      showPreview(staffMemberGrid);
+    }
 
   }
 

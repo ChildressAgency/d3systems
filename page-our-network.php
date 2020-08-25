@@ -97,7 +97,7 @@
             $staff_filter_items = implode(" ", $staff_filter_items);  ?>
 
 
-            <div class="grid-item circle-card <?php echo $staff_filter_items; ?>">
+            <div id="<?php echo get_post_field('post_name'); ?>" class="grid-item circle-card <?php echo $staff_filter_items; ?>">
               <a href="#" class="circle-card-content" data-details_name="<?php the_title(); ?>" data-details_title="<?php the_field('staff_position'); ?>" data-details_bio="<?php the_field('staff_bio'); ?>" data-staff_team="<?php echo implode(', ', $staff_teams); ?>" data-staff_yearsexp="<?php the_field('years_experience'); ?>" data-staff_degrees="<?php the_field('staff_degrees'); ?>" data-staff_languages="<?php echo implode(', ', $staff_languages); ?>" data-staff_countryexp="<?php echo implode(', ', $staff_countries); ?>" data-staff_regionexp="<?php echo implode(', ', $staff_regions); ?>">
                 <img src="<?php the_field('staff_image'); ?>" class="img-circle center-block" alt="<?php the_title(); ?>" />
                 <h4><?php the_title(); ?></h4>
