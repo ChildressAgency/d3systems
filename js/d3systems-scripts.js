@@ -867,17 +867,17 @@ $.fn.revealer = function(){
           subsidiary_contact: $itemEl.data('subsidiary_contact')
         };
 
-      (eldata.details_name != null) ? this.$details_name.html(eldata.details_name) : this.$details_name.html('');
-      (eldata.details_title != null) ? this.$details_title.html(eldata.details_title) : this.$details_title.html('');
-      (eldata.bio != null) ? this.$bio.html(eldata.bio) : this.$bio.html('');
-      (eldata.staff_team != null) ? this.$staff_team.html('Team:<span>' + eldata.staff_team + '</span>') : this.$staff_team.html('');
-      (eldata.staff_yearsexp != null) ? this.$staff_yearsexp.html('Years of Experience:<span>' + eldata.staff_yearsexp + '</span>') : this.$staff_yearsexp.html('');
-      (eldata.staff_languages != null) ? this.$staff_languages.html('Languages:<span>' + eldata.staff_languages + '</span>') : this.$staff_languages.html('');
-      (eldata.staff_countryexp != null) ? this.$staff_countryexp.html('Country Expertise:<span>' + eldata.staff_countryexp + '</span>') : this.$staff_countryexp.html('');
-      (eldata.staff_degrees != null) ? this.$staff_degrees.html('Degrees:<span>' + eldata.staff_degrees + '</span>') : this.$staff_degrees.html('');
-      (eldata.subsidiary_address != null) ? this.$subsidiary_address.html('Address:<span>' + eldata.subsidiary_address + '</span>') : this.$subsidiary_address.html('');
-      (eldata.subsidiary_phone != null) ? this.$subsidiary_phone.html('Telephone:<span>' + eldata.subsidiary_phone + '</span>') : this.$subsidiary_phone.html('');
-      (eldata.subsidiary_contact != null) ? this.$subsidiary_contact.html('Contact:<span>' + eldata.subsidiary_contact + '</span>') : this.$subsidiary_contact.html('');
+      (eldata.details_name != null && eldata.details_name != '') ? this.$details_name.html(eldata.details_name) : this.$details_name.html('');
+      (eldata.details_title != null && eldata.details_title != '') ? this.$details_title.html(eldata.details_title) : this.$details_title.html('');
+      (eldata.bio != null && eldata.bio != '') ? this.$bio.html(eldata.bio) : this.$bio.html('');
+      (eldata.staff_team != null && eldata.staff_team != '') ? this.$staff_team.html('Team:<span>' + eldata.staff_team + '</span>') : this.$staff_team.html('');
+      (eldata.staff_yearsexp != null && eldata.staff_yearsexp != '') ? this.$staff_yearsexp.html('Years of Experience:<span>' + eldata.staff_yearsexp + '</span>') : this.$staff_yearsexp.html('');
+      (eldata.staff_languages != null && eldata.staff_languages != '') ? this.$staff_languages.html('Languages:<span>' + eldata.staff_languages + '</span>') : this.$staff_languages.html('');
+      (eldata.staff_countryexp != null && eldata.staff_countryexp != '') ? this.$staff_countryexp.html('Country Expertise:<span>' + eldata.staff_countryexp + '</span>') : this.$staff_countryexp.html('');
+      (eldata.staff_degrees != null && eldata.staff_degrees != '') ? this.$staff_degrees.html('Degrees:<span>' + eldata.staff_degrees + '</span>') : this.$staff_degrees.html('');
+      (eldata.subsidiary_address != null && eldata.subsidiary_address != '') ? this.$subsidiary_address.html('Address:<span>' + eldata.subsidiary_address + '</span>') : this.$subsidiary_address.html('');
+      (eldata.subsidiary_phone != null && eldata.subsidiary_phone != '') ? this.$subsidiary_phone.html('Telephone:<span>' + eldata.subsidiary_phone + '</span>') : this.$subsidiary_phone.html('');
+      (eldata.subsidiary_contact != null && eldata.subsidiary_contact != '') ? this.$subsidiary_contact.html('Contact:<span>' + eldata.subsidiary_contact + '</span>') : this.$subsidiary_contact.html('');
 
       var self = this;
     },
