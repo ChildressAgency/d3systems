@@ -436,6 +436,18 @@ jQuery(document).ready(function($){
     }
   }
 
+  var securitySlider = new Swiper('.security-carousel .swiper-container', {
+    autoplay: false,
+    loop: false,
+    autoHeight: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      renderBullet: function(index, className){
+        return '<span class="' + className + '"><span></span></span>';
+      }
+    }
+  });
 }); // end document ready
 
 /*

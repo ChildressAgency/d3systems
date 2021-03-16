@@ -1983,3 +1983,48 @@ g#Layer_244{
 .compliance-card .expander-card-content{
   margin-bottom: 40px;
 }
+
+#page-news.security-single{
+  margin-top: 25px;
+  margin-bottom: -25px;
+}
+#security-single .section-intro ul{
+  font-size: 21px;
+}
+.security-carousel{
+  background-color: #fcfbfb;
+  box-shadow: inset 0px 8px 18px -5px #ddd;
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+.security-carousel .swiper-container{
+  background-color: #fff;
+  box-shadow: 0px 0px 20px #ddd;
+  padding-bottom: 60px;
+}
+.security-carousel .swiper-slide{
+  padding: 40px 5%;
+}
+.security-carousel .swiper-slide h2{
+  margin-top: 0;
+  font-weight: bold;
+}
+.security-carousel .swiper-pagination-bullet{
+  height: 12px;
+  width: 12px;
+}
+.security-carousel .swiper-pagination-bullet-active{
+  background-color: #191919;
+}
+.security-carousel .swiper-button-prev,
+.security-carousel .swiper-button-next{
+  top: auto;
+  color: #191919;
+}
+
+@media (min-width:768px){
+  #security-single,
+  #section-1{
+    margin-top: 144px;
+  }
+}
