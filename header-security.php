@@ -89,18 +89,24 @@
         <?php get_search_form(); ?>
       </div>
     </div>
-    <?php if(have_rows('section_titles')): ?>
-      <div id="page-progress" class="justified-nav">
+    <?php if(have_rows('security_links', 'option')): ?>
+      <div id="page-news" class="justified-nav security-single">
         <ul class="nav nav-tabs nav-justified">
-          <?php $t = 1; while(have_rows('section_titles')): the_row(); ?>
-            <li><a href="#section-<?php echo $t; ?>"><?php the_sub_field('section_title'); ?></a></li>
+          <?php $t = 1; while(have_rows('security_links','option')): the_row(); ?>
+            <?php 
+              $link = get_sub_field('security_link');
+              $page_title = get_the_title();
+            ?>
+            <li class="<?php if($link['title'] == $page_title){ echo 'active'; } ?>">
+              <a href="<?php echo esc_url($link['url']); ?>"><?php echo esc_html($link['title']); ?></a>
+            </li>
           <?php $t++; endwhile; ?>
         </ul>
       </div>
     <?php endif; ?>
   </nav>
 
-  <section id="section-1">
+  <section id="security-single">
     <div class="hero" style="background-image:url(<?php the_field('hero_background_image'); ?>); <?php the_field('hero_background_image_css'); ?>">
       <div class="container">
         <div class="hero-caption">
