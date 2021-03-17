@@ -77,6 +77,10 @@ img.alignright{
   margin:25px 0px 25px 25px;
 }
 
+.container-fluid{
+  max-width: 1400px;
+}
+
 
 .landing-page-wrapper{
   display:table;
@@ -1958,12 +1962,12 @@ g#Layer_244{
   margin-top: 40px;
 }
 
-#section-3 .container-fluid{
-  background-color: #fcfbfb;
-  box-shadow: inset 0px 8px 18px -5px #ddd;
-}
 #section-3 .section-intro{
   background-color: #fff;
+}
+.compliance-cards-wrapper{
+  background-color: #fcfbfb;
+  box-shadow: inset 0px 8px 18px -5px #ddd;
 }
 .compliance-cards{
   display: flex;
@@ -1972,7 +1976,7 @@ g#Layer_244{
   margin-top: 40px;
 }
 .compliance-card{
-  max-width: 500px;
+  max-width: 400px;
   margin: 25px;
 }
 .compliance-card-body{
