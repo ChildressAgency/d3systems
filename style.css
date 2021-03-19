@@ -2032,3 +2032,7 @@ g#Layer_244{
     margin-top: 144px;
   }
 }
+
+.list-arrow{
+  list-style-image: url(images/list-arrow.png);
+}
