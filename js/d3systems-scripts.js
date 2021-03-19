@@ -446,6 +446,10 @@ jQuery(document).ready(function($){
       renderBullet: function(index, className){
         return '<span class="' + className + '"><span></span></span>';
       }
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
     }
   });
 }); // end document ready
