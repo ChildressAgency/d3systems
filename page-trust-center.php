@@ -63,7 +63,15 @@
 </section>
 
 <?php if(have_rows('security_cards')): ?>
-<section id="section-2">
+<style>
+ #section-2-anchor{
+  display: block;
+  margin-top:-200px;
+  padding-bottom:200px;
+ }
+</style>
+<span id="section-2-anchor"></span>
+<section id="section-2" class="anchor-offset">
   <div class="container-fluid">
     <div class="security-cards">
       <?php $s = 0; while(have_rows('security_cards')): the_row(); ?>

@@ -48,7 +48,7 @@
 
 </head>
 
-<body <?php body_class(); ?> data-spy="scroll" data-target="#page-progress" data-offset="150">
+<body <?php body_class(); ?> data-spy="scroll" data-target="#page-progress" data-offset="200">
   <nav id="header-nav" class="sticky">
     <div class="container">
       <div class="navbar-header">
@@ -93,7 +93,11 @@
       <div id="page-progress" class="justified-nav">
         <ul class="nav nav-tabs nav-justified">
           <?php $t = 1; while(have_rows('section_titles')): the_row(); ?>
-            <li><a href="#section-<?php echo $t; ?>"><?php the_sub_field('section_title'); ?></a></li>
+            <?php
+              $anchor = $t;
+              if($t == 2){ $anchor = $t . '-anchor'; }
+            ?>
+            <li><a href="#section-<?php echo $anchor; ?>"><?php the_sub_field('section_title'); ?></a></li>
           <?php $t++; endwhile; ?>
         </ul>
       </div>
