@@ -436,9 +436,11 @@ jQuery(document).ready(function($){
     }
   }
 
+  var firstSlide = $('.security-carousel .swiper-container').data('initial-slide');
   var securitySlider = new Swiper('.security-carousel .swiper-container', {
     autoplay: false,
     loop: false,
+    initialSlide: parseInt(firstSlide),
     autoHeight: true,
     pagination: {
       el: '.swiper-pagination',

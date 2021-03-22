@@ -13,7 +13,13 @@ get_header('security'); ?>
 <?php if(have_rows('security_sections')): ?>
   <div class="security-carousel">
     <div class="container">
-      <div class="swiper-container">
+      <?php
+        $slide = 0;
+        if($_GET['slide']){
+          $slide = $_GET['slide'] - 1;
+        }
+      ?>
+      <div class="swiper-container" data-initial-slide="<?php echo $slide; ?>">
         <div class="swiper-wrapper">
           <?php while(have_rows('security_sections')): the_row(); ?>
             <div class="swiper-slide">
