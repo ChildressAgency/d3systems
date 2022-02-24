@@ -57,11 +57,9 @@
 
                 <div class="media-body">
                   <h3 class="expander-card-title"><?php the_sub_field('functionalities_card_title'); ?></h3>
-                  <div id="x-card-<?php echo $x; ?>" class="expander-card-content collapse" aria-expanded="false">
+                  <div id="x-card-<?php echo $x; ?>" class="expander-card-content">
                     <?php the_sub_field('functionalities_card_content'); ?>
                   </div>
-                  <a href="#x-card-<?php echo $x; ?>" role="button" class="expander collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="x-card-<?php echo $x; ?>">Read More</a>
-                  <a href="#x-card-<?php echo $x; ?>" role="button" class="expander-closer collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="x-card-<?php echo $x; ?>"><i class="fas fa-chevron-up"></i></a>
                 </div>
                 <div class="media-right">
                   <?php
@@ -82,11 +80,9 @@
                 </div>
                 <div class="media-body">
                   <h3 class="expander-card-title"><?php the_sub_field('functionalities_card_title'); ?></h3>
-                  <div id="x-card-<?php echo $x; ?>" class="expander-card-content collapse" aria-expanded="false">
+                  <div id="x-card-<?php echo $x; ?>" class="expander-card-content">
                     <?php the_sub_field('functionalities_card_content'); ?>
                   </div>
-                  <a href="#x-card-<?php echo $x; ?>" role="button" class="expander collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="x-card-<?php echo $x; ?>">Read More</a>
-                  <a href="#x-card-<?php echo $x; ?>" role="button" class="expander-closer collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="x-card-<?php echo $x; ?>"><i class="fas fa-chevron-up"></i></a>
                 </div>
 
               <?php endif; ?>
